@@ -1,6 +1,25 @@
 import re
 
 
+def resolve_categories(entry, clause, start, end, targets, topic=None):
+    """Share one explicit predicate across an enumerated target list."""
+    if entry["category"] == "auto":
+        enumeration = re.fullmatch(r"\s*(.+?)\s*(?:모두|전부|둘\s*다)\s*", clause[:start])
+        if enumeration:
+            tokens = re.split(r"\s*(?:,|및|와|과|랑|하고)\s*", enumeration.group(1))
+            categories = []
+            for token in tokens:
+                matched = [category for category, terms in targets.items() if any(
+                    re.fullmatch(re.escape(term) + r"[이가은는을를도]*", token.strip()) for term in terms)]
+                if len(matched) != 1:
+                    categories = []
+                    break
+                categories.extend(matched)
+            if len(tokens) > 1 and categories:
+                return [(category, "shared_enumeration") for category in dict.fromkeys(categories)]
+    return [resolve_category(entry, clause, start, end, targets, topic)]
+
+
 def resolve_category(entry, clause, start, end, targets, topic=None):
     if entry["category"] != "auto":
         return entry["category"], "lexicon_category"
@@ -25,6 +44,13 @@ def apply_context(entry, clause, start, end, rules):
     before, after = clause[:start], clause[end:]
     polarity = entry["polarity"]
     applied = []
+    if re.search(r"(?:다른|옆|근처|주변)\s*(?:카페|가게|곳|매장)[이가은는]|\S+(?:동|지역)[의은는]*\s*물가|지역\s*물가", clause):
+        return None, ["external_target"], start, end
+    if re.search(r"(?:에|엔)\s*$", before) and re.match(r"은\s*(?:곳|카페)[이가은는]*\s*많", after):
+        return None, ["external_target"], start, end
+    if "추천" in entry["expression"] and re.search(
+            r"(?:친구|지인|동료|블로그|후기|리뷰|누군가)[이가은는]*\s*(?:[가-힣]+\s*){0,3}$", before):
+        return None, ["attributed_recommendation"], start, end
     # Attach uncertainty to the evaluation ending rather than excluding a whole
     # clause just because it also contains "기대" or an unrelated quotation.
     for reason, pattern in rules["abstain_patterns"].items():
@@ -32,6 +58,8 @@ def apply_context(entry, clause, start, end, rules):
             return None, [reason], start, end
     if re.search(r"(?:안|못)\s*(?:먹|마셔|마시)[가-힣]*\s*$", before[-25:]):
         return None, ["not_experienced"], start, end
+    if re.match(r"^(?:하)?(?:지|지는|지도|진)\s*(?:않|못)(?:았|했)?(?:다고|다며|대요|다면|으면|겠)", after):
+        return None, ["negated_quote_or_condition"], start, end
     suffix = re.match(rules["negation_suffix"], after)
     prefix = re.search(rules["negation_prefix"], before)
     if suffix or prefix:

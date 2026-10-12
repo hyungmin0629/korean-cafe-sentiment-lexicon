@@ -116,6 +116,10 @@ def run(args):
                 "generated_at": datetime.now().astimezone().isoformat(),
                 "lexicon_status": "candidate_not_human_validated"}
     (output / "run_metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    if not args.no_report:
+        from .report import write_report
+        metadata["report"] = write_report(output, example_limit=args.report_examples)
+        (output / "run_metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"output": str(output), "counts": dict(counts)}, ensure_ascii=False))
 
 
@@ -130,7 +134,11 @@ def main(argv=None):
     parser.add_argument("--lexicon")
     parser.add_argument("--rules")
     parser.add_argument("--aliases")
+    parser.add_argument("--no-report", action="store_true", help="Skip the offline HTML report")
+    parser.add_argument("--report-examples", type=int, default=3, help="Excerpt samples per category/period/direction, 0..10")
     args = parser.parse_args(argv)
+    if not 0 <= args.report_examples <= 10:
+        parser.error("report-examples must be between 0 and 10")
     try:
         run(args)
     except (ValueError, OSError, KeyError, re.error) as error:

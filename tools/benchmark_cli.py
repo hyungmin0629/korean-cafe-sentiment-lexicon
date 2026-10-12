@@ -7,10 +7,12 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from cafe_sentiment import __version__
 
 
 def main():
-    folder = ROOT / "outputs_private/benchmark_cli_v02"
+    folder = ROOT / ("outputs_private/benchmark_cli_v" + __version__)
     folder.mkdir(exist_ok=True)
     source = folder / "synthetic.10000.csv"
     if (folder / "result").exists():

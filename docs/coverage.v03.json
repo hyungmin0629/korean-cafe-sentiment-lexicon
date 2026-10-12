@@ -1,0 +1,175 @@
+{
+  "version": "0.3.0",
+  "entries": 420,
+  "development_reviews": 221,
+  "entries_observed_in_development": 95,
+  "entries_unobserved_in_development": 325,
+  "observation_definition": "Selected evidence in fixed 221 development texts, includes abstained evidence; not human validation",
+  "cafes": [
+    {
+      "cafe_id": "terarosa_gangneung",
+      "cafe_name": "테라로사 강릉본점",
+      "role": "development",
+      "collected": 151,
+      "nonempty": 140,
+      "undated_nonempty": 21,
+      "scored_reviews": 130,
+      "needs_review": 4,
+      "category_scored_reviews": {
+        "menu": 98,
+        "service": 5,
+        "space": 44,
+        "location": 12,
+        "value": 12,
+        "hygiene": 5,
+        "operation": 14,
+        "overall": 42
+      }
+    },
+    {
+      "cafe_id": "fritz_dohwa",
+      "cafe_name": "프릳츠 도화점",
+      "role": "development",
+      "collected": 83,
+      "nonempty": 81,
+      "undated_nonempty": 6,
+      "scored_reviews": 72,
+      "needs_review": 5,
+      "category_scored_reviews": {
+        "menu": 62,
+        "service": 2,
+        "space": 21,
+        "location": 2,
+        "value": 6,
+        "hygiene": 4,
+        "operation": 2,
+        "overall": 21
+      }
+    },
+    {
+      "cafe_id": "onion_anguk",
+      "cafe_name": "어니언 안국점",
+      "role": "validation",
+      "collected": 107,
+      "nonempty": 107,
+      "undated_nonempty": 11,
+      "scored_reviews": 103,
+      "needs_review": 3,
+      "category_scored_reviews": {
+        "menu": 79,
+        "service": 7,
+        "space": 48,
+        "location": 3,
+        "value": 14,
+        "hygiene": 2,
+        "operation": 14,
+        "overall": 32
+      }
+    },
+    {
+      "cafe_id": "layered_anguk",
+      "cafe_name": "레이어드 안국점",
+      "role": "development_audit",
+      "collected": 92,
+      "nonempty": 86,
+      "undated_nonempty": 2,
+      "scored_reviews": 79,
+      "needs_review": 11,
+      "category_scored_reviews": {
+        "menu": 65,
+        "service": 7,
+        "space": 35,
+        "location": 3,
+        "value": 12,
+        "hygiene": 2,
+        "operation": 6,
+        "overall": 7
+      }
+    },
+    {
+      "cafe_id": "daelim_seongsu",
+      "cafe_name": "대림창고 성수",
+      "role": "development_audit",
+      "collected": 88,
+      "nonempty": 85,
+      "undated_nonempty": 7,
+      "scored_reviews": 79,
+      "needs_review": 6,
+      "category_scored_reviews": {
+        "menu": 46,
+        "service": 2,
+        "space": 40,
+        "location": 2,
+        "value": 24,
+        "hygiene": 3,
+        "operation": 1,
+        "overall": 25
+      }
+    },
+    {
+      "cafe_id": "narinamu",
+      "cafe_name": "카페나리나무",
+      "role": "application",
+      "collected": 2,
+      "nonempty": 2,
+      "undated_nonempty": 1,
+      "scored_reviews": 1,
+      "needs_review": 0,
+      "category_scored_reviews": {
+        "menu": 1,
+        "service": 0,
+        "space": 0,
+        "location": 0,
+        "value": 0,
+        "hygiene": 0,
+        "operation": 0,
+        "overall": 0
+      }
+    },
+    {
+      "cafe_id": "momos_oncheonjang",
+      "cafe_name": "모모스커피 부산본점",
+      "role": "holdout",
+      "collected": 94,
+      "nonempty": 92,
+      "undated_nonempty": 25,
+      "scored_reviews": 82,
+      "needs_review": 5,
+      "category_scored_reviews": {
+        "menu": 69,
+        "service": 7,
+        "space": 25,
+        "location": 7,
+        "value": 7,
+        "hygiene": 1,
+        "operation": 4,
+        "overall": 15
+      }
+    },
+    {
+      "cafe_id": "anthracite_hapjeong",
+      "cafe_name": "앤트러사이트 합정점",
+      "role": "holdout",
+      "collected": 34,
+      "nonempty": 31,
+      "undated_nonempty": 2,
+      "scored_reviews": 27,
+      "needs_review": 3,
+      "category_scored_reviews": {
+        "menu": 18,
+        "service": 3,
+        "space": 21,
+        "location": 0,
+        "value": 5,
+        "hygiene": 0,
+        "operation": 0,
+        "overall": 6
+      }
+    }
+  ],
+  "analyzed_reviews": 624,
+  "scored_reviews": 573,
+  "interpretation": "Execution coverage only; human accuracy unmeasured",
+  "lexicon_sha256": "391f640e73b5bcae443394d4888cdf51470c5e648d636fd66e432bd5165113a5",
+  "rules_sha256": "41d54653ad990ed3c1d903bc4edb12ebf0662f8fe7b51c2df2eead0cffcd7da3"
+}

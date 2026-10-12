@@ -1,6 +1,7 @@
 """Package an allowlist of authored public files, excluding raw reviews."""
 import hashlib
 import json
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -22,6 +23,12 @@ def main():
     paths = sorted(set(candidates))
     if any(not path.is_file() for path in paths):
         raise ValueError("Missing required public file")
+    for path in paths:
+        if path.parent == ROOT / "examples" and path.suffix == ".html":
+            payload = re.search(r'<script id="report-data" type="application/json">(.*?)</script>',
+                                path.read_text(encoding="utf-8"), re.S)
+            if not payload or not json.loads(payload.group(1)).get("is_synthetic"):
+                raise ValueError("Only synthetic reports may be packaged in public examples")
     destination = ROOT / f"outputs_private/cafe-sentiment-lexicon-v{__version__}.zip"
     destination.parent.mkdir(parents=True, exist_ok=True)
     manifest = []

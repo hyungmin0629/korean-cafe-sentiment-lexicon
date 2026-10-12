@@ -303,7 +303,7 @@ CAFE0301,가격이 합리적이다,value,1,0,0,candidate
 CAFE0302,가격이 과하다,value,-1,0,0,candidate
 CAFE0303,가격이 사악하다,value,-2,0,0,candidate
 CAFE0304,가격이 높다,value,-1,0,0,candidate
-CAFE0305,가격이 좀 있다,value,-1,1,1,candidate
+CAFE0305,가격이 좀 있다,value,-1,2,2,candidate
 CAFE0306,가성비가 별로다,value,-1,0,0,candidate
 CAFE0307,가성비가 아쉽다,value,-1,0,0,candidate
 CAFE0308,가성비가 괜찮다,value,1,0,0,candidate
@@ -414,3 +414,8 @@ CAFE0412,빈자리가 없다,space,-1,1,1,candidate
 CAFE0413,뛰어난 맛,menu,2,1,1,candidate
 CAFE0414,커피가 진하다,menu,1,3,3,candidate
 CAFE0415,방문할 가치가 있다,overall,1,1,1,candidate
+CAFE0416,메뉴 외관이 귀엽다,menu,1,0,0,candidate
+CAFE0417,사람이 너무 많다,operation,-1,9,9,candidate
+CAFE0418,너무 붐비다,operation,-1,0,0,candidate
+CAFE0419,분위기가 기분 좋다,space,1,0,0,candidate
+CAFE0420,다른 곳을 고르겠다,overall,-1,0,0,candidate

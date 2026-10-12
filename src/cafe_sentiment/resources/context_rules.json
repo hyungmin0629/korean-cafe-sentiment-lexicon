@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "category_labels": {
     "menu": "메뉴·맛",
     "service": "친절·서비스",
@@ -147,12 +147,12 @@
   "abstain_patterns": {
     "conditional_or_wish": "^(?:하)?(?:다면|라면|으면|면|었으면|겠|아야|어야)",
     "quoted_or_hearsay": "^(?:하)?(?:다고|다며|대요|라던|라고|다는)",
-    "uncertain": "^(?:어|아)?\\s*보[이여입였]|^(?:한지|는지|을지|ㄹ지)\\s*모르",
+    "uncertain": "^(?:어|아)?\\s*보[이여입였]|^(?:한지|할지|은지|는지|을지|ㄹ지)\\s*모르",
     "out_of_scope_negation": "^(?:은|는|한|다는)?\\s*(?:것은|건|것도)\\s*아니"
   },
   "negation_prefix": "(?:안|못)\\s*$",
   "negation_suffix": "^(?:하)?(?:지|지는|지도|진)\\s*않[가-힣]*|^(?:하)?지\\s*못[가-힣]*",
-  "intensifier_prefix": "(?:정말|매우|엄청|너무|진짜)\\s*$",
+  "intensifier_prefix": "(?:정말|매우|엄청|너무|진짜|아주|짱|넘)\\s*$",
   "diminisher_prefix": "(?:조금|약간|살짝|좀)\\s*$",
   "topic_headers": {
     "주차": "location",

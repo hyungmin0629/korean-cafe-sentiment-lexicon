@@ -1,0 +1,416 @@
+﻿entry_id,expression,category,polarity,development_reviews_matched,development_reviews_scored,status
+CAFE0001,맛있다,menu,2,90,88,candidate
+CAFE0002,맛없다,menu,-2,1,1,candidate
+CAFE0003,맛이 좋다,menu,2,3,3,candidate
+CAFE0004,맛이 없다,menu,-2,0,0,candidate
+CAFE0005,맛이 별로다,menu,-1,1,1,candidate
+CAFE0006,맛이 아쉽다,menu,-1,0,0,candidate
+CAFE0007,맛집,menu,1,3,3,candidate
+CAFE0008,향긋하다,menu,1,2,2,candidate
+CAFE0009,고소하다,menu,1,6,6,candidate
+CAFE0010,풍미가 좋다,menu,2,1,1,candidate
+CAFE0011,향이 좋다,menu,1,2,2,candidate
+CAFE0012,잡내,menu,-1,0,0,candidate
+CAFE0013,비린내,menu,-2,0,0,candidate
+CAFE0014,눅눅하다,menu,-1,0,0,candidate
+CAFE0015,퍽퍽하다,menu,-1,0,0,candidate
+CAFE0016,촉촉하다,menu,1,0,0,candidate
+CAFE0017,바삭하다,menu,1,0,0,candidate
+CAFE0018,신선하다,menu,1,3,3,candidate
+CAFE0019,상했다,menu,-2,0,0,candidate
+CAFE0020,밍밍하다,menu,-1,1,1,candidate
+CAFE0021,탄 맛,menu,-1,1,1,candidate
+CAFE0022,취향에 맞다,menu,1,0,0,candidate
+CAFE0023,입맛에 맞다,menu,1,1,1,candidate
+CAFE0024,입에 맞다,menu,1,0,0,candidate
+CAFE0025,취향이 아니다,menu,-1,1,1,candidate
+CAFE0026,너무 달다,menu,-1,0,0,candidate
+CAFE0027,너무 쓰다,menu,-1,1,1,candidate
+CAFE0028,너무 시다,menu,-1,0,0,candidate
+CAFE0029,산미가 너무 강하다,menu,-1,0,0,candidate
+CAFE0030,친절하다,service,2,5,5,candidate
+CAFE0031,불친절하다,service,-2,0,0,candidate
+CAFE0032,상냥하다,service,1,0,0,candidate
+CAFE0033,다정하다,service,1,0,0,candidate
+CAFE0034,퉁명스럽다,service,-1,0,0,candidate
+CAFE0035,무례하다,service,-2,0,0,candidate
+CAFE0036,응대가 좋다,service,1,0,0,candidate
+CAFE0037,응대가 별로다,service,-1,0,0,candidate
+CAFE0038,설명을 잘 해주다,service,1,0,0,candidate
+CAFE0039,주문을 잘못 받다,service,-2,0,0,candidate
+CAFE0040,주문 누락,service,-2,0,0,candidate
+CAFE0041,인사를 안 하다,service,-1,0,0,candidate
+CAFE0042,아늑하다,space,1,1,1,candidate
+CAFE0043,쾌적하다,space,1,2,2,candidate
+CAFE0044,답답하다,space,-1,1,1,candidate
+CAFE0045,시끄럽다,space,-1,5,4,candidate
+CAFE0046,소음이 심하다,space,-2,0,0,candidate
+CAFE0047,의자가 불편하다,space,-1,0,0,candidate
+CAFE0048,좌석이 편하다,space,1,0,0,candidate
+CAFE0049,인테리어가 예쁘다,space,1,1,1,candidate
+CAFE0050,분위기가 좋다,space,2,11,11,candidate
+CAFE0051,분위기 맛집,space,2,0,0,candidate
+CAFE0052,사진 찍기 좋다,space,1,0,0,candidate
+CAFE0053,공부하기 좋다,space,1,0,0,candidate
+CAFE0054,작업하기 좋다,space,1,0,0,candidate
+CAFE0055,콘센트가 부족하다,space,-1,0,0,candidate
+CAFE0056,좌석이 좁다,space,-1,0,0,candidate
+CAFE0057,공간이 넓다,space,1,4,4,candidate
+CAFE0058,찾기 쉽다,location,1,0,0,candidate
+CAFE0059,찾기 어렵다,location,-1,0,0,candidate
+CAFE0060,접근성이 좋다,location,1,0,0,candidate
+CAFE0061,역에서 가깝다,location,1,0,0,candidate
+CAFE0062,주차가 편하다,location,1,0,0,candidate
+CAFE0063,주차가 어렵다,location,-1,0,0,candidate
+CAFE0064,주차가 불편하다,location,-1,0,0,candidate
+CAFE0065,주차 공간이 없다,location,-1,1,1,candidate
+CAFE0066,가성비가 좋다,value,2,0,0,candidate
+CAFE0067,가성비가 나쁘다,value,-2,0,0,candidate
+CAFE0068,비싸다,value,-1,12,12,candidate
+CAFE0069,저렴하다,value,1,1,1,candidate
+CAFE0070,합리적인 가격,value,1,0,0,candidate
+CAFE0071,양이 적다,value,-1,0,0,candidate
+CAFE0072,가격이 부담스럽다,value,-1,0,0,candidate
+CAFE0073,돈이 아깝다,value,-2,0,0,candidate
+CAFE0074,깨끗하다,hygiene,1,4,4,candidate
+CAFE0075,지저분하다,hygiene,-2,1,1,candidate
+CAFE0076,청결하다,hygiene,1,1,1,candidate
+CAFE0077,더럽다,hygiene,-2,1,1,candidate
+CAFE0078,위생이 좋다,hygiene,1,0,0,candidate
+CAFE0079,위생이 아쉽다,hygiene,-1,0,0,candidate
+CAFE0080,먼지가 많다,hygiene,-1,0,0,candidate
+CAFE0081,설거지가 안 되다,hygiene,-2,0,0,candidate
+CAFE0082,대기가 길다,operation,-1,0,0,candidate
+CAFE0083,웨이팅이 길다,operation,-1,1,1,candidate
+CAFE0084,자주 품절,operation,-1,0,0,candidate
+CAFE0085,품절이라 아쉽다,operation,-1,0,0,candidate
+CAFE0086,오래 기다리다,operation,-1,0,0,candidate
+CAFE0087,빨리 나오다,operation,1,0,0,candidate
+CAFE0088,대기 없이,operation,1,1,1,candidate
+CAFE0089,웨이팅 없이,operation,1,0,0,candidate
+CAFE0090,재방문하고 싶다,overall,2,0,0,candidate
+CAFE0091,또 오고 싶다,overall,2,0,0,candidate
+CAFE0092,다시 방문하고 싶다,overall,2,0,0,candidate
+CAFE0093,다신 안 오다,overall,-2,0,0,candidate
+CAFE0094,재방문 의사 없다,overall,-2,0,0,candidate
+CAFE0095,추천한다,auto,1,16,16,candidate
+CAFE0096,만족한다,auto,1,12,12,candidate
+CAFE0097,실망한다,auto,-2,2,2,candidate
+CAFE0098,별로다,auto,-1,5,5,candidate
+CAFE0099,아쉽다,auto,-1,12,11,candidate
+CAFE0100,괜찮다,auto,1,22,21,candidate
+CAFE0101,좋다,auto,1,68,68,candidate
+CAFE0102,나쁘다,auto,-1,3,3,candidate
+CAFE0103,편하다,auto,1,6,6,candidate
+CAFE0104,불편하다,auto,-1,1,1,candidate
+CAFE0105,예쁘다,auto,1,17,16,candidate
+CAFE0106,깔끔하다,auto,1,9,9,candidate
+CAFE0107,그저 그렇다,auto,0,1,1,candidate
+CAFE0108,보통이다,auto,0,1,1,candidate
+CAFE0109,평범하다,auto,0,5,5,candidate
+CAFE0110,맛나다,menu,2,5,5,candidate
+CAFE0111,부드럽다,menu,1,6,6,candidate
+CAFE0112,쏘쏘,auto,0,7,7,candidate
+CAFE0113,그냥저냥,auto,0,1,1,candidate
+CAFE0114,넓다,auto,1,27,27,candidate
+CAFE0115,좁다,auto,-1,0,0,candidate
+CAFE0116,널찍하다,auto,1,0,0,candidate
+CAFE0117,정신없다,space,-1,3,3,candidate
+CAFE0118,다양하다,auto,1,18,18,candidate
+CAFE0119,아름답다,space,1,1,1,candidate
+CAFE0120,가볼 만하다,overall,1,4,3,candidate
+CAFE0121,재방문 의사 있다,overall,1,1,1,candidate
+CAFE0122,구경거리가 많다,space,1,0,0,candidate
+CAFE0123,시간이 오래 걸리다,operation,-1,0,0,candidate
+CAFE0124,대기가 없다,operation,1,0,0,candidate
+CAFE0125,깊은 맛,menu,1,0,0,candidate
+CAFE0126,맛이 진하다,menu,1,0,0,candidate
+CAFE0127,맛이 풍부하다,menu,1,0,0,candidate
+CAFE0128,맛이 조화롭다,menu,1,0,0,candidate
+CAFE0129,밸런스가 좋다,menu,1,1,1,candidate
+CAFE0130,뒷맛이 깔끔하다,menu,1,0,0,candidate
+CAFE0131,여운이 좋다,menu,1,0,0,candidate
+CAFE0132,잘 어울리는 맛,menu,1,1,1,candidate
+CAFE0133,입맛에 안 맞다,menu,-1,0,0,candidate
+CAFE0134,입에 안 맞다,menu,-1,0,0,candidate
+CAFE0135,취향에 안 맞다,menu,-1,1,1,candidate
+CAFE0136,맛이 떨어지다,menu,-1,1,1,candidate
+CAFE0137,맛이 변했다,menu,-1,0,0,candidate
+CAFE0138,맛이 들쭉날쭉하다,menu,-1,0,0,candidate
+CAFE0139,맛의 편차가 크다,menu,-1,0,0,candidate
+CAFE0140,맛이 약하다,menu,-1,0,0,candidate
+CAFE0141,향이 약하다,menu,-1,0,0,candidate
+CAFE0142,향이 풍부하다,menu,1,0,0,candidate
+CAFE0143,향이 진하다,menu,1,1,1,candidate
+CAFE0144,향이 안 나다,menu,-1,0,0,candidate
+CAFE0145,떫다,menu,-1,0,0,candidate
+CAFE0146,텁텁하다,menu,-1,0,0,candidate
+CAFE0147,느끼하다,menu,-1,0,0,candidate
+CAFE0148,기름지다,menu,-1,0,0,candidate
+CAFE0149,짜다 싶다,menu,-1,0,0,candidate
+CAFE0150,단맛이 과하다,menu,-1,0,0,candidate
+CAFE0151,쓴맛이 강하다,menu,-1,0,0,candidate
+CAFE0152,신맛이 강하다,menu,-1,0,0,candidate
+CAFE0153,단맛이 적당하다,menu,1,0,0,candidate
+CAFE0154,달지 않아 좋다,menu,1,0,0,candidate
+CAFE0155,많이 달지 않아 좋다,menu,1,0,0,candidate
+CAFE0156,단맛이 부담 없다,menu,1,0,0,candidate
+CAFE0157,적당한 산미,menu,1,2,2,candidate
+CAFE0158,산미가 거슬리다,menu,-1,0,0,candidate
+CAFE0159,산미가 아쉽다,menu,-1,0,0,candidate
+CAFE0160,산미가 취향에 맞다,menu,1,0,0,candidate
+CAFE0161,비리지 않아서 좋다,menu,1,0,0,candidate
+CAFE0162,잡내가 없다,menu,1,0,0,candidate
+CAFE0163,비린내가 없다,menu,1,0,0,candidate
+CAFE0164,식감이 좋다,menu,1,1,1,candidate
+CAFE0165,식감이 별로다,menu,-1,0,0,candidate
+CAFE0166,질기다,menu,-1,0,0,candidate
+CAFE0167,딱딱하다,menu,-1,0,0,candidate
+CAFE0168,입에서 녹다,menu,1,0,0,candidate
+CAFE0169,퍼석하다,menu,-1,0,0,candidate
+CAFE0170,축축하다,menu,-1,1,1,candidate
+CAFE0171,덜 익다,menu,-1,0,0,candidate
+CAFE0172,덜 구워지다,menu,-1,0,0,candidate
+CAFE0173,타 버리다,menu,-2,0,0,candidate
+CAFE0174,상한 맛,menu,-2,0,0,candidate
+CAFE0175,냉동 맛이 나다,menu,-1,0,0,candidate
+CAFE0176,오래된 맛,menu,-1,0,0,candidate
+CAFE0177,우유 냄새가 나쁘다,menu,-1,0,0,candidate
+CAFE0178,크림이 부드럽다,menu,1,0,0,candidate
+CAFE0179,크림이 느끼하다,menu,-1,0,0,candidate
+CAFE0180,빵이 푸석하다,menu,-1,0,0,candidate
+CAFE0181,속이 알차다,menu,1,0,0,candidate
+CAFE0182,재료가 아쉽다,menu,-1,0,0,candidate
+CAFE0183,재료가 좋다,menu,1,0,0,candidate
+CAFE0184,토핑이 부족하다,menu,-1,0,0,candidate
+CAFE0185,토핑이 넉넉하다,menu,1,0,0,candidate
+CAFE0186,음료가 미지근하다,menu,-1,0,0,candidate
+CAFE0187,식은 커피,menu,-1,0,0,candidate
+CAFE0188,커피가 식었다,menu,-1,0,0,candidate
+CAFE0189,얼음이 너무 많다,menu,-1,0,0,candidate
+CAFE0190,얼음이 녹아 싱겁다,menu,-1,0,0,candidate
+CAFE0191,차갑지 않아 아쉽다,menu,-1,0,0,candidate
+CAFE0192,안 차가운 음료,menu,-1,0,0,candidate
+CAFE0193,너무 뜨겁다,menu,-1,0,0,candidate
+CAFE0194,메뉴 선택 폭이 넓다,menu,1,0,0,candidate
+CAFE0195,메뉴가 다양해서 좋다,menu,1,0,0,candidate
+CAFE0196,메뉴가 부족하다,menu,-1,0,0,candidate
+CAFE0197,디저트 종류가 아쉽다,menu,-1,0,0,candidate
+CAFE0198,품질이 좋다,menu,1,0,0,candidate
+CAFE0199,품질이 떨어지다,menu,-1,0,0,candidate
+CAFE0200,정성스러운 메뉴,menu,1,0,0,candidate
+CAFE0201,말투가 차갑다,service,-1,0,0,candidate
+CAFE0202,말투가 불쾌하다,service,-2,0,0,candidate
+CAFE0203,표정이 안 좋다,service,-1,0,0,candidate
+CAFE0204,짜증을 내다,service,-2,0,0,candidate
+CAFE0205,눈치를 주다,service,-1,0,0,candidate
+CAFE0206,무시하다,service,-2,0,0,candidate
+CAFE0207,성의 없다,service,-1,0,0,candidate
+CAFE0208,인사를 잘 하다,service,1,0,0,candidate
+CAFE0209,반갑게 맞다,service,1,0,0,candidate
+CAFE0210,웃으며 응대하다,service,1,0,0,candidate
+CAFE0211,세심하게 챙기다,service,1,0,0,candidate
+CAFE0212,배려해 주다,service,1,0,0,candidate
+CAFE0213,요청을 잘 들어주다,service,1,0,0,candidate
+CAFE0214,요청을 거절하다,service,-1,0,0,candidate
+CAFE0215,도움을 주다,service,1,0,0,candidate
+CAFE0216,설명이 자세하다,service,1,0,0,candidate
+CAFE0217,설명이 부족하다,service,-1,0,0,candidate
+CAFE0218,설명을 안 해주다,service,-1,0,0,candidate
+CAFE0219,메뉴 추천을 잘 해주다,service,1,0,0,candidate
+CAFE0220,추천을 강요하다,service,-1,0,0,candidate
+CAFE0221,질문에 답을 안 하다,service,-1,0,0,candidate
+CAFE0222,응대가 빠르다,service,1,0,0,candidate
+CAFE0223,응대가 늦다,service,-1,0,0,candidate
+CAFE0224,대처가 좋다,service,1,0,0,candidate
+CAFE0225,대처가 미흡하다,service,-1,0,0,candidate
+CAFE0226,실수를 인정하다,service,1,0,0,candidate
+CAFE0227,사과가 없다,service,-1,0,0,candidate
+CAFE0228,사과를 안 하다,service,-1,0,0,candidate
+CAFE0229,주문이 잘못 나오다,service,-1,0,0,candidate
+CAFE0230,음료를 쏟다,service,-1,0,0,candidate
+CAFE0231,응대가 일관되지 않다,service,-1,0,0,candidate
+CAFE0232,공간이 비좁다,space,-1,0,0,candidate
+CAFE0233,천장이 높아 좋다,space,1,0,0,candidate
+CAFE0234,탁 트이다,space,1,1,1,candidate
+CAFE0235,테이블 간격이 넓다,space,1,1,1,candidate
+CAFE0236,테이블 간격이 좁다,space,-1,0,0,candidate
+CAFE0237,테이블이 작다,space,-1,0,0,candidate
+CAFE0238,테이블이 흔들리다,space,-1,0,0,candidate
+CAFE0239,의자가 딱딱하다,space,-1,0,0,candidate
+CAFE0240,의자가 편하다,space,1,0,0,candidate
+CAFE0241,좌석이 부족하다,space,-1,0,0,candidate
+CAFE0242,앉을 자리가 없다,space,-1,0,0,candidate
+CAFE0243,쉴 자리 부족,space,-1,0,0,candidate
+CAFE0244,조용해서 좋다,space,1,0,0,candidate
+CAFE0245,차분한 분위기,space,1,1,1,candidate
+CAFE0246,고즈넉하다,space,1,1,1,candidate
+CAFE0247,산만하다,space,-1,0,0,candidate
+CAFE0248,울리는 소리,space,-1,0,0,candidate
+CAFE0249,음악이 너무 크다,space,-1,0,0,candidate
+CAFE0250,음악이 좋다,space,1,0,0,candidate
+CAFE0251,대화하기 좋다,space,1,1,1,candidate
+CAFE0252,대화가 어렵다,space,-1,0,0,candidate
+CAFE0253,쉬기 좋다,space,1,1,1,candidate
+CAFE0254,오래 있기 좋다,space,1,0,0,candidate
+CAFE0255,집중하기 좋다,space,1,0,0,candidate
+CAFE0256,집중하기 어렵다,space,-1,0,0,candidate
+CAFE0257,카공하기 좋다,space,1,0,0,candidate
+CAFE0258,카공하기 어렵다,space,-1,0,0,candidate
+CAFE0259,와이파이가 잘 된다,space,1,0,0,candidate
+CAFE0260,와이파이가 느리다,space,-1,0,0,candidate
+CAFE0261,와이파이가 안 된다,space,-1,0,0,candidate
+CAFE0262,콘센트가 많다,space,1,0,0,candidate
+CAFE0263,충전하기 좋다,space,1,0,0,candidate
+CAFE0264,너무 춥다,space,-1,0,0,candidate
+CAFE0265,너무 덥다,space,-1,1,1,candidate
+CAFE0266,환기가 안 된다,space,-1,0,0,candidate
+CAFE0267,환기가 잘 된다,space,1,0,0,candidate
+CAFE0268,조명이 편안하다,space,1,0,0,candidate
+CAFE0269,조명이 너무 어둡다,space,-1,0,0,candidate
+CAFE0270,뷰가 좋다,space,1,0,0,candidate
+CAFE0271,햇살이 좋다,space,1,0,0,candidate
+CAFE0272,사진이 잘 나온다,space,1,0,0,candidate
+CAFE0273,인테리어가 멋지다,space,1,0,0,candidate
+CAFE0274,독특한 인테리어가 좋다,space,1,0,0,candidate
+CAFE0275,주차하기 쉽다,location,1,0,0,candidate
+CAFE0276,주차장이 협소하다,location,-1,0,0,candidate
+CAFE0277,주차할 곳이 많다,location,1,1,1,candidate
+CAFE0278,주차할 곳이 없다,location,-1,0,0,candidate
+CAFE0279,주차 공간이 부족하다,location,-1,0,0,candidate
+CAFE0280,주차가 복잡하다,location,-1,0,0,candidate
+CAFE0281,주차가 힘들다,location,-1,1,1,candidate
+CAFE0282,주차 만차,location,-1,1,1,candidate
+CAFE0283,주차 안내가 좋다,location,1,0,0,candidate
+CAFE0284,주차 안내가 부족하다,location,-1,0,0,candidate
+CAFE0285,무료 주차가 좋다,location,1,0,0,candidate
+CAFE0286,대중교통이 편하다,location,1,0,0,candidate
+CAFE0287,대중교통이 불편하다,location,-1,0,0,candidate
+CAFE0288,역에서 멀다,location,-1,0,0,candidate
+CAFE0289,버스 접근성이 좋다,location,1,0,0,candidate
+CAFE0290,길 찾기 어렵다,location,-1,0,0,candidate
+CAFE0291,입구 찾기 어렵다,location,-1,0,0,candidate
+CAFE0292,간판이 안 보인다,location,-1,0,0,candidate
+CAFE0293,골목이 복잡하다,location,-1,0,0,candidate
+CAFE0294,계단이 가파르다,location,-1,0,0,candidate
+CAFE0295,유모차 접근이 어렵다,location,-1,0,0,candidate
+CAFE0296,휠체어 접근이 어렵다,location,-1,0,0,candidate
+CAFE0297,동선이 편하다,space,1,0,0,candidate
+CAFE0298,동선이 복잡하다,space,-1,0,0,candidate
+CAFE0299,가격이 착하다,value,1,0,0,candidate
+CAFE0300,가격이 적당하다,value,1,0,0,candidate
+CAFE0301,가격이 합리적이다,value,1,0,0,candidate
+CAFE0302,가격이 과하다,value,-1,0,0,candidate
+CAFE0303,가격이 사악하다,value,-2,0,0,candidate
+CAFE0304,가격이 높다,value,-1,0,0,candidate
+CAFE0305,가격이 좀 있다,value,-1,1,1,candidate
+CAFE0306,가성비가 별로다,value,-1,0,0,candidate
+CAFE0307,가성비가 아쉽다,value,-1,0,0,candidate
+CAFE0308,가성비가 괜찮다,value,1,0,0,candidate
+CAFE0309,가격 대비 만족,value,1,0,0,candidate
+CAFE0310,가격 대비 아쉽다,value,-1,0,0,candidate
+CAFE0311,가격 대비 맛이 별로다,value,-1,0,0,candidate
+CAFE0312,양이 충분하다,value,1,0,0,candidate
+CAFE0313,양이 넉넉하다,value,1,0,0,candidate
+CAFE0314,양이 아쉽다,value,-1,0,0,candidate
+CAFE0315,돈값을 하다,value,1,0,0,candidate
+CAFE0316,돈값을 못 하다,value,-1,0,0,candidate
+CAFE0317,돈값을 안 하다,value,-1,0,0,candidate
+CAFE0318,비싸도 납득하다,value,1,0,0,candidate
+CAFE0319,할인돼서 좋다,value,1,0,0,candidate
+CAFE0320,주차비가 부담스럽다,value,-1,0,0,candidate
+CAFE0321,추가 요금이 아쉽다,value,-1,0,0,candidate
+CAFE0322,정리가 잘 되어 있다,hygiene,1,0,0,candidate
+CAFE0323,정리가 안 되어 있다,hygiene,-1,1,1,candidate
+CAFE0324,테이블이 끈적하다,hygiene,-1,0,0,candidate
+CAFE0325,테이블을 안 닦다,hygiene,-1,0,0,candidate
+CAFE0326,컵에 얼룩이 있다,hygiene,-1,0,0,candidate
+CAFE0327,컵에 립스틱이 묻다,hygiene,-2,0,0,candidate
+CAFE0328,식기에 이물질이 있다,hygiene,-2,0,0,candidate
+CAFE0329,머리카락이 나오다,hygiene,-2,0,0,candidate
+CAFE0330,벌레가 나오다,hygiene,-2,0,0,candidate
+CAFE0331,악취가 나다,hygiene,-2,0,0,candidate
+CAFE0332,화장실 냄새가 심하다,hygiene,-1,0,0,candidate
+CAFE0333,하수구 냄새,hygiene,-1,0,0,candidate
+CAFE0334,쓰레기가 많다,hygiene,-1,0,0,candidate
+CAFE0335,바닥이 끈적하다,hygiene,-1,0,0,candidate
+CAFE0336,물때가 있다,hygiene,-1,0,0,candidate
+CAFE0337,곰팡이가 있다,hygiene,-2,0,0,candidate
+CAFE0338,손을 안 씻다,hygiene,-2,0,0,candidate
+CAFE0339,위생 관리가 좋다,hygiene,1,0,0,candidate
+CAFE0340,위생 관리가 부족하다,hygiene,-1,0,0,candidate
+CAFE0341,청소가 잘 되어 있다,hygiene,1,0,0,candidate
+CAFE0342,청소가 안 되어 있다,hygiene,-1,0,0,candidate
+CAFE0343,소독이 잘 되어 있다,hygiene,1,0,0,candidate
+CAFE0344,청결 관리에 만족,hygiene,1,0,0,candidate
+CAFE0345,냄새 없이 깨끗하다,hygiene,1,0,0,candidate
+CAFE0346,주문하는 데 오래 걸리다,operation,-1,0,0,candidate
+CAFE0347,음료 나오는 데 오래 걸리다,operation,-1,0,0,candidate
+CAFE0348,나오는 데 오래 걸리다,operation,-1,0,0,candidate
+CAFE0349,줄이 길다,operation,-1,0,0,candidate
+CAFE0350,줄 서기 힘들다,operation,-1,0,0,candidate
+CAFE0351,대기 시간이 짧다,operation,1,0,0,candidate
+CAFE0352,대기 시간이 길다,operation,-1,0,0,candidate
+CAFE0353,주문이 밀리다,operation,-1,0,0,candidate
+CAFE0354,주문이 빨리 나오다,operation,1,0,0,candidate
+CAFE0355,회전율이 좋다,operation,1,0,0,candidate
+CAFE0356,회전율이 느리다,operation,-1,0,0,candidate
+CAFE0357,픽업이 편하다,operation,1,0,0,candidate
+CAFE0358,픽업이 복잡하다,operation,-1,0,0,candidate
+CAFE0359,예약이 편하다,operation,1,0,0,candidate
+CAFE0360,예약이 어렵다,operation,-1,0,0,candidate
+CAFE0361,예약이 누락되다,operation,-2,0,0,candidate
+CAFE0362,예약이 취소되다,operation,-1,0,0,candidate
+CAFE0363,안내 없이 휴무,operation,-2,0,0,candidate
+CAFE0364,영업시간이 다르다,operation,-1,0,0,candidate
+CAFE0365,영업 안내가 부정확하다,operation,-1,0,0,candidate
+CAFE0366,품절이 많다,operation,-1,0,0,candidate
+CAFE0367,재고가 부족하다,operation,-1,0,0,candidate
+CAFE0368,혼잡해서 힘들다,operation,-1,0,0,candidate
+CAFE0369,키오스크가 불편하다,operation,-1,0,0,candidate
+CAFE0370,키오스크가 편하다,operation,1,0,0,candidate
+CAFE0371,결제가 안 되다,operation,-1,0,0,candidate
+CAFE0372,결제가 편하다,operation,1,0,0,candidate
+CAFE0373,포장이 엉성하다,operation,-1,0,0,candidate
+CAFE0374,포장이 꼼꼼하다,operation,1,0,0,candidate
+CAFE0375,포장이 새다,operation,-1,0,0,candidate
+CAFE0376,메뉴가 빠르게 준비되다,operation,1,0,0,candidate
+CAFE0377,재방문 의사가 있다,overall,2,0,0,candidate
+CAFE0378,다시 가고 싶다,overall,2,0,0,candidate
+CAFE0379,또 방문하고 싶다,overall,2,0,0,candidate
+CAFE0380,다시는 안 가다,overall,-2,0,0,candidate
+CAFE0381,재방문은 글쎄,overall,-1,0,0,candidate
+CAFE0382,다음에도 오다,overall,1,0,0,candidate
+CAFE0383,단골이 되고 싶다,overall,1,0,0,candidate
+CAFE0384,시간이 아깝다,overall,-1,1,1,candidate
+CAFE0385,발걸음이 아깝다,overall,-1,0,0,candidate
+CAFE0386,다녀온 보람이 있다,overall,1,0,0,candidate
+CAFE0387,최악이다,auto,-2,1,1,candidate
+CAFE0388,최고다,auto,2,7,7,candidate
+CAFE0389,훌륭하다,auto,2,1,1,candidate
+CAFE0390,훨씬 낫다,auto,1,0,0,candidate
+CAFE0391,아주 마음에 들다,auto,1,1,1,candidate
+CAFE0392,별로 마음에 안 들다,auto,-1,0,0,candidate
+CAFE0393,기대 이하,auto,-1,0,0,candidate
+CAFE0394,기대 이상,auto,1,0,0,candidate
+CAFE0395,기대에 못 미치다,auto,-1,0,0,candidate
+CAFE0396,기대한 것보다 좋다,auto,1,0,0,candidate
+CAFE0397,기대한 것보다 별로다,auto,-1,0,0,candidate
+CAFE0398,불만족하다,auto,-1,0,0,candidate
+CAFE0399,불쾌하다,auto,-2,0,0,candidate
+CAFE0400,무난하다,auto,0,8,8,candidate
+CAFE0401,그럭저럭이다,auto,0,2,2,candidate
+CAFE0402,애매하다,auto,0,2,2,candidate
+CAFE0403,감동이다,auto,2,2,2,candidate
+CAFE0404,매력적이다,auto,1,2,2,candidate
+CAFE0405,인상적이다,auto,1,1,1,candidate
+CAFE0406,호불호가 갈린다,auto,0,0,0,candidate
+CAFE0407,추천하지 않다,auto,-1,2,2,candidate
+CAFE0408,비추천,auto,-1,0,0,candidate
+CAFE0409,강력 추천,auto,2,0,0,candidate
+CAFE0410,주차가 불가능하다,location,-1,0,0,candidate
+CAFE0411,자리 잡기 어렵다,space,-1,1,1,candidate
+CAFE0412,빈자리가 없다,space,-1,1,1,candidate
+CAFE0413,뛰어난 맛,menu,2,1,1,candidate
+CAFE0414,커피가 진하다,menu,1,3,3,candidate
+CAFE0415,방문할 가치가 있다,overall,1,1,1,candidate

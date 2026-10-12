@@ -4,7 +4,9 @@
 
 리뷰 CSV를 넣으면 메뉴·친절·공간·입지·가격·청결·운영·전반 만족의 감성 점수를 기간별로 계산합니다. 표현별 근거를 저장하며, 분석 실행에는 외부 AI API나 추가 Python 라이브러리가 필요하지 않습니다.
 
-버전 0.2.0은 자체 작성한 **415개 후보 표현**을 제공합니다. 실제 카페 6곳의 본문 501건에서 실행했으며, 나리나무도 2건에 적용했습니다. 개발 본문 221건에서 선택 근거로 관찰된 후보는 94개, 나머지 321개는 해당 표본에서 미관찰인 보완 가설입니다. 모든 항목은 `candidate`이며 **사람 정답 기반 정확도는 아직 측정하지 않았습니다.**
+버전 0.3.0은 자체 작성한 **420개 후보 표현**과 **오프라인 HTML 진단 보고서**를 제공합니다. 실제 카페 8곳의 본문 624건에 실행했고, 나리나무 2건도 포함했습니다. 개발 본문 221건에서 관찰된 후보는 95개, 미관찰 후보는 325개입니다. 모든 항목은 `candidate`이며 **사람 정답 기반 정확도는 아직 측정하지 않았습니다.**
+
+보고서에서 카페·월 범위별 8개 항목 점수, 근거 건수, 추세, 반복 표현과 확인 후보를 볼 수 있습니다. [자체 작성 예제 보고서](examples/report.synthetic.html)를 내려받아 브라우저에서 열어보세요. 사용법은 [보고서 안내](docs/owner_report.md)에 있습니다.
 
 ## 바로 실행
 
@@ -21,11 +23,19 @@ python run.py --input examples/reviews.synthetic.csv --output outputs_private/de
 
 예제는 실제 고객 리뷰가 아닌 자체 작성 문장 18건입니다. 기존 결과를 실수로 덮어쓰지 않도록 새 폴더 또는 빈 폴더로 출력해야 합니다.
 
+보고서를 포함한 생성 예제 74건 실행:
+
+```powershell
+python run.py --input examples/reviews.report.synthetic.csv --output outputs_private/report_demo
+```
+
+결과 폴더의 `report.html`을 엽니다. `--report-examples 0`은 발췌를 제외하며 `--no-report`는 HTML 출력을 생략합니다. 실제 보고서는 일부 원문 발췌가 있으므로 비공개로 관리합니다.
+
 실제 리뷰 분석:
 
 ```powershell
-python run.py --input data_private/reviews.diningcode.csv --output outputs_private/actual_all --period all
-python run.py --input data_private/reviews.diningcode.csv --output outputs_private/actual_month --period month
+python run.py --input data_private/reviews.csv --output outputs_private/actual_all --period all
+python run.py --input data_private/reviews.csv --output outputs_private/actual_month --period month
 ```
 
 분기 집계는 `--period quarter`, 전체 기간은 `--period all`입니다. `--start`·`--end`는 양 끝 날짜를 포함합니다. 날짜 필터가 있으면 날짜 미상 리뷰는 전체 기간 집계에서도 제외됩니다.
@@ -58,6 +68,7 @@ UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/review
 
 | 파일 | 읽는 방법 |
 |---|---|
+| report.html | 카페·월 범위 필터, 8개 항목, 월별 추세, 근거 발췌, CSV 미리보기·저장, 인쇄 |
 | summary.csv | 카페·기간·카테고리별 점수, 건수, 비율, 표본 상태 |
 | reviews.jsonl | 리뷰별 원문·정제문·카테고리 점수·근거 표현·정제문 위치 |
 | input_issues.csv | 중복·빈 필드·날짜 누락 등과 처리 방식 |
@@ -107,8 +118,9 @@ python tools/benchmark_cli.py
 - `docs/scoring.md`: 점수, 비율 분모, 날짜와 표본 처리.
 - `docs/annotation_guide.md`: 실제 리뷰 정답 작성 방법.
 - `docs/evaluation.md`: 검증 결과와 미지원 문맥.
-- `docs/provisional_review.md`: 고정 사전으로 12본문을 읽은 Codex 잠정 점검과 발견한 오류.
-- `docs/dataset.v02.json`, `docs/coverage.v02.json`: 데이터 역할·해시·후보 출현·판정 범위.
+- `docs/provisional_review.md`: v0.2의 고정 사전 12본문 잠정 점검(과거 기록).
+- `docs/provisional_review.v03.md`: 새 카페 10본문 잠정 점검과 남은 누락·오판.
+- `docs/dataset.v03.json`, `docs/coverage.v03.json`: 데이터 역할·해시·후보 출현·판정 범위.
 - `docs/data_status.md`: 확보 자료와 작업 상태.
 - `docs/sources.md`: 출처와 공개 범위.
 

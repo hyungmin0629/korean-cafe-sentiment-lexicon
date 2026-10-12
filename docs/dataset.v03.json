@@ -1,0 +1,74 @@
+{
+  "version": "0.3.0",
+  "input_sha256": "a8f1785f6e8b2d33bd7f15fce7d020a1cb3686169e10564c7a83bfef393a2125",
+  "lexicon_sha256": "391f640e73b5bcae443394d4888cdf51470c5e648d636fd66e432bd5165113a5",
+  "rules_sha256": "41d54653ad990ed3c1d903bc4edb12ebf0662f8fe7b51c2df2eead0cffcd7da3",
+  "cafes": [
+    {
+      "cafe_id": "terarosa_gangneung",
+      "cafe_name": "테라로사 강릉본점",
+      "role": "development",
+      "collected": 151,
+      "nonempty": 140,
+      "undated_nonempty": 21
+    },
+    {
+      "cafe_id": "fritz_dohwa",
+      "cafe_name": "프릳츠 도화점",
+      "role": "development",
+      "collected": 83,
+      "nonempty": 81,
+      "undated_nonempty": 6
+    },
+    {
+      "cafe_id": "onion_anguk",
+      "cafe_name": "어니언 안국점",
+      "role": "validation",
+      "collected": 107,
+      "nonempty": 107,
+      "undated_nonempty": 11
+    },
+    {
+      "cafe_id": "layered_anguk",
+      "cafe_name": "레이어드 안국점",
+      "role": "development_audit",
+      "collected": 92,
+      "nonempty": 86,
+      "undated_nonempty": 2
+    },
+    {
+      "cafe_id": "daelim_seongsu",
+      "cafe_name": "대림창고 성수",
+      "role": "development_audit",
+      "collected": 88,
+      "nonempty": 85,
+      "undated_nonempty": 7
+    },
+    {
+      "cafe_id": "narinamu",
+      "cafe_name": "카페나리나무",
+      "role": "application",
+      "collected": 2,
+      "nonempty": 2,
+      "undated_nonempty": 1
+    },
+    {
+      "cafe_id": "momos_oncheonjang",
+      "cafe_name": "모모스커피 부산본점",
+      "role": "holdout",
+      "collected": 94,
+      "nonempty": 92,
+      "undated_nonempty": 25
+    },
+    {
+      "cafe_id": "anthracite_hapjeong",
+      "cafe_name": "앤트러사이트 합정점",
+      "role": "holdout",
+      "collected": 34,
+      "nonempty": 31,
+      "undated_nonempty": 2
+    }
+  ],
+  "policy": "v0.2 audit cafes now development references; new cafe text not used for classifier changes",
+  "accuracy_status": "no_human_gold_labels"
+}

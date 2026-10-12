@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "candidate_not_human_validated",
   "entries": [
     {
@@ -1010,8 +1010,10 @@
     {
       "entry_id": "CAFE0068",
       "expression": "비싸다",
-      "variants": [],
-      "pattern": "(?<![가-힣])(?:비[싸싼쌌])",
+      "variants": [
+        "비쌈"
+      ],
+      "pattern": "(?<![가-힣])(?:비[싸싼쌌쌈])",
       "category": "value",
       "subcategory": "",
       "polarity": -1,
@@ -1020,7 +1022,7 @@
       "context_rule_id": "default",
       "provenance": "authored_by_codex_2026-10-12",
       "status": "candidate",
-      "notes": "자체 작성 초안. 실제 리뷰·사람 평가로 검증 전."
+      "notes": "v0.3 개발 오류 유형 보완. 사람 검증 전."
     },
     {
       "entry_id": "CAFE0069",
@@ -1071,7 +1073,7 @@
       "entry_id": "CAFE0072",
       "expression": "가격이 부담스럽다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*부담)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*부담)",
       "category": "value",
       "subcategory": "",
       "polarity": -1,
@@ -1296,7 +1298,7 @@
       "entry_id": "CAFE0087",
       "expression": "빨리 나오다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:빨리\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:빨리\\s*나[오왔와])",
       "category": "operation",
       "subcategory": "",
       "polarity": 1,
@@ -1400,8 +1402,11 @@
     {
       "entry_id": "CAFE0094",
       "expression": "재방문 의사 없다",
-      "variants": [],
-      "pattern": "(?<![가-힣])(?:재방문\\s*의사[가은는]*\\s*없)",
+      "variants": [
+        "재방문 의사 X",
+        "재방문 의사 NO"
+      ],
+      "pattern": "(?<![가-힣])(?:재방문\\s*의사[가은는]*\\s*(?:없|[xX]|[nN][oO]))",
       "category": "overall",
       "subcategory": "",
       "polarity": -2,
@@ -1410,7 +1415,7 @@
       "context_rule_id": "default",
       "provenance": "authored_by_codex_2026-10-12",
       "status": "candidate",
-      "notes": "자체 작성 초안. 실제 리뷰·사람 평가로 검증 전."
+      "notes": "v0.3 개발 오류 유형 보완. 사람 검증 전."
     },
     {
       "entry_id": "CAFE0095",
@@ -3536,7 +3541,7 @@
       "entry_id": "CAFE0229",
       "expression": "주문이 잘못 나오다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:주문[이가은는]*\\s*잘못\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:주문[이가은는]*\\s*잘못\\s*나[오왔와])",
       "category": "service",
       "subcategory": "",
       "polarity": -1,
@@ -4196,7 +4201,7 @@
       "entry_id": "CAFE0272",
       "expression": "사진이 잘 나온다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:사진[이가은는]*\\s*잘\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:사진[이가은는]*\\s*잘\\s*나[오왔와])",
       "category": "space",
       "subcategory": "",
       "polarity": 1,
@@ -4604,7 +4609,7 @@
       "entry_id": "CAFE0299",
       "expression": "가격이 착하다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*착)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*착)",
       "category": "value",
       "subcategory": "",
       "polarity": 1,
@@ -4619,7 +4624,7 @@
       "entry_id": "CAFE0300",
       "expression": "가격이 적당하다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*적당)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*적당)",
       "category": "value",
       "subcategory": "",
       "polarity": 1,
@@ -4634,7 +4639,7 @@
       "entry_id": "CAFE0301",
       "expression": "가격이 합리적이다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*합리적)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*합리적)",
       "category": "value",
       "subcategory": "",
       "polarity": 1,
@@ -4649,7 +4654,7 @@
       "entry_id": "CAFE0302",
       "expression": "가격이 과하다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*과[하한해했])",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*과[하한해했])",
       "category": "value",
       "subcategory": "",
       "polarity": -1,
@@ -4664,7 +4669,7 @@
       "entry_id": "CAFE0303",
       "expression": "가격이 사악하다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*사악)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*사악)",
       "category": "value",
       "subcategory": "",
       "polarity": -2,
@@ -4679,7 +4684,7 @@
       "entry_id": "CAFE0304",
       "expression": "가격이 높다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*높)",
+      "pattern": "(?<![가-힣])(?:가격대?[이가은는]*\\s*높)",
       "category": "value",
       "subcategory": "",
       "polarity": -1,
@@ -4693,8 +4698,10 @@
     {
       "entry_id": "CAFE0305",
       "expression": "가격이 좀 있다",
-      "variants": [],
-      "pattern": "(?<![가-힣])(?:가격[이가은는]*\\s*좀\\s*있)",
+      "variants": [
+        "가격대가 있다"
+      ],
+      "pattern": "(?<![가-힣])(?:(?:가격대[이가은는]*\\s*(?:(?:좀|약간|조금|꽤)\\s*)?있|가격대?[이가은는]*\\s*(?:좀|약간|조금|꽤)\\s*있))",
       "category": "value",
       "subcategory": "",
       "polarity": -1,
@@ -4703,7 +4710,7 @@
       "context_rule_id": "default",
       "provenance": "authored_by_codex_domain_supplement_2026-10-12",
       "status": "candidate",
-      "notes": "도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전."
+      "notes": "v0.3 개발 오류 유형 보완. 사람 검증 전."
     },
     {
       "entry_id": "CAFE0306",
@@ -5054,7 +5061,7 @@
       "entry_id": "CAFE0329",
       "expression": "머리카락이 나오다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:머리카락[이가은는]*\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:머리카락[이가은는]*\\s*나[오왔와])",
       "category": "hygiene",
       "subcategory": "",
       "polarity": -2,
@@ -5077,7 +5084,7 @@
       "entry_id": "CAFE0330",
       "expression": "벌레가 나오다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:벌레[가은는]*\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:벌레[가은는]*\\s*나[오왔와])",
       "category": "hygiene",
       "subcategory": "",
       "polarity": -2,
@@ -5453,7 +5460,7 @@
       "entry_id": "CAFE0354",
       "expression": "주문이 빨리 나오다",
       "variants": [],
-      "pattern": "(?<![가-힣])(?:주문[이가은는]*\\s*빨리\\s*나[오왔])",
+      "pattern": "(?<![가-힣])(?:주문[이가은는]*\\s*빨리\\s*나[오왔와])",
       "category": "operation",
       "subcategory": "",
       "polarity": 1,
@@ -5797,8 +5804,10 @@
     {
       "entry_id": "CAFE0377",
       "expression": "재방문 의사가 있다",
-      "variants": [],
-      "pattern": "(?<![가-힣])(?:재방문\\s*의사[가은는]*\\s*있)",
+      "variants": [
+        "재방문 의사 OK"
+      ],
+      "pattern": "(?<![가-힣])(?:재방문\\s*의사[가은는]*\\s*(?:있|[oO][kK]|ㅇㅋ))",
       "category": "overall",
       "subcategory": "",
       "polarity": 2,
@@ -5807,7 +5816,7 @@
       "context_rule_id": "default",
       "provenance": "authored_by_codex_domain_supplement_2026-10-12",
       "status": "candidate",
-      "notes": "도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전."
+      "notes": "v0.3 개발 오류 유형 보완. 사람 검증 전."
     },
     {
       "entry_id": "CAFE0378",
@@ -6378,6 +6387,86 @@
       "provenance": "authored_by_codex_domain_supplement_2026-10-12",
       "status": "candidate",
       "notes": "도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전."
+    },
+    {
+      "entry_id": "CAFE0416",
+      "expression": "메뉴 외관이 귀엽다",
+      "variants": [],
+      "pattern": "(?<![가-힣])(?:(?:(?:귀여운|깜찍한)\\s*(?:케이크|케익|스콘|쿠키|빵|디저트)|(?:케이크|케익|스콘|쿠키|빵|디저트)[이가은는도]*\\s*(?:귀[엽여]|깜찍)))",
+      "category": "menu",
+      "subcategory": "",
+      "polarity": 1,
+      "match_type": "regex",
+      "target_terms": [],
+      "context_rule_id": "default",
+      "provenance": "authored_by_codex_error_type_2026-10-12",
+      "status": "candidate",
+      "notes": "개발 오류 유형 보완 가설. 사람 검증 전."
+    },
+    {
+      "entry_id": "CAFE0417",
+      "expression": "사람이 너무 많다",
+      "variants": [],
+      "pattern": "(?<![가-힣])(?:사람[이가은는]*\\s*너무\\s*많)",
+      "category": "operation",
+      "subcategory": "",
+      "polarity": -1,
+      "match_type": "regex",
+      "target_terms": [],
+      "context_rule_id": "default",
+      "provenance": "authored_by_codex_error_type_2026-10-12",
+      "status": "candidate",
+      "notes": "개발 오류 유형 보완 가설. 사람 검증 전."
+    },
+    {
+      "entry_id": "CAFE0418",
+      "expression": "너무 붐비다",
+      "variants": [],
+      "pattern": "(?<![가-힣])(?:(?:너무|핵)\\s*붐[비빔])",
+      "category": "operation",
+      "subcategory": "",
+      "polarity": -1,
+      "match_type": "regex",
+      "target_terms": [],
+      "context_rule_id": "default",
+      "provenance": "authored_by_codex_error_type_2026-10-12",
+      "status": "candidate",
+      "notes": "개발 오류 유형 보완 가설. 사람 검증 전."
+    },
+    {
+      "entry_id": "CAFE0419",
+      "expression": "분위기가 기분 좋다",
+      "variants": [],
+      "pattern": "(?<![가-힣])(?:기분\\s*좋)",
+      "category": "space",
+      "subcategory": "",
+      "polarity": 1,
+      "match_type": "regex",
+      "target_terms": [
+        "분위기",
+        "공간",
+        "인테리어",
+        "뷰"
+      ],
+      "context_rule_id": "default",
+      "provenance": "authored_by_codex_error_type_2026-10-12",
+      "status": "candidate",
+      "notes": "개발 오류 유형 보완 가설. 사람 검증 전."
+    },
+    {
+      "entry_id": "CAFE0420",
+      "expression": "다른 곳을 고르겠다",
+      "variants": [],
+      "pattern": "(?<![가-힣])(?:(?:굳이\\s*)?(?:여긴|여기는)\\s*아닌\\s*걸로)",
+      "category": "overall",
+      "subcategory": "",
+      "polarity": -1,
+      "match_type": "regex",
+      "target_terms": [],
+      "context_rule_id": "default",
+      "provenance": "authored_by_codex_error_type_2026-10-12",
+      "status": "candidate",
+      "notes": "개발 오류 유형 보완 가설. 사람 검증 전."
     }
   ]
 }

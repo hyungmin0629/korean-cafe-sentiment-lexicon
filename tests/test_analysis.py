@@ -129,6 +129,44 @@ class AnalysisTests(unittest.TestCase):
             self.assertEqual((ROOT / "lexicon" / name).read_bytes(),
                              (ROOT / "src/cafe_sentiment/resources" / name).read_bytes())
 
+    def test_shared_evaluation(self):
+        result = self.analyzer.analyze("서비스, 가격, 맛 모두 실망스러워요")
+        for category in ("service", "value", "menu"):
+            self.assertEqual(result["categories"][category]["label"], "negative")
+        result = self.analyzer.analyze("주차와 좌석 모두 불편해요")
+        for category in ("location", "space"):
+            self.assertEqual(result["categories"][category]["label"], "negative")
+        self.assertIsNone(result["categories"]["menu"]["score"])
+        for evidence in result["evidence"]:
+            self.assertEqual(result["normalized_text"][evidence["start"]:evidence["end"]], evidence["matched_text"])
+
+    def test_colloquial_and_menu_presentation(self):
+        for text, category, expected in (("가격비쌈", "value", "negative"),
+                                       ("재방문 의사 OK", "overall", "positive"),
+                                       ("재방문 의사 NO", "overall", "negative"),
+                                       ("짱귀여운 쿠키가 있어요", "menu", "positive"),
+                                       ("매장에 사람이 너무 많아요", "operation", "negative"),
+                                       ("카페에 사람이 많아요", "operation", "unscored")):
+            self.assertEqual(self.score(text, category)["label"], expected)
+
+    def test_external_opinion_and_attribution(self):
+        result = self.analyzer.analyze("다른 카페는 맛있어요. 여기 커피는 맛없어요")
+        self.assertEqual(result["categories"]["menu"]["label"], "negative")
+        self.assertIsNone(self.score("성수동 물가는 비싸요", "value")["score"])
+        self.assertIsNone(self.score("지인이 커피를 추천했어요", "menu")["score"])
+        self.assertEqual(self.score("다른 카페보다 커피가 맛있어요", "menu")["label"], "positive")
+
+    def test_contracted_come_out_predicates(self):
+        self.assertEqual(self.score("주문이 빨리 나와요", "operation")["label"], "positive")
+        self.assertEqual(self.score("주문이 잘못 나와요", "service")["label"], "negative")
+        self.assertEqual(self.score("사진이 잘 나와요", "space")["label"], "positive")
+
+    def test_negated_quotes_are_not_direct_opinions(self):
+        for text in ("직원이 친절하지 않다고 해서 왔어요", "커피가 좋은지 모르겠어요"):
+            result = self.analyzer.analyze(text)
+            self.assertTrue(result["needs_review"])
+            self.assertTrue(all(row["score"] is None for row in result["categories"].values()))
+
     def test_missing_month_and_missing_date(self):
         agg = Aggregator(self.analyzer.categories)
         row = {"cafe_id": "a"}

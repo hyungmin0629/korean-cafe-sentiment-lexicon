@@ -4,7 +4,7 @@ import re
 from importlib.resources import files
 from pathlib import Path
 
-from .context import apply_context, resolve_category
+from .context import apply_context, resolve_categories
 from .match import compile_entries, find_matches
 from .preprocess import clauses, normalize
 
@@ -48,8 +48,8 @@ class Analyzer:
             targets.setdefault(key, []).extend(terms)
         terms = sorted({term for group in targets.values() for term in group}, key=len, reverse=True)
         attached_prefix = re.compile(r"(?:" + "|".join(re.escape(term) for term in terms) +
-            r")[이가은는을를에도와과의로]*\s*(?:(?:정말|매우|엄청|너무|진짜|아주|조금|약간|살짝|좀)\s*)?(?:안|못)?$"
-            r"|(?:정말|매우|엄청|너무|진짜|아주|조금|약간|살짝|좀|안|못|하고)$")
+            r")[이가은는을를에도와과의로]*\s*(?:(?:정말|매우|엄청|너무|진짜|아주|조금|약간|살짝|좀|짱|넘)\s*)?(?:안|못)?$"
+            r"|(?:정말|매우|엄청|너무|진짜|아주|조금|약간|살짝|좀|짱|넘|안|못|하고)$")
         evidence = []
         mentioned = set()
         topic = None
@@ -63,21 +63,20 @@ class Analyzer:
                 if any(term in clause for term in terms):
                     mentioned.add(category)
             for start, end, entry in find_matches(clause, self.compiled, attached_prefix):
-                category, target_rule = resolve_category(entry, clause, start, end, targets, topic)
                 polarity, applied, evidence_start, evidence_end = apply_context(
                     entry, clause, start, end, self.rules)
-                if category:
-                    mentioned.add(category)
-                else:
-                    polarity = None
-                evidence.append({
-                    "entry_id": entry["entry_id"], "expression": entry["expression"],
-                    "matched_text": clause[evidence_start:evidence_end],
-                    "start": offset + evidence_start, "end": offset + evidence_end,
-                    "category": category, "base_polarity": entry["polarity"],
-                    "polarity": polarity, "rules": [target_rule] + applied,
-                    "status": "scored" if polarity is not None else "needs_review",
-                })
+                for category, target_rule in resolve_categories(entry, clause, start, end, targets, topic):
+                    if category:
+                        mentioned.add(category)
+                    value = polarity if category else None
+                    evidence.append({
+                        "entry_id": entry["entry_id"], "expression": entry["expression"],
+                        "matched_text": clause[evidence_start:evidence_end],
+                        "start": offset + evidence_start, "end": offset + evidence_end,
+                        "category": category, "base_polarity": entry["polarity"],
+                        "polarity": value, "rules": [target_rule] + applied,
+                        "status": "scored" if value is not None else "needs_review",
+                    })
             topic = None
         category_scores = {}
         for category in self.categories:
