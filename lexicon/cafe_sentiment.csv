@@ -123,3 +123,294 @@ CAFE0121,재방문 의사 있다,[],(?<![가-힣])(?:재방문\s*의사[가은�
 CAFE0122,구경거리가 많다,[],(?<![가-힣])(?:구경거리[가은는]*\s*많),space,,1,regex,[],default,authored_by_codex_development_review_2026-10-12,candidate,개발 카페(테라로사 강릉본점)의 누락 유형을 참고한 자체 작성 후보. 사람 검증 전.
 CAFE0123,시간이 오래 걸리다,[],(?<![가-힣])(?:시간[이가은는]*\s*오래\s*걸),operation,,-1,regex,[],default,authored_by_codex_development_review_2026-10-12,candidate,개발 카페(테라로사 강릉본점)의 누락 유형을 참고한 자체 작성 후보. 사람 검증 전.
 CAFE0124,대기가 없다,[],(?<![가-힣])(?:대기[가은는]*\s*없),operation,,1,regex,[],default,authored_by_codex_development_review_2026-10-12,candidate,개발 카페(테라로사 강릉본점)의 누락 유형을 참고한 자체 작성 후보. 사람 검증 전.
+CAFE0125,깊은 맛,[],(?<![가-힣])(?:(?:깊은\s*맛|맛[이가은는]*\s*깊)),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0126,맛이 진하다,[],(?<![가-힣])(?:맛[이가은는]*\s*(?:진[하한해했]|찐[하한해했])),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0127,맛이 풍부하다,[],(?<![가-힣])(?:맛[이가은는]*\s*풍부),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0128,맛이 조화롭다,[],(?<![가-힣])(?:(?:맛[이가은는]*\s*조화|조화로운\s*맛)),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0129,밸런스가 좋다,[],(?<![가-힣])(?:밸런스[가도는]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0130,뒷맛이 깔끔하다,[],(?<![가-힣])(?:(?:뒷맛|끝맛)[이가은는]*\s*깔끔),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0131,여운이 좋다,[],(?<![가-힣])(?:여운[이가은는]*\s*좋),menu,,1,regex,"[""커피"", ""맛"", ""향"", ""음료""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0132,잘 어울리는 맛,[],(?<![가-힣])(?:잘\s*어울),menu,,1,regex,"[""커피"", ""빵"", ""크림"", ""디저트"", ""맛"", ""음료"", ""라떼""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0133,입맛에 안 맞다,[],(?<![가-힣])(?:입맛[에이가]*\s*(?:잘\s*)?안\s*맞),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0134,입에 안 맞다,[],(?<![가-힣])(?:입[에이가]*\s*안\s*맞),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0135,취향에 안 맞다,[],(?<![가-힣])(?:취향[에이가]*\s*안\s*맞),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0136,맛이 떨어지다,[],(?<![가-힣])(?:맛[이가은는]*\s*떨어),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0137,맛이 변했다,[],(?<![가-힣])(?:맛[이가은는]*\s*(?:변했|변해)),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0138,맛이 들쭉날쭉하다,[],(?<![가-힣])(?:맛[이가은는]*\s*들쭉날쭉),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0139,맛의 편차가 크다,[],(?<![가-힣])(?:맛[의이가]*\s*편차[가도는]*\s*크),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0140,맛이 약하다,[],(?<![가-힣])(?:맛[이가은는]*\s*약[하한해했]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0141,향이 약하다,[],(?<![가-힣])(?:향[이가은는]*\s*약[하한해했]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0142,향이 풍부하다,[],(?<![가-힣])(?:향[이가은는]*\s*풍부),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0143,향이 진하다,[],(?<![가-힣])(?:향[이가은는]*\s*진[하한해했]),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0144,향이 안 나다,[],(?<![가-힣])(?:향[이가은는]*\s*안\s*나),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0145,떫다,[],(?<![가-힣])(?:떫),menu,,-1,regex,"[""커피"", ""차"", ""음료"", ""맛""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0146,텁텁하다,[],(?<![가-힣])(?:텁텁),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0147,느끼하다,[],(?<![가-힣])(?:느끼[하한해했]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0148,기름지다,[],(?<![가-힣])(?:기름[지진져졌]),menu,,-1,regex,"[""빵"", ""디저트"", ""케이크"", ""쿠키"", ""크루아상"", ""메뉴""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0149,짜다 싶다,[],(?<![가-힣])(?:(?:너무\s*짜|짠\s*맛[이가은는]*\s*강)),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0150,단맛이 과하다,[],(?<![가-힣])(?:단맛[이가은는]*\s*과[하한해했]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0151,쓴맛이 강하다,[],(?<![가-힣])(?:쓴맛[이가은는]*\s*(?:너무\s*)?강),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0152,신맛이 강하다,[],(?<![가-힣])(?:신맛[이가은는]*\s*(?:너무\s*)?강),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0153,단맛이 적당하다,[],(?<![가-힣])(?:단맛[이가은는]*\s*적당),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0154,달지 않아 좋다,[],(?<![가-힣])(?:달지\s*않[아아서은]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0155,많이 달지 않아 좋다,[],(?<![가-힣])(?:많이\s*달지\s*않[아아서은]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0156,단맛이 부담 없다,[],(?<![가-힣])(?:단맛[이가은는]*\s*부담\s*없),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0157,적당한 산미,[],(?<![가-힣])(?:(?:적당한\s*산미|산미[가은는]*\s*적당)),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0158,산미가 거슬리다,[],(?<![가-힣])(?:산미[가은는]*\s*거슬),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0159,산미가 아쉽다,[],(?<![가-힣])(?:산미[가은는]*\s*아[쉽쉬]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0160,산미가 취향에 맞다,[],(?<![가-힣])(?:산미[가은는]*\s*(?:제\s*)?취향[에이가]*\s*맞),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0161,비리지 않아서 좋다,[],(?<![가-힣])(?:비리지\s*않[아아서은]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0162,잡내가 없다,[],(?<![가-힣])(?:잡내[가은는]*\s*없),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0163,비린내가 없다,[],(?<![가-힣])(?:비린내[가은는]*\s*없),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0164,식감이 좋다,[],(?<![가-힣])(?:식감[이가은는]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0165,식감이 별로다,[],(?<![가-힣])(?:식감[이가은는]*\s*별로),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0166,질기다,[],(?<![가-힣])(?:질[기긴겨겼]),menu,,-1,regex,"[""빵"", ""디저트"", ""스콘"", ""케이크"", ""베이커리""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0167,딱딱하다,[],(?<![가-힣])(?:딱딱),menu,,-1,regex,"[""빵"", ""스콘"", ""쿠키"", ""케이크"", ""디저트""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0168,입에서 녹다,[],(?<![가-힣])(?:입에서\s*(?:사르르\s*)?녹),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0169,퍼석하다,[],(?<![가-힣])(?:퍼[석썩]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0170,축축하다,[],(?<![가-힣])(?:축축),menu,,-1,regex,"[""빵"", ""스콘"", ""쿠키"", ""디저트""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0171,덜 익다,[],(?<![가-힣])(?:덜\s*익),menu,,-1,regex,"[""빵"", ""스콘"", ""디저트"", ""쿠키"", ""케이크""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0172,덜 구워지다,[],(?<![가-힣])(?:덜\s*구[워웠]),menu,,-1,regex,"[""빵"", ""스콘"", ""디저트"", ""쿠키""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0173,타 버리다,[],(?<![가-힣])(?:(?:타\s*버[리렸]|새까맣게\s*탔)),menu,,-2,regex,"[""빵"", ""스콘"", ""디저트"", ""쿠키""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0174,상한 맛,[],(?<![가-힣])(?:상한\s*(?:맛|냄새)),menu,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0175,냉동 맛이 나다,[],(?<![가-힣])(?:냉동\s*맛[이가은는]*\s*나),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0176,오래된 맛,[],(?<![가-힣])(?:오래된\s*맛),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0177,우유 냄새가 나쁘다,[],(?<![가-힣])(?:우유\s*냄새[가은는]*\s*(?:이상|나[쁘빠])),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0178,크림이 부드럽다,[],(?<![가-힣])(?:크림[이가은는]*\s*부드[럽러]),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0179,크림이 느끼하다,[],(?<![가-힣])(?:크림[이가은는]*\s*느끼),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0180,빵이 푸석하다,[],(?<![가-힣])(?:빵[이가은는]*\s*푸[석썩]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0181,속이 알차다,[],(?<![가-힣])(?:속[이가은는]*\s*알[차찬]),menu,,1,regex,"[""빵"", ""디저트"", ""스콘"", ""케이크""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0182,재료가 아쉽다,[],(?<![가-힣])(?:재료[가은는]*\s*아[쉽쉬]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0183,재료가 좋다,[],(?<![가-힣])(?:재료[가은는]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0184,토핑이 부족하다,[],(?<![가-힣])(?:토핑[이가은는]*\s*부족),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0185,토핑이 넉넉하다,[],(?<![가-힣])(?:토핑[이가은는]*\s*넉넉),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0186,음료가 미지근하다,[],(?<![가-힣])(?:(?:음료|커피|라떼|차)[가은는도]*\s*미지근),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0187,식은 커피,[],(?<![가-힣])(?:식은\s*커피),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0188,커피가 식었다,[],(?<![가-힣])(?:커피[가은는도]*\s*식[었어]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0189,얼음이 너무 많다,[],(?<![가-힣])(?:얼음[이가은는]*\s*너무\s*많),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0190,얼음이 녹아 싱겁다,[],(?<![가-힣])(?:얼음[이가은는]*\s*녹[아서았]*\s*(?:싱겁|밍밍)),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0191,차갑지 않아 아쉽다,[],(?<![가-힣])(?:차갑지\s*않[아아서]*\s*아[쉽쉬]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0192,안 차가운 음료,[],(?<![가-힣])(?:(?:음료|아이스|커피)[가은는]*\s*안\s*차[가갑]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0193,너무 뜨겁다,[],(?<![가-힣])(?:너무\s*뜨[겁거]),menu,,-1,regex,"[""음료"", ""커피"", ""라떼"", ""차""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0194,메뉴 선택 폭이 넓다,[],(?<![가-힣])(?:(?:메뉴[의는가]*\s*)?선택\s*폭[이가은는]*\s*넓),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0195,메뉴가 다양해서 좋다,[],(?<![가-힣])(?:메뉴[가은는]*\s*다양[해해서하고]*\s*좋),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0196,메뉴가 부족하다,[],(?<![가-힣])(?:메뉴[가은는]*\s*부족),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0197,디저트 종류가 아쉽다,[],(?<![가-힣])(?:(?:디저트|빵)\s*종류[가은는]*\s*아[쉽쉬]),menu,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0198,품질이 좋다,[],(?<![가-힣])(?:(?:품질|퀄리티)[가은는]*\s*좋),menu,,1,regex,"[""커피"", ""빵"", ""디저트"", ""메뉴"", ""음료"", ""케이크""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0199,품질이 떨어지다,[],(?<![가-힣])(?:(?:품질|퀄리티)[가은는]*\s*떨어),menu,,-1,regex,"[""커피"", ""빵"", ""디저트"", ""메뉴"", ""음료"", ""케이크""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0200,정성스러운 메뉴,[],(?<![가-힣])(?:정성(?:스러운|스럽게\s*만든)\s*(?:음료|디저트|커피|빵)),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0201,말투가 차갑다,[],(?<![가-힣])(?:말투[가은는]*\s*차[갑가]),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0202,말투가 불쾌하다,[],(?<![가-힣])(?:말투[가은는]*\s*불쾌),service,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0203,표정이 안 좋다,[],(?<![가-힣])(?:표정[이가은는]*\s*안\s*좋),service,,-1,regex,"[""직원"", ""사장"", ""응대""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0204,짜증을 내다,[],(?<![가-힣])(?:짜증[을도]*\s*내),service,,-2,regex,"[""직원"", ""사장"", ""응대"", ""주문""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0205,눈치를 주다,[],(?<![가-힣])(?:눈치[를도]*\s*[주줘줬]),service,,-1,regex,"[""직원"", ""사장"", ""응대""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0206,무시하다,[],(?<![가-힣])(?:무시[하한해했]),service,,-2,regex,"[""직원"", ""사장"", ""응대"", ""손님"", ""고객""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0207,성의 없다,[],(?<![가-힣])(?:성의[가도는]*\s*없),service,,-1,regex,"[""직원"", ""사장"", ""응대"", ""설명""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0208,인사를 잘 하다,[],(?<![가-힣])(?:인사[를도]*\s*잘\s*하),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0209,반갑게 맞다,[],(?<![가-힣])(?:반갑게\s*맞),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0210,웃으며 응대하다,[],(?<![가-힣])(?:웃[으으며]*\s*(?:응대|맞아)),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0211,세심하게 챙기다,[],(?<![가-힣])(?:세심하게\s*챙),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0212,배려해 주다,[],(?<![가-힣])(?:배려[해하여]*\s*[주줘줬]),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0213,요청을 잘 들어주다,[],(?<![가-힣])(?:요청[을도]*\s*잘\s*들어[주줘줬]),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0214,요청을 거절하다,[],(?<![가-힣])(?:요청[을도]*\s*(?:무시|거절)),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0215,도움을 주다,[],(?<![가-힣])(?:도움[을도]*\s*[주줘줬]),service,,1,regex,"[""직원"", ""사장"", ""응대""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0216,설명이 자세하다,[],(?<![가-힣])(?:설명[이가은는]*\s*자세),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0217,설명이 부족하다,[],(?<![가-힣])(?:설명[이가은는]*\s*부족),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0218,설명을 안 해주다,[],(?<![가-힣])(?:설명[을도]*\s*안\s*해[주줘줬]),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0219,메뉴 추천을 잘 해주다,[],(?<![가-힣])(?:메뉴\s*추천[을도]*\s*잘\s*해),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0220,추천을 강요하다,[],(?<![가-힣])(?:추천[을도]*\s*강요),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0221,질문에 답을 안 하다,[],(?<![가-힣])(?:질문[에을]*\s*(?:답[을도]*\s*)?안\s*[하해]),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0222,응대가 빠르다,[],(?<![가-힣])(?:응대[가은는]*\s*빠[르른른라]),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0223,응대가 늦다,[],(?<![가-힣])(?:응대[가은는]*\s*늦),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0224,대처가 좋다,[],(?<![가-힣])(?:대처[가은는]*\s*좋),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0225,대처가 미흡하다,[],(?<![가-힣])(?:대처[가은는]*\s*미흡),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0226,실수를 인정하다,[],(?<![가-힣])(?:실수[를도]*\s*인정),service,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0227,사과가 없다,[],(?<![가-힣])(?:사과[가도는]*\s*없),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0228,사과를 안 하다,[],(?<![가-힣])(?:사과[를도]*\s*안\s*하),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0229,주문이 잘못 나오다,[],(?<![가-힣])(?:주문[이가은는]*\s*잘못\s*나[오왔]),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0230,음료를 쏟다,[],(?<![가-힣])(?:음료[를도]*\s*쏟),service,,-1,regex,"[""직원"", ""사장""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0231,응대가 일관되지 않다,[],(?<![가-힣])(?:응대[가은는]*\s*일관되지\s*않),service,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0232,공간이 비좁다,[],(?<![가-힣])(?:(?:공간|매장|내부)[이가은는]*\s*비좁),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0233,천장이 높아 좋다,[],(?<![가-힣])(?:천장[이가은는]*\s*높[아서아고]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0234,탁 트이다,[],(?<![가-힣])(?:탁\s*트[이인여였]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0235,테이블 간격이 넓다,[],(?<![가-힣])(?:테이블\s*간격[이가은는]*\s*넓),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0236,테이블 간격이 좁다,[],(?<![가-힣])(?:테이블\s*간격[이가은는]*\s*좁),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0237,테이블이 작다,[],(?<![가-힣])(?:테이블[이가은는]*\s*작),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0238,테이블이 흔들리다,[],(?<![가-힣])(?:테이블[이가은는]*\s*흔들),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0239,의자가 딱딱하다,[],(?<![가-힣])(?:의자[가은는]*\s*딱딱),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0240,의자가 편하다,[],(?<![가-힣])(?:의자[가은는]*\s*편[하한해했]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0241,좌석이 부족하다,[],(?<![가-힣])(?:(?:좌석|자리)[이가은는]*\s*부족),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0242,앉을 자리가 없다,[],(?<![가-힣])(?:앉을\s*자리[가은는]*\s*없),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0243,쉴 자리 부족,[],(?<![가-힣])(?:쉴\s*자리[가은는]*\s*부족),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0244,조용해서 좋다,[],(?<![가-힣])(?:조용[해해서하고]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0245,차분한 분위기,[],(?<![가-힣])(?:(?:차분한\s*분위기|분위기[가은는]*\s*차분)),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0246,고즈넉하다,[],(?<![가-힣])(?:고즈넉),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0247,산만하다,[],(?<![가-힣])(?:산만),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0248,울리는 소리,[],(?<![가-힣])(?:(?:소리[가은는]*\s*울|울리는\s*소리)),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0249,음악이 너무 크다,[],(?<![가-힣])(?:음악[이가은는]*\s*너무\s*크),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0250,음악이 좋다,[],(?<![가-힣])(?:음악[이가은는]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0251,대화하기 좋다,[],(?<![가-힣])(?:대화하기\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0252,대화가 어렵다,[],(?<![가-힣])(?:대화[가은는]*\s*(?:어[렵려]|힘[들든])),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0253,쉬기 좋다,[],(?<![가-힣])(?:(?:쉬기|쉬어가기|쉬어\s*가기)\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0254,오래 있기 좋다,[],(?<![가-힣])(?:(?:오래|장시간)\s*(?:있기|쉬기|머물기)\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0255,집중하기 좋다,[],(?<![가-힣])(?:집중하기\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0256,집중하기 어렵다,[],(?<![가-힣])(?:집중하기\s*어[렵려]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0257,카공하기 좋다,[],(?<![가-힣])(?:카공[하하기에]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0258,카공하기 어렵다,[],(?<![가-힣])(?:카공[하하기에]*\s*(?:어[렵려]|힘[들든])),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0259,와이파이가 잘 된다,[],(?<![가-힣])(?:와이파이[가은는]*\s*잘\s*[되돼]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0260,와이파이가 느리다,[],(?<![가-힣])(?:와이파이[가은는]*\s*느[리린려]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0261,와이파이가 안 된다,[],(?<![가-힣])(?:와이파이[가은는]*\s*안\s*[되돼]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0262,콘센트가 많다,[],(?<![가-힣])(?:콘센트[가은는]*\s*많),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0263,충전하기 좋다,[],(?<![가-힣])(?:충전하기\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0264,너무 춥다,[],(?<![가-힣])(?:너무\s*추[워웠]|너무\s*춥),space,,-1,regex,"[""매장"", ""실내"", ""공간"", ""내부"", ""좌석""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0265,너무 덥다,[],(?<![가-힣])(?:너무\s*더[워웠]|너무\s*덥),space,,-1,regex,"[""매장"", ""실내"", ""공간"", ""내부"", ""좌석""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0266,환기가 안 된다,[],(?<![가-힣])(?:환기[가은는]*\s*안\s*[되돼]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0267,환기가 잘 된다,[],(?<![가-힣])(?:환기[가은는]*\s*잘\s*[되돼]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0268,조명이 편안하다,[],(?<![가-힣])(?:조명[이가은는]*\s*편안),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0269,조명이 너무 어둡다,[],(?<![가-힣])(?:조명[이가은는]*\s*너무\s*어[둡두]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0270,뷰가 좋다,[],(?<![가-힣])(?:(?:뷰|풍경|전망)[가이가은는]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0271,햇살이 좋다,[],(?<![가-힣])(?:(?:햇살|채광)[이가은는]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0272,사진이 잘 나온다,[],(?<![가-힣])(?:사진[이가은는]*\s*잘\s*나[오왔]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0273,인테리어가 멋지다,[],(?<![가-힣])(?:인테리어[가은는]*\s*멋[지진져]),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0274,독특한 인테리어가 좋다,[],(?<![가-힣])(?:독특한\s*(?:인테리어|구조)[가은는]*\s*좋),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0275,주차하기 쉽다,[],(?<![가-힣])(?:주차하기\s*쉽),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0276,주차장이 협소하다,[],(?<![가-힣])(?:주차장[이가은는]*\s*협소),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0277,주차할 곳이 많다,[],(?<![가-힣])(?:주차할\s*(?:곳|자리)[이가은는]*\s*많),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0278,주차할 곳이 없다,[],(?<![가-힣])(?:주차할\s*(?:곳|자리)[이가은는]*\s*없),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0279,주차 공간이 부족하다,[],(?<![가-힣])(?:주차\s*(?:공간|자리)[이가은는]*\s*부족),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0280,주차가 복잡하다,[],(?<![가-힣])(?:주차[가은는]*\s*복잡),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0281,주차가 힘들다,[],(?<![가-힣])(?:주차[가은는]*\s*힘[들든]),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0282,주차 만차,[],(?<![가-힣])(?:(?:주차장?[이가은는]*\s*만차|만차[라이어서]*)),location,,-1,regex,"[""주차"", ""주차장""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0283,주차 안내가 좋다,[],(?<![가-힣])(?:주차\s*안내[가은는]*\s*좋),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0284,주차 안내가 부족하다,[],(?<![가-힣])(?:주차\s*안내[가은는]*\s*부족),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0285,무료 주차가 좋다,[],(?<![가-힣])(?:무료\s*주차[가은는]*\s*좋),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0286,대중교통이 편하다,[],(?<![가-힣])(?:대중교통[이가은는]*\s*편),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0287,대중교통이 불편하다,[],(?<![가-힣])(?:대중교통[이가은는]*\s*불편),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0288,역에서 멀다,[],(?<![가-힣])(?:역에서\s*멀),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0289,버스 접근성이 좋다,[],(?<![가-힣])(?:버스\s*접근성[이가은는]*\s*좋),location,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0290,길 찾기 어렵다,[],(?<![가-힣])(?:길\s*찾기\s*어[렵려]),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0291,입구 찾기 어렵다,[],(?<![가-힣])(?:입구\s*찾기\s*어[렵려]),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0292,간판이 안 보인다,[],(?<![가-힣])(?:간판[이가은는]*\s*안\s*보),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0293,골목이 복잡하다,[],(?<![가-힣])(?:골목[이가은는]*\s*복잡),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0294,계단이 가파르다,[],(?<![가-힣])(?:계단[이가은는]*\s*가파),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0295,유모차 접근이 어렵다,[],(?<![가-힣])(?:유모차[로는]*\s*(?:접근|이동|들어가기)[이가은는]*\s*어[렵려]),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0296,휠체어 접근이 어렵다,[],(?<![가-힣])(?:휠체어[로는]*\s*(?:접근|이동|들어가기)[이가은는]*\s*어[렵려]),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0297,동선이 편하다,[],(?<![가-힣])(?:동선[이가은는]*\s*편),space,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0298,동선이 복잡하다,[],(?<![가-힣])(?:동선[이가은는]*\s*복잡),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0299,가격이 착하다,[],(?<![가-힣])(?:가격[이가은는]*\s*착),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0300,가격이 적당하다,[],(?<![가-힣])(?:가격[이가은는]*\s*적당),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0301,가격이 합리적이다,[],(?<![가-힣])(?:가격[이가은는]*\s*합리적),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0302,가격이 과하다,[],(?<![가-힣])(?:가격[이가은는]*\s*과[하한해했]),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0303,가격이 사악하다,[],(?<![가-힣])(?:가격[이가은는]*\s*사악),value,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0304,가격이 높다,[],(?<![가-힣])(?:가격[이가은는]*\s*높),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0305,가격이 좀 있다,[],(?<![가-힣])(?:가격[이가은는]*\s*좀\s*있),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0306,가성비가 별로다,[],(?<![가-힣])(?:가성비[가은는]*\s*별로),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0307,가성비가 아쉽다,[],(?<![가-힣])(?:가성비[가은는]*\s*아[쉽쉬]),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0308,가성비가 괜찮다,[],(?<![가-힣])(?:가성비[가은는]*\s*괜찮),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0309,가격 대비 만족,[],(?<![가-힣])(?:가격\s*대비\s*만족),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0310,가격 대비 아쉽다,[],(?<![가-힣])(?:가격\s*대비\s*아[쉽쉬]),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0311,가격 대비 맛이 별로다,[],(?<![가-힣])(?:가격\s*대비\s*맛[이가은는]*\s*별로),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0312,양이 충분하다,[],(?<![가-힣])(?:양[이가은는]*\s*충분),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0313,양이 넉넉하다,[],(?<![가-힣])(?:양[이가은는]*\s*넉넉),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0314,양이 아쉽다,[],(?<![가-힣])(?:양[이가은는]*\s*아[쉽쉬]),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0315,돈값을 하다,[],(?<![가-힣])(?:돈값[을도]*\s*하),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0316,돈값을 못 하다,[],(?<![가-힣])(?:돈값[을도]*\s*못\s*하),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0317,돈값을 안 하다,[],(?<![가-힣])(?:돈값[을도]*\s*안\s*하),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0318,비싸도 납득하다,[],(?<![가-힣])(?:비싸도\s*납득),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0319,할인돼서 좋다,[],(?<![가-힣])(?:할인[되돼된서]*\s*좋),value,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0320,주차비가 부담스럽다,[],(?<![가-힣])(?:주차비[가은는]*\s*부담),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0321,추가 요금이 아쉽다,[],(?<![가-힣])(?:추가\s*요금[이가은는]*\s*아[쉽쉬]),value,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0322,정리가 잘 되어 있다,[],(?<![가-힣])(?:정리[가은는]*\s*잘\s*(?:되|돼)),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0323,정리가 안 되어 있다,[],(?<![가-힣])(?:정리[가은는]*\s*안\s*(?:되|돼)),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0324,테이블이 끈적하다,[],(?<![가-힣])(?:테이블[이가은는]*\s*끈적),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0325,테이블을 안 닦다,[],(?<![가-힣])(?:테이블[을도]*\s*안\s*닦),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0326,컵에 얼룩이 있다,[],(?<![가-힣])(?:컵[에은는]*\s*얼룩[이가은는]*\s*있),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0327,컵에 립스틱이 묻다,[],(?<![가-힣])(?:컵[에은는]*\s*립스틱[이가은는]*\s*묻),hygiene,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0328,식기에 이물질이 있다,[],(?<![가-힣])(?:식기[에은는]*\s*이물질[이가은는]*\s*있),hygiene,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0329,머리카락이 나오다,[],(?<![가-힣])(?:머리카락[이가은는]*\s*나[오왔]),hygiene,,-2,regex,"[""음료"", ""커피"", ""빵"", ""디저트"", ""케이크"", ""컵"", ""접시""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0330,벌레가 나오다,[],(?<![가-힣])(?:벌레[가은는]*\s*나[오왔]),hygiene,,-2,regex,"[""음료"", ""커피"", ""빵"", ""디저트"", ""케이크"", ""컵"", ""접시""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0331,악취가 나다,[],(?<![가-힣])(?:악취[가은는]*\s*나),hygiene,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0332,화장실 냄새가 심하다,[],(?<![가-힣])(?:화장실\s*냄새[가은는]*\s*심),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0333,하수구 냄새,[],(?<![가-힣])(?:하수구\s*냄새),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0334,쓰레기가 많다,[],(?<![가-힣])(?:쓰레기[가은는]*\s*많),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0335,바닥이 끈적하다,[],(?<![가-힣])(?:바닥[이가은는]*\s*끈적),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0336,물때가 있다,[],(?<![가-힣])(?:물때[가은는]*\s*있),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0337,곰팡이가 있다,[],(?<![가-힣])(?:곰팡이[가은는]*\s*있),hygiene,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0338,손을 안 씻다,[],(?<![가-힣])(?:손[을도]*\s*안\s*씻),hygiene,,-2,regex,"[""직원"", ""사장""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0339,위생 관리가 좋다,[],(?<![가-힣])(?:위생\s*관리[가은는]*\s*좋),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0340,위생 관리가 부족하다,[],(?<![가-힣])(?:위생\s*관리[가은는]*\s*부족),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0341,청소가 잘 되어 있다,[],(?<![가-힣])(?:청소[가은는]*\s*잘\s*(?:되|돼)),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0342,청소가 안 되어 있다,[],(?<![가-힣])(?:청소[가은는]*\s*안\s*(?:되|돼)),hygiene,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0343,소독이 잘 되어 있다,[],(?<![가-힣])(?:소독[이가은는]*\s*잘\s*(?:되|돼)),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0344,청결 관리에 만족,[],(?<![가-힣])(?:청결\s*관리[에은는]*\s*만족),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0345,냄새 없이 깨끗하다,[],(?<![가-힣])(?:냄새\s*없이\s*깨끗),hygiene,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0346,주문하는 데 오래 걸리다,[],(?<![가-힣])(?:주문[하하는]*\s*데\s*오래\s*걸),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0347,음료 나오는 데 오래 걸리다,[],(?<![가-힣])(?:음료\s*나오는\s*데\s*오래\s*걸),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0348,나오는 데 오래 걸리다,[],(?<![가-힣])(?:나오는\s*데\s*오래\s*걸),operation,,-1,regex,"[""음료"", ""커피"", ""주문"", ""메뉴""]",default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0349,줄이 길다,[],(?<![가-힣])(?:줄[이가은는]*\s*길),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0350,줄 서기 힘들다,[],(?<![가-힣])(?:줄\s*서기\s*힘[들든]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0351,대기 시간이 짧다,[],(?<![가-힣])(?:대기\s*시간[이가은는]*\s*짧),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0352,대기 시간이 길다,[],(?<![가-힣])(?:대기\s*시간[이가은는]*\s*길),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0353,주문이 밀리다,[],(?<![가-힣])(?:주문[이가은는]*\s*밀[리린려렸]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0354,주문이 빨리 나오다,[],(?<![가-힣])(?:주문[이가은는]*\s*빨리\s*나[오왔]),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0355,회전율이 좋다,[],(?<![가-힣])(?:회전율[이가은는]*\s*좋),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0356,회전율이 느리다,[],(?<![가-힣])(?:회전율[이가은는]*\s*느[리린려]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0357,픽업이 편하다,[],(?<![가-힣])(?:픽업[이가은는]*\s*편),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0358,픽업이 복잡하다,[],(?<![가-힣])(?:픽업[이가은는]*\s*복잡),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0359,예약이 편하다,[],(?<![가-힣])(?:예약[이가은는]*\s*편),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0360,예약이 어렵다,[],(?<![가-힣])(?:예약[이가은는]*\s*어[렵려]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0361,예약이 누락되다,[],(?<![가-힣])(?:예약[이가은는]*\s*누락),operation,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0362,예약이 취소되다,[],(?<![가-힣])(?:예약[이가은는]*\s*취소),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0363,안내 없이 휴무,[],(?<![가-힣])(?:안내\s*없이\s*휴무),operation,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0364,영업시간이 다르다,[],(?<![가-힣])(?:영업시간[이가은는]*\s*다[르른라]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0365,영업 안내가 부정확하다,[],(?<![가-힣])(?:영업\s*안내[가은는]*\s*부정확),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0366,품절이 많다,[],(?<![가-힣])(?:품절[이가은는]*\s*많),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0367,재고가 부족하다,[],(?<![가-힣])(?:재고[가은는]*\s*부족),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0368,혼잡해서 힘들다,[],(?<![가-힣])(?:혼잡[해해서하고]*\s*힘[들든]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0369,키오스크가 불편하다,[],(?<![가-힣])(?:키오스크[가은는]*\s*불편),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0370,키오스크가 편하다,[],(?<![가-힣])(?:키오스크[가은는]*\s*편),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0371,결제가 안 되다,[],(?<![가-힣])(?:결제[가은는]*\s*안\s*[되돼]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0372,결제가 편하다,[],(?<![가-힣])(?:결제[가은는]*\s*편),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0373,포장이 엉성하다,[],(?<![가-힣])(?:포장[이가은는]*\s*엉성),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0374,포장이 꼼꼼하다,[],(?<![가-힣])(?:포장[이가은는]*\s*꼼꼼),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0375,포장이 새다,[],(?<![가-힣])(?:포장[이가은는]*\s*새[요서었]),operation,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0376,메뉴가 빠르게 준비되다,[],(?<![가-힣])(?:메뉴[가은는]*\s*빠르게\s*준비),operation,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0377,재방문 의사가 있다,[],(?<![가-힣])(?:재방문\s*의사[가은는]*\s*있),overall,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0378,다시 가고 싶다,[],(?<![가-힣])(?:다시\s*가고\s*싶),overall,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0379,또 방문하고 싶다,[],(?<![가-힣])(?:또\s*방문하고\s*싶),overall,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0380,다시는 안 가다,[],(?<![가-힣])(?:다시는?\s*안\s*[가갈]),overall,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0381,재방문은 글쎄,[],(?<![가-힣])(?:재방문[은는]*\s*글쎄),overall,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0382,다음에도 오다,[],(?<![가-힣])(?:다음에도\s*[오올]),overall,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0383,단골이 되고 싶다,[],(?<![가-힣])(?:단골[이가]*\s*되고\s*싶),overall,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0384,시간이 아깝다,[],(?<![가-힣])(?:시간[이가은는]*\s*아[깝까]),overall,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0385,발걸음이 아깝다,[],(?<![가-힣])(?:발걸음[이가은는]*\s*아[깝까]),overall,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0386,다녀온 보람이 있다,[],(?<![가-힣])(?:다녀온\s*보람[이가은는]*\s*있),overall,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0387,최악이다,[],(?<![가-힣])(?:최악),auto,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0388,최고다,[],(?<![가-힣])(?:최고),auto,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0389,훌륭하다,[],(?<![가-힣])(?:훌륭),auto,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0390,훨씬 낫다,[],(?<![가-힣])(?:훨씬\s*낫),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0391,아주 마음에 들다,[],(?<![가-힣])(?:마음에\s*들),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0392,별로 마음에 안 들다,[],(?<![가-힣])(?:마음에\s*안\s*들),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0393,기대 이하,[],(?<![가-힣])(?:기대\s*이하),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0394,기대 이상,[],(?<![가-힣])(?:기대\s*이상),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0395,기대에 못 미치다,[],(?<![가-힣])(?:기대[에을]*\s*못\s*미[치친쳐]),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0396,기대한 것보다 좋다,[],(?<![가-힣])(?:기대한\s*것보다\s*좋),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0397,기대한 것보다 별로다,[],(?<![가-힣])(?:기대한\s*것보다\s*별로),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0398,불만족하다,[],(?<![가-힣])(?:불만족),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0399,불쾌하다,[],(?<![가-힣])(?:불쾌),auto,,-2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0400,무난하다,[],(?<![가-힣])(?:무난),auto,,0,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0401,그럭저럭이다,[],(?<![가-힣])(?:그럭저럭),auto,,0,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0402,애매하다,[],(?<![가-힣])(?:애매),auto,,0,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0403,감동이다,[],(?<![가-힣])(?:감동),auto,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0404,매력적이다,[],(?<![가-힣])(?:매력적),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0405,인상적이다,[],(?<![가-힣])(?:인상적),auto,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0406,호불호가 갈린다,[],(?<![가-힣])(?:호불호[가은는]*\s*갈),auto,,0,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0407,추천하지 않다,[],(?<![가-힣])(?:추천하지\s*않),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0408,비추천,[],(?<![가-힣])(?:비추천),auto,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0409,강력 추천,[],(?<![가-힣])(?:강[력추]*\s*추천),auto,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0410,주차가 불가능하다,[],(?<![가-힣])(?:주차[가은는]*\s*불가능),location,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0411,자리 잡기 어렵다,[],(?<![가-힣])(?:자리\s*잡기\s*어[렵려]),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0412,빈자리가 없다,[],(?<![가-힣])(?:빈\s*자리[가은는]*\s*없),space,,-1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0413,뛰어난 맛,[],(?<![가-힣])(?:(?:뛰어난\s*(?:맛|커피|빵)|(?:커피|빵)[과와도\s]*(?:커피|빵)?\s*(?:모두\s*)?뛰어)),menu,,2,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0414,커피가 진하다,[],(?<![가-힣])(?:커피[가은는도]*\s*진[하한해했]),menu,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.
+CAFE0415,방문할 가치가 있다,[],(?<![가-힣])(?:방문할\s*가치[가은는]*\s*있),overall,,1,regex,[],default,authored_by_codex_domain_supplement_2026-10-12,candidate,도메인 보완 가설. 개발 자료 출현 여부는 별도 집계하며 사람 검증 전.

@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "review_csv_sha256": "7cf0f0fd66c4b08b1fb5c26f970a30133b25705bc0648133bacfce74cf9b5c7b",
+  "lexicon_sha256": "c1b4a40647692c3a99d5497680980dcd2a882b0237acd5ad890d66e453346f8a",
+  "rules_sha256": "320113163e86c7d69f197466f1bc2c8f3b809c94f1deaef0e67af271e954fcdf",
+  "cafes": [
+    {
+      "cafe_id": "terarosa_gangneung",
+      "cafe_name": "테라로사 강릉본점",
+      "split": "development",
+      "collected": 151,
+      "nonempty": 140,
+      "undated_nonempty": 21
+    },
+    {
+      "cafe_id": "fritz_dohwa",
+      "cafe_name": "프릳츠 도화점",
+      "split": "development",
+      "collected": 83,
+      "nonempty": 81,
+      "undated_nonempty": 6
+    },
+    {
+      "cafe_id": "onion_anguk",
+      "cafe_name": "어니언 안국점",
+      "split": "validation",
+      "collected": 107,
+      "nonempty": 107,
+      "undated_nonempty": 11
+    },
+    {
+      "cafe_id": "layered_anguk",
+      "cafe_name": "레이어드 안국점",
+      "split": "holdout",
+      "collected": 92,
+      "nonempty": 86,
+      "undated_nonempty": 2
+    },
+    {
+      "cafe_id": "daelim_seongsu",
+      "cafe_name": "대림창고 성수",
+      "split": "holdout",
+      "collected": 88,
+      "nonempty": 85,
+      "undated_nonempty": 7
+    },
+    {
+      "cafe_id": "narinamu",
+      "cafe_name": "카페나리나무",
+      "split": "application",
+      "collected": 2,
+      "nonempty": 2,
+      "undated_nonempty": 1
+    }
+  ],
+  "accuracy_status": "no_human_gold_labels",
+  "selection": "All collected bodies analyzed; annotation sample uses identity SHA256 order, max 30 per cafe",
+  "development_policy": "Only terarosa/fritz text inspected for this expansion; onion used earlier development, so not independent holdout"
+}

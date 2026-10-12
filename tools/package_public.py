@@ -1,10 +1,13 @@
 """Package an allowlist of authored public files, excluding raw reviews."""
 import hashlib
 import json
+import sys
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from cafe_sentiment import __version__
 DIRECTORIES = ("src", "lexicon", "configs", "schemas", "examples", "docs", "tests", "tools")
 FILES = ("README.md", "LICENSE", "CHANGELOG.md", ".gitignore", "pyproject.toml", "run.py", "requirements-crawl.txt")
 
@@ -19,7 +22,7 @@ def main():
     paths = sorted(set(candidates))
     if any(not path.is_file() for path in paths):
         raise ValueError("Missing required public file")
-    destination = ROOT / "outputs_private/cafe-sentiment-lexicon-v0.1.0.zip"
+    destination = ROOT / f"outputs_private/cafe-sentiment-lexicon-v{__version__}.zip"
     destination.parent.mkdir(parents=True, exist_ok=True)
     manifest = []
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as archive:

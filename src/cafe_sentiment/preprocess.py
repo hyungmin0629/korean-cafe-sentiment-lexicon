@@ -2,7 +2,7 @@ import re
 import unicodedata
 
 # Keep Korean connecting endings intact; evidence stems work without endings.
-BREAK = re.compile(r"[.!?。！？\n,;]+|(?:하지만|그런데|반면)\s*|지만|는데")
+BREAK = re.compile(r"[.!?。！？\n,;]+|(?:하지만|그런데|반면)\s*|지만|(?<![하오리])는데")
 
 
 def normalize(text):

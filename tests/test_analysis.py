@@ -76,6 +76,59 @@ class AnalysisTests(unittest.TestCase):
         analyzer = Analyzer(aliases=ROOT / "configs/cafe_aliases.example.json")
         self.assertEqual(analyzer.analyze("나무라떼가 좋아요", "demo_a")["categories"]["menu"]["label"], "positive")
 
+    def test_attached_words_and_boundaries(self):
+        for text, category, expected in (
+                ("빵도맛있고", "menu", "positive"),
+                ("커피맛이좋아요", "menu", "positive"),
+                ("직원이안친절해요", "service", "negative"),
+                ("정말불친절해요", "service", "negative"),
+                ("직원이 친절한지 모르겠어요", "service", "unscored"),
+                ("커피가 맛있어 보입니다", "menu", "unscored")):
+            with self.subTest(text=text):
+                self.assertEqual(self.score(text, category)["label"], expected)
+        self.assertFalse(self.analyzer.analyze("좋합이라는 메뉴 이름입니다")["evidence"])
+
+    def test_scoped_uncertainty(self):
+        result = self.analyzer.analyze("직원이 친절하다고 해서 왔고 커피는 맛있어요")
+        self.assertIsNone(result["categories"]["service"]["score"])
+        self.assertEqual(result["categories"]["menu"]["label"], "positive")
+        self.assertEqual(self.score("커피는 기대한 것보다 맛있어요", "menu")["label"], "positive")
+        self.assertIsNone(self.score("커피는 좋은 것은 아니에요", "menu")["score"])
+
+    def test_required_target_protects_category(self):
+        self.assertIsNone(self.score("의자가 딱딱해요", "menu")["score"])
+        self.assertEqual(self.score("의자가 딱딱해요", "space")["label"], "negative")
+        self.assertEqual(self.score("빵이 딱딱해요", "menu")["label"], "negative")
+        self.assertIsNone(self.score("주차장에 벌레가 나왔어요", "hygiene")["score"])
+
+    def test_operation_nominal_clause(self):
+        self.assertEqual(self.score("주문하는데 오래 걸려요", "operation")["label"], "negative")
+        self.assertEqual(self.score("음료 나오는 데 오래 걸려요", "operation")["label"], "negative")
+        self.assertEqual(self.score("주차가 편하고 대기 없이 들어왔어요", "operation")["label"], "positive")
+
+    def test_topic_header_and_offsets(self):
+        result = self.analyzer.analyze("주차:\n편하고 좋았어요\n케이크는 맛없어요")
+        self.assertEqual(result["categories"]["location"]["label"], "positive")
+        self.assertEqual(result["categories"]["menu"]["label"], "negative")
+        self.assertIsNone(result["categories"]["overall"]["score"])
+        for evidence in result["evidence"]:
+            self.assertEqual(result["normalized_text"][evidence["start"]:evidence["end"]], evidence["matched_text"])
+
+    def test_no_negative_substring_leak(self):
+        for text, category in (("가성비가 별로예요", "value"),
+                               ("주차가 불가능해요", "location"),
+                               ("커피가 불만족스러워요", "menu"),
+                               ("커피는 비추천이에요", "menu")):
+            self.assertEqual(self.score(text, category)["label"], "negative")
+
+    def test_packaged_resources_synchronized(self):
+        from cafe_sentiment import __version__
+        self.assertEqual(self.analyzer.lexicon["version"], __version__)
+        self.assertEqual(self.analyzer.rules["version"], __version__)
+        for name in ("cafe_sentiment.json", "context_rules.json"):
+            self.assertEqual((ROOT / "lexicon" / name).read_bytes(),
+                             (ROOT / "src/cafe_sentiment/resources" / name).read_bytes())
+
     def test_missing_month_and_missing_date(self):
         agg = Aggregator(self.analyzer.categories)
         row = {"cafe_id": "a"}

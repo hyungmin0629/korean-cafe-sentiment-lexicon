@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "reviews": 10000,
+  "seconds": 8.468,
+  "reviews_per_second": 1180.9,
+  "scope": "CLI subprocess startup + CSV input + ID deduplication + analysis + aggregation + all output files",
+  "input": "Repeated authored short text, 10 cafes, 12 months; input generation excluded",
+  "analyzed_rows": 10000,
+  "output_bytes": 29973670,
+  "lexicon_sha256": "c1b4a40647692c3a99d5497680980dcd2a882b0237acd5ad890d66e453346f8a",
+  "rules_sha256": "320113163e86c7d69f197466f1bc2c8f3b809c94f1deaef0e67af271e954fcdf"
+}

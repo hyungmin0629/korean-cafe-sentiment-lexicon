@@ -4,7 +4,7 @@
 
 리뷰 CSV를 넣으면 메뉴·친절·공간·입지·가격·청결·운영·전반 만족의 감성 점수를 기간별로 계산합니다. 표현별 근거를 저장하며, 분석 실행에는 외부 AI API나 추가 Python 라이브러리가 필요하지 않습니다.
 
-버전 0.1.0은 자체 작성한 **124개 후보 표현**과 규칙으로 구현한 초기 버전입니다. 실제 리뷰 수집·실행과 사람 정답 기반 정확도 평가는 구분합니다. 현재 사람 정답 기반 정확도는 측정하지 않았습니다. 카페나리나무는 후속 적용 대상이며, 먼저 다른 카페 리뷰로 동작을 확인합니다.
+버전 0.2.0은 자체 작성한 **415개 후보 표현**을 제공합니다. 실제 카페 6곳의 본문 501건에서 실행했으며, 나리나무도 2건에 적용했습니다. 개발 본문 221건에서 선택 근거로 관찰된 후보는 94개, 나머지 321개는 해당 표본에서 미관찰인 보완 가설입니다. 모든 항목은 `candidate`이며 **사람 정답 기반 정확도는 아직 측정하지 않았습니다.**
 
 ## 바로 실행
 
@@ -69,7 +69,9 @@ UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/review
 
 ## 사전 수정과 카페 설정
 
-`lexicon/cafe_sentiment.csv`가 편집 기준입니다. `polarity`는 -2~-1~0~1~2이며, `pattern`은 실제 매칭에 사용하는 정규식입니다. 단어 변형은 `pattern`에 반영합니다. `variants`, `target_terms`, `subcategory`는 현재 기록용 필드입니다. 대상 연결은 `context_rules.json`의 공통 단서와 카페별 설정을 사용합니다.
+`lexicon/cafe_sentiment.csv`가 편집 기준입니다. `polarity`는 -2~-1~0~1~2이며, `pattern`은 매칭 정규식입니다. 단어 변형은 `pattern`에 반영합니다. `variants`, `subcategory`는 기록용입니다. `target_terms`가 비어 있지 않으면 해당 절에 그 단서 중 하나가 있어야 매칭합니다. 대상 연결은 `context_rules.json`의 공통 단서와 카페별 설정을 사용합니다.
+
+붙여 쓴 `빵도맛있어요` 등을 위해 자체 작성 정규식의 맨 앞 `(?<![가-힣])` 경계는 대상·조사·강조·앞 부정 단서가 있을 때 완화합니다. 무조건 부분 문자열을 허용하지는 않습니다. `lexicon/development_coverage.csv`에는 후보별 개발 자료 선택 근거 건수가 있습니다. 0건은 틀린 표현이라는 뜻도, 검증된 표현이라는 뜻도 아닙니다.
 
 ```powershell
 python tools/export_lexicon.py
@@ -87,28 +89,35 @@ python -m unittest discover -s tests -v
 ```powershell
 python -m pip install -r requirements-crawl.txt
 python tools/crawl_diningcode.py --max-pages 40 --delay 1.5
+python tools/crawl_diningcode.py --cafes configs/collection.expansion.json --output data_private/reviews.expansion.csv --max-pages 70 --delay 1.5
+python tools/crawl_diningcode.py --cafes configs/collection.narinamu.json --output data_private/reviews.narinamu.csv --max-pages 5 --delay 1.5
 ```
 
-수집 대상은 테라로사 강릉본점·어니언 안국점·레이어드 안국점입니다. 추천순 표본이므로 전체 고객을 대표하는 무작위 표본이 아닙니다. 원문 CSV·캐시·수집 기록은 `data_private`에 저장하며 GitHub 공개 대상에서 제외합니다. 작성일에 연도가 빠진 경우 `source_date_text`를 보존하고 `review_date`를 빈칸으로 둡니다.
+기본 대상은 테라로사 강릉본점·어니언 안국점·레이어드 안국점이며 설정으로 프릳츠·대림창고·나리나무를 추가합니다. `--cafes`는 `[카페 ID, 이름, 다이닝코드 rid]` 배열의 JSON입니다. 추천순 표본이며 화면 전체 리뷰의 완전 수집을 보장하지 않습니다. 원문 CSV·캐시·수집 기록은 `data_private`에 저장하며 GitHub 공개 대상에서 제외합니다. 작성 연도가 빠지면 `source_date_text`를 보존하고 `review_date`를 빈칸으로 둡니다. 캐시를 읽은 수집 시각은 캐시 파일 생성·저장 시점입니다.
 
 ## 검증과 문서
 
 ```powershell
 python -m unittest discover -s tests -v
 python tools/benchmark.py
+python tools/benchmark_cli.py
 ```
 
 - `docs/taxonomy.md`: 분류 기준.
 - `docs/scoring.md`: 점수, 비율 분모, 날짜와 표본 처리.
 - `docs/annotation_guide.md`: 실제 리뷰 정답 작성 방법.
 - `docs/evaluation.md`: 검증 결과와 미지원 문맥.
+- `docs/provisional_review.md`: 고정 사전으로 12본문을 읽은 Codex 잠정 점검과 발견한 오류.
+- `docs/dataset.v02.json`, `docs/coverage.v02.json`: 데이터 역할·해시·후보 출현·판정 범위.
 - `docs/data_status.md`: 확보 자료와 작업 상태.
 - `docs/sources.md`: 출처와 공개 범위.
 
-반어, 복잡한 대명사, 붙여 쓴 긴 문장, 인용과 직접 평가가 섞인 절은 오판 또는 누락이 생길 수 있습니다. 현재는 형태소 분석기 없이 어간 정규식과 가까운 대상 단서를 사용합니다. 판정률은 정확도가 아니며, 카페 사이의 단순 순위 산정에 사용하기 전에 출처·기간·표본 차이를 확인해야 합니다.
+반어, 복잡한 대명사, 붙여 쓴 긴 문장, 인용과 직접 평가가 섞인 절은 오판 또는 누락이 생길 수 있습니다. 현재는 형태소 분석기 없이 어간 정규식과 가까운 대상 단서를 사용합니다. 판정 범위는 정확도가 아닙니다. 나리나무 2건으로 카테고리별 운영 판단을 내릴 수는 없습니다.
+
+실제 정답 작성·평가는 `docs/annotation_guide.md`를 따릅니다. 정답이 비어 있으면 평가 도구는 정확도를 계산하지 않습니다. 사람 라벨 없이 자동 판정을 정답으로 채우지 않습니다.
 
 ## 공개와 기여
 
 코드와 자체 작성 사전·예제는 MIT 라이선스로 제공합니다. 외부 원문 리뷰는 이 라이선스에 포함하지 않습니다. KNU 사전 데이터는 복제하지 않았습니다. 신규 표현을 제안할 때는 카테고리, 감성 강도, 판단 이유, 자체 작성 예문을 함께 제출해주세요.
 
-GitHub 공개용 묶음은 `python tools/package_public.py`로 생성합니다. 공개 묶음에는 허용된 코드·문서·사전·생성 예제만 포함합니다. 버전 0.1.0은 초기 후보 사전이며, 기능 검증 결과와 실제 정확도 평가의 한계를 함께 공개합니다.
+GitHub 공개용 묶음은 `python tools/package_public.py`로 생성합니다. 공개 묶음에는 허용된 코드·문서·사전·생성 예제와 원문 없는 실행 통계만 포함합니다. 카페별 감성 점수·실제 상세 결과는 로컬에 보관합니다.

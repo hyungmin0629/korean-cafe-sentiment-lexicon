@@ -2,9 +2,12 @@
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from cafe_sentiment import __version__
 
 
 def main():
@@ -21,7 +24,7 @@ def main():
             raise ValueError("Invalid status")
         re.compile(entry["pattern"])
         seen.add(entry["entry_id"])
-    lexicon = {"version": "0.1.0", "status": "candidate_not_human_validated", "entries": entries}
+    lexicon = {"version": __version__, "status": "candidate_not_human_validated", "entries": entries}
     resources = ROOT / "src/cafe_sentiment/resources"
     resources.mkdir(parents=True, exist_ok=True)
     data = json.dumps(lexicon, ensure_ascii=False, indent=2) + "\n"

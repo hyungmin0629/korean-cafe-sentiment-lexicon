@@ -15,14 +15,27 @@ def compile_entries(entries):
             "operation", "overall", "auto"
         } or entry["polarity"] not in (-2, -1, 0, 1, 2):
             raise ValueError("Invalid lexicon category/polarity: " + entry["entry_id"])
-        result.append((entry, re.compile(entry["pattern"])))
+        # Relax only our authored leading boundary; find_matches checks whether
+        # an attached preceding token is a target, particle or modifier.
+        pattern = entry["pattern"].removeprefix(r"(?<![가-힣])")
+        result.append((entry, re.compile(pattern)))
     return result
 
 
-def find_matches(text, compiled):
+def find_matches(text, compiled, attached_prefix=None):
     candidates = []
     for entry, pattern in compiled:
         for match in pattern.finditer(text):
+            if match.group().endswith("좋") and match.end() < len(text):
+                following = text[match.end()]
+                if re.match(r"[가-힣]", following) and following not in "다아았고은음네지겠더던으게냐나":
+                    continue
+            if match.start() and re.match(r"[가-힣]", text[match.start() - 1]):
+                if attached_prefix is None or not attached_prefix.search(text[:match.start()]):
+                    continue
+            terms = entry.get("target_terms", [])
+            if terms and not any(term in text for term in terms):
+                continue
             candidates.append((match.start(), match.end(), entry))
     # Longest expression wins when spans overlap, with stable tie breaking.
     candidates.sort(key=lambda x: (-(x[1] - x[0]), x[0], x[2]["entry_id"]))

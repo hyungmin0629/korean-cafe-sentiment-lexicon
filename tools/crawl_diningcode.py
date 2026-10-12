@@ -51,7 +51,7 @@ def parse_reviews(html, cafe_id, cafe_name, url, collected_at):
     return soup, rows
 
 
-def crawl(max_pages=25, delay=1.5):
+def crawl(max_pages=25, delay=1.5, cafes=None, output=None):
     cache = ROOT / "data_private/crawl"
     cache.mkdir(parents=True, exist_ok=True)
     robot = urllib.robotparser.RobotFileParser()
@@ -77,7 +77,7 @@ def crawl(max_pages=25, delay=1.5):
     collected_at = datetime.now(timezone(timedelta(hours=9))).isoformat()
     records, identities, manifest = [], set(), []
     failure = None
-    for cafe_id, cafe_name, rid in CAFES:
+    for cafe_id, cafe_name, rid in (cafes or CAFES):
         url = BASE + "/profile.php?rid=" + rid
         entry = {"cafe_id": cafe_id, "cafe_name": cafe_name, "url": url, "pages": 0,
                  "collected_reviews": 0, "sort": "DININGCODE", "status": "pending"}
@@ -95,7 +95,9 @@ def crawl(max_pages=25, delay=1.5):
                             "mode": "LIST", "v_rid": rid, "page": page, "rows": "5",
                             "type": "rest", "start_id": first_id, "order": "DININGCODE"})
                     cache_file.write_text(html, encoding="utf-8")
-                soup, rows = parse_reviews(html, cafe_id, cafe_name, url, collected_at)
+                fetched_at = datetime.fromtimestamp(cache_file.stat().st_mtime,
+                                                    timezone(timedelta(hours=9))).isoformat()
+                soup, rows = parse_reviews(html, cafe_id, cafe_name, url, fetched_at)
                 entry["pages"] += 1
                 if page == 1:
                     node = soup.select_one("#hdn_first_review_id")
@@ -134,7 +136,8 @@ def crawl(max_pages=25, delay=1.5):
             entry["difference_from_displayed"] = displayed - entry["collected_reviews"]
             if entry["status"] == "reached_last_page" and displayed != entry["collected_reviews"]:
                 entry["status"] = "reached_last_page_with_count_difference"
-    output = ROOT / "data_private/reviews.diningcode.csv"
+    output = Path(output) if output else ROOT / "data_private/reviews.diningcode.csv"
+    output.parent.mkdir(parents=True, exist_ok=True)
     fields = ["review_id", "cafe_id", "cafe_name", "review_date", "text", "source", "rating",
               "collected_at", "source_url", "source_date_text", "date_status"]
     with output.open("w", encoding="utf-8-sig", newline="") as handle:
@@ -147,7 +150,8 @@ def crawl(max_pages=25, delay=1.5):
               "robots_sha256": hashlib.sha256(robots_path.read_bytes()).hexdigest(),
               "sampling": "public default recommendation order, capped pages; not random",
               "publication": "raw reviews private; redistribution rights not established"}
-    (ROOT / "data_private/crawl_manifest.json").write_text(
+    manifest_path = output.with_suffix(".manifest.json") if output.name != "reviews.diningcode.csv" else ROOT / "data_private/crawl_manifest.json"
+    manifest_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"total": len(records), "error": failure}, ensure_ascii=False), flush=True)
     return 1 if failure else 0
@@ -157,7 +161,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-pages", type=int, default=25)
     parser.add_argument("--delay", type=float, default=1.5)
+    parser.add_argument("--cafes", help="JSON array of [cafe_id, cafe_name, DiningCode rid]")
+    parser.add_argument("--output", help="Private CSV destination")
     args = parser.parse_args()
     if args.max_pages < 1 or args.delay < 1:
         parser.error("max-pages >= 1 and delay >= 1 required")
-    raise SystemExit(crawl(args.max_pages, args.delay))
+    cafes = json.loads(Path(args.cafes).read_text(encoding="utf-8-sig")) if args.cafes else None
+    if cafes is not None and (not cafes or any(len(row) != 3 or not all(isinstance(v, str) and v for v in row) for row in cafes)):
+        parser.error("cafes must be a nonempty array of three-string arrays")
+    if args.output and Path(args.output).exists():
+        parser.error("Output exists; choose a new file")
+    raise SystemExit(crawl(args.max_pages, args.delay, cafes, args.output))

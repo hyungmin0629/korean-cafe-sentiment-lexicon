@@ -1,0 +1,147 @@
+{
+  "version": "0.2.0",
+  "entries": 415,
+  "entries_by_category": {
+    "menu": 109,
+    "service": 43,
+    "space": 66,
+    "location": 31,
+    "value": 31,
+    "hygiene": 32,
+    "operation": 41,
+    "overall": 18,
+    "auto": 44
+  },
+  "development_reviews": 221,
+  "entries_observed_in_development": 94,
+  "entries_unobserved_in_development": 321,
+  "observation_definition": "Selected expression evidence in development reviews; includes abstained evidence, not raw regex counts or human validation",
+  "same_input_comparison": {
+    "reviews": 333,
+    "v01_scored": 299,
+    "v02_scored": 311
+  },
+  "cafes": [
+    {
+      "cafe_id": "terarosa_gangneung",
+      "cafe_name": "테라로사 강릉본점",
+      "split": "development",
+      "collected": 151,
+      "nonempty": 140,
+      "undated_nonempty": 21,
+      "scored_reviews": 130,
+      "needs_review": 4,
+      "category_scored_reviews": {
+        "menu": 98,
+        "service": 5,
+        "space": 44,
+        "location": 12,
+        "value": 12,
+        "hygiene": 5,
+        "operation": 7,
+        "overall": 45
+      }
+    },
+    {
+      "cafe_id": "fritz_dohwa",
+      "cafe_name": "프릳츠 도화점",
+      "split": "development",
+      "collected": 83,
+      "nonempty": 81,
+      "undated_nonempty": 6,
+      "scored_reviews": 72,
+      "needs_review": 5,
+      "category_scored_reviews": {
+        "menu": 62,
+        "service": 2,
+        "space": 19,
+        "location": 2,
+        "value": 5,
+        "hygiene": 3,
+        "operation": 1,
+        "overall": 23
+      }
+    },
+    {
+      "cafe_id": "onion_anguk",
+      "cafe_name": "어니언 안국점",
+      "split": "validation",
+      "collected": 107,
+      "nonempty": 107,
+      "undated_nonempty": 11,
+      "scored_reviews": 102,
+      "needs_review": 3,
+      "category_scored_reviews": {
+        "menu": 78,
+        "service": 7,
+        "space": 48,
+        "location": 3,
+        "value": 13,
+        "hygiene": 2,
+        "operation": 7,
+        "overall": 33
+      }
+    },
+    {
+      "cafe_id": "layered_anguk",
+      "cafe_name": "레이어드 안국점",
+      "split": "holdout",
+      "collected": 92,
+      "nonempty": 86,
+      "undated_nonempty": 2,
+      "scored_reviews": 79,
+      "needs_review": 9,
+      "category_scored_reviews": {
+        "menu": 64,
+        "service": 7,
+        "space": 35,
+        "location": 3,
+        "value": 10,
+        "hygiene": 2,
+        "operation": 5,
+        "overall": 6
+      }
+    },
+    {
+      "cafe_id": "daelim_seongsu",
+      "cafe_name": "대림창고 성수",
+      "split": "holdout",
+      "collected": 88,
+      "nonempty": 85,
+      "undated_nonempty": 7,
+      "scored_reviews": 79,
+      "needs_review": 4,
+      "category_scored_reviews": {
+        "menu": 46,
+        "service": 1,
+        "space": 39,
+        "location": 2,
+        "value": 19,
+        "hygiene": 3,
+        "operation": 0,
+        "overall": 25
+      }
+    },
+    {
+      "cafe_id": "narinamu",
+      "cafe_name": "카페나리나무",
+      "split": "application",
+      "collected": 2,
+      "nonempty": 2,
+      "undated_nonempty": 1,
+      "scored_reviews": 1,
+      "needs_review": 0,
+      "category_scored_reviews": {
+        "menu": 1,
+        "service": 0,
+        "space": 0,
+        "location": 0,
+        "value": 0,
+        "hygiene": 0,
+        "operation": 0,
+        "overall": 0
+      }
+    }
+  ],
+  "interpretation": "Execution coverage only; no human ground truth or measured real-review accuracy"
+}

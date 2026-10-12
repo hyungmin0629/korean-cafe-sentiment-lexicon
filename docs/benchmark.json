@@ -1,22 +1,22 @@
 {
   "python": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "input": "synthetic, four repeated short texts, 10 cafes, 12 months",
   "scope": "analyze + aggregate; excludes CSV input, duplicate-ID set and JSONL output",
   "memory": "process-wide Windows peak working set, includes both sequential runs",
   "results": [
     {
       "reviews": 10000,
-      "seconds": 1.309,
-      "reviews_per_second": 7638.6,
-      "process_peak_memory_mb": 24.37
+      "seconds": 2.836,
+      "reviews_per_second": 3526.1,
+      "process_peak_memory_mb": 24.46
     },
     {
       "reviews": 100000,
-      "seconds": 13.23,
-      "reviews_per_second": 7558.8,
-      "process_peak_memory_mb": 24.57
+      "seconds": 27.839,
+      "reviews_per_second": 3592.1,
+      "process_peak_memory_mb": 24.86
     }
   ]
 }

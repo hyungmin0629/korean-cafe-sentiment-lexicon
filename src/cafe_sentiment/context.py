@@ -1,7 +1,7 @@
 import re
 
 
-def resolve_category(entry, clause, start, end, targets):
+def resolve_category(entry, clause, start, end, targets, topic=None):
     if entry["category"] != "auto":
         return entry["category"], "lexicon_category"
     distances = {}
@@ -11,6 +11,8 @@ def resolve_category(entry, clause, start, end, targets):
                 distance = max(start - match.end(), match.start() - end, 0)
                 distances[category] = min(distance, distances.get(category, float("inf")))
     if not distances:
+        if topic:
+            return topic, "preceding_topic_header"
         return "overall", "no_target_overall"
     closest = min(distances.values())
     choices = [category for category, distance in distances.items() if distance == closest]
@@ -23,11 +25,13 @@ def apply_context(entry, clause, start, end, rules):
     before, after = clause[:start], clause[end:]
     polarity = entry["polarity"]
     applied = []
-    # Conservative clause-wide abstention prevents obvious hypothetical/quoted
-    # evaluations being asserted as observed opinions. See docs for its limits.
+    # Attach uncertainty to the evaluation ending rather than excluding a whole
+    # clause just because it also contains "기대" or an unrelated quotation.
     for reason, pattern in rules["abstain_patterns"].items():
-        if re.search(pattern, clause):
+        if re.match(pattern, after):
             return None, [reason], start, end
+    if re.search(r"(?:안|못)\s*(?:먹|마셔|마시)[가-힣]*\s*$", before[-25:]):
+        return None, ["not_experienced"], start, end
     suffix = re.match(rules["negation_suffix"], after)
     prefix = re.search(rules["negation_prefix"], before)
     if suffix or prefix:

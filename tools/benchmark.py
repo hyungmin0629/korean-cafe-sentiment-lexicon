@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from cafe_sentiment import Analyzer
+from cafe_sentiment import Analyzer, __version__
 from cafe_sentiment.aggregate import Aggregator
 
 
@@ -51,7 +51,7 @@ def main():
         results.append(result)
         print(json.dumps(result), flush=True)
     report = {"python": platform.python_version(), "platform": platform.platform(),
-              "version": "0.1.0", "input": "synthetic, four repeated short texts, 10 cafes, 12 months",
+              "version": __version__, "input": "synthetic, four repeated short texts, 10 cafes, 12 months",
               "scope": "analyze + aggregate; excludes CSV input, duplicate-ID set and JSONL output",
               "memory": "process-wide Windows peak working set, includes both sequential runs",
               "results": results}
