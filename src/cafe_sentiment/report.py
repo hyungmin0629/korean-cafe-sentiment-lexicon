@@ -151,6 +151,7 @@ def write_report(directory, destination=None, example_limit=3):
     template = resources.joinpath("report.html").read_text(encoding="utf-8")
     payload = json.dumps(model, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     html = template.replace("__REPORT_CSS__", resources.joinpath("report.css").read_text(encoding="utf-8"))
+    html = html.replace("__REPORT_TRENDS_JS__", resources.joinpath("report-trends.js").read_text(encoding="utf-8"))
     html = html.replace("__REPORT_JS__", resources.joinpath("report.js").read_text(encoding="utf-8"))
     html = html.replace("__REPORT_DATA__", payload)
     destination = Path(destination) if destination else Path(directory) / "report.html"

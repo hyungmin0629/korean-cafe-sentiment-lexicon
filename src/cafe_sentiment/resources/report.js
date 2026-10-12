@@ -162,40 +162,99 @@ function svgNode(parent,name,attributes,text) {
 function renderTrend() {
   if (!currentCafe) return;
   const category = $("trend-category").value;
-  const months = Object.keys(currentCafe.periods).filter(key => /^\d{4}-\d{2}$/.test(key)).sort().filter(key => $("scope-select").value === "all" || (key >= $("start-select").value && key <= $("end-select").value));
+  const selected = Object.keys(currentCafe.periods).filter(key => /^\d{4}-\d{2}$/.test(key)).sort().filter(key => $("scope-select").value === "all" || (key >= $("start-select").value && key <= $("end-select").value));
+  const months = $("trend-window").value === "all" ? selected : selected.slice(-Number($("trend-window").value));
   const rows = months.map(key => currentCafe.periods[key].categories[category]);
-  $("trend-table").replaceChildren(); $("trend-chart").replaceChildren();
-  for (const row of rows) {
+  $("trend-range").textContent = months.length ? months[0]+" ~ "+months.at(-1)+" · "+months.length+"개월 표시 · 날짜 미상 리뷰 제외" : "확인된 작성일이 없어 월별 변화를 표시할 수 없습니다.";
+  $("trend-table").replaceChildren(); $("trend-chart").replaceChildren(); $("trend-summary").replaceChildren();
+  const summary = CafeTrends.summarize(rows, MIN);
+  const deltaText = value => (value > 0 ? "+" : "") + value.toFixed(1) + "p";
+  const box = (title, value, caption, className) => {
+    const panel = add($("trend-summary"),"div","trend-stat");
+    add(panel,"span","label",title); add(panel,"strong",className,value); add(panel,"p",null,caption);
+  };
+  const last = summary.last, previous = summary.previous;
+  box(last ? last.period+" · "+LABELS[category] : "마지막 표시 월",last?.score == null ? "—" : sfmt(last.score)+"점",last ? "판정 "+last.scored_reviews+"건 · "+last.sample_status : "월별 자료 없음");
+  box("전월 대비",summary.delta == null ? "비교 보류" : deltaText(summary.delta),
+    summary.delta == null ? "연속 두 월에 각각 판정 "+MIN+"건 이상 필요" : previous.period+" → "+last.period+" · 판정 "+previous.scored_reviews+" → "+last.scored_reviews+"건",
+    summary.delta == null || summary.delta === 0 ? "" : summary.delta > 0 ? "rise" : "fall");
+  box("표시 기간 중 가장 큰 월간 변화",summary.largest ? deltaText(summary.largest.delta) : "비교 보류",
+    summary.largest ? summary.largest.from+" → "+summary.largest.to : "비교 가능한 연속 월 없음",
+    !summary.largest || summary.largest.delta === 0 ? "" : summary.largest.delta > 0 ? "rise" : "fall");
+  rows.forEach((row,i) => {
     const tr = add($("trend-table"),"tr");
-    for (const value of [row.period,sfmt(row.score),nfmt(row.scored_reviews),nfmt(row.total_reviews),row.sample_status]) add(tr,"td",null,value);
-  }
-  const pairs = rows.slice(1).map((row,i) => [rows[i],row]).filter(pair => pair.every(row => row.scored_reviews >= MIN));
-  if (!pairs.length) {
+    const change = CafeTrends.comparable(rows[i-1],row,MIN) ? deltaText(row.score-rows[i-1].score) : "—";
+    for (const value of [row.period,sfmt(row.score),change,nfmt(row.scored_reviews),nfmt(row.total_reviews),row.sample_status]) add(tr,"td",null,value);
+  });
+  const hasPair = rows.slice(1).some((row,i) => CafeTrends.comparable(rows[i],row,MIN));
+  if (!hasPair) {
     $("trend-note").textContent = "추세 판단 보류 · 연속된 두 월에 각각 " + MIN + "건 이상의 판정 근거가 필요합니다. 날짜 미상 리뷰는 월별에서 제외합니다.";
     add($("trend-chart"),"p","empty","현재 자료로 월별 변화를 확정하기 어렵습니다. 아래 월별 건수를 함께 확인해주세요.");
+    renderMonthCounts(rows);
+    renderMonthMatrix(months);
     return;
   }
-  $("trend-note").textContent = "각 월에 판정 " + MIN + "건 이상인 구간만 연결합니다. 빈 달·작은 표본은 선으로 이어 추정하지 않습니다.";
-  const svg = svgNode($("trend-chart"),"svg",{viewBox:"0 0 960 240",role:"img","aria-label":LABELS[category]+" 월별 점수. 근거가 충분한 월만 표시"});
-  const left=44,right=940,top=20,bottom=190;
+  $("trend-note").textContent = "판정 " + MIN + "건 이상인 연속 월만 연결합니다. 빈 달·작은 표본은 연결하지 않습니다. 변화량은 감성지수 차이이며 원인이나 개선 효과를 뜻하지 않습니다.";
+  const svg = svgNode($("trend-chart"),"svg",{viewBox:"0 0 960 270",role:"img","aria-label":LABELS[category]+" 월별 점수. 근거가 충분한 월만 표시"});
+  const left=50,right=920,top=30,bottom=220;
   const x=i => left+(right-left)*(rows.length===1 ? .5 : i/(rows.length-1));
   const y=score => bottom-(bottom-top)*score/100;
+  svgNode(svg,"text",{x:left,y:14,class:"axis-label"},"감성지수 (0~100)");
   for (const score of [0,25,50,75,100]) {
     svgNode(svg,"line",{x1:left,x2:right,y1:y(score),y2:y(score),class:"axis"});
     svgNode(svg,"text",{x:30,y:y(score)+4,"text-anchor":"end"},score);
   }
-  let path="",previous=false;
+  let path="";
   rows.forEach((row,i) => {
     const usable=row.scored_reviews>=MIN && row.score!=null;
     if (usable) {
-      path += (previous ? " L" : " M")+x(i)+" "+y(row.score);
-      const dot=svgNode(svg,"circle",{cx:x(i),cy:y(row.score),r:4,class:"point"});
+      path += (CafeTrends.comparable(rows[i-1],row,MIN) ? " L" : " M")+x(i)+" "+y(row.score);
+      const dot=svgNode(svg,"circle",{cx:x(i),cy:y(row.score),r:5,class:"point"});
       svgNode(dot,"title",{},row.period+" · "+sfmt(row.score)+"점 · 판정 "+row.scored_reviews+"건");
+      if (rows.length <= 12) svgNode(svg,"text",{x:x(i),y:y(row.score)-11,"text-anchor":"middle",class:"point-label"},sfmt(row.score));
     }
-    previous=usable;
-    if (i===0 || i===rows.length-1 || i % Math.max(1,Math.ceil(rows.length/8))===0) svgNode(svg,"text",{x:x(i),y:218,"text-anchor":i===0?"start":i===rows.length-1?"end":"middle"},row.period);
+    if (i===0 || i===rows.length-1 || i % Math.max(1,Math.ceil(rows.length/8))===0) svgNode(svg,"text",{x:x(i),y:250,"text-anchor":i===0?"start":i===rows.length-1?"end":"middle"},row.period);
   });
   svgNode(svg,"path",{d:path,class:"score-path"});
+  renderMonthCounts(rows);
+  renderMonthMatrix(months);
+}
+function renderMonthCounts(rows) {
+  $("trend-counts").replaceChildren();
+  if (!rows.length) {add($("trend-counts"),"p","empty","월별 건수 없음");return;}
+  const svg=svgNode($("trend-counts"),"svg",{viewBox:"0 0 960 110",role:"img","aria-label":"월별 전체 리뷰 수와 선택 항목 판정 수"});
+  const max=Math.max(1,...rows.map(row=>row.total_reviews));
+  const step=870/Math.max(1,rows.length-1), width=Math.min(48,step*.6);
+  rows.forEach((row,i)=>{
+    const x=50+(rows.length===1?435:i*step), total=70*row.total_reviews/max, scored=70*row.scored_reviews/max;
+    const background=svgNode(svg,"rect",{x:x-width/2,y:90-total,width,height:total,rx:2,class:"count-total"});
+    svgNode(background,"title",{},row.period+" · 전체 "+row.total_reviews+"건");
+    const foreground=svgNode(svg,"rect",{x:x-width/2,y:90-scored,width,height:scored,rx:2,class:"count-scored"});
+    svgNode(foreground,"title",{},row.period+" · 판정 "+row.scored_reviews+"건 / 전체 "+row.total_reviews+"건");
+    if (rows.length<=12) svgNode(svg,"text",{x,y:Math.max(12,85-total),"text-anchor":"middle"},row.scored_reviews+" / "+row.total_reviews);
+  });
+}
+function renderMonthMatrix(months) {
+  const container=$("month-matrix");container.replaceChildren();
+  if (!months.length) {add(container,"p","empty","월별 자료 없음");return;}
+  const table=add(container,"table","heatmap");table.setAttribute("aria-label","항목별 월간 감성 점수와 판정 건수");
+  const head=add(add(table,"thead"),"tr");add(head,"th",null,"항목 / 월");
+  for (const month of months) add(head,"th",null,month);
+  const body=add(table,"tbody");
+  for (const [category,label] of Object.entries(LABELS)) {
+    const tr=add(body,"tr"), th=add(tr,"th");th.scope="row";
+    const button=add(th,"button","matrix-category",label);button.type="button";
+    button.addEventListener("click",()=>{$("trend-category").value=category;renderTrend();});
+    for (const month of months) {
+      const row=currentCafe.periods[month].categories[category], td=add(tr,"td");
+      const usable=row.score!=null && row.scored_reviews>=MIN;
+      const band=!usable?"low":row.score>=75?"high":row.score>=60?"positive":row.score>=40?"middle":row.score>=25?"negative":"bottom";
+      const cell=add(td,"div","heat-cell heat-"+band);
+      add(cell,"strong",null,row.score==null?"—":sfmt(row.score));
+      add(cell,"span",null,"판정 "+row.scored_reviews+"건");
+      if (!usable) add(cell,"small",null,row.scored_reviews?"표본 부족":"근거 없음");
+    }
+  }
 }
 function renderEvidence() {
   const row = currentRows?.find(row => row.category === $("evidence-category").value);
@@ -245,6 +304,7 @@ function downloadCsv() {
 $("cafe-select").addEventListener("change",selectCafe);
 for (const id of ["scope-select","start-select","end-select"]) $(id).addEventListener("change",render);
 $("trend-category").addEventListener("change",renderTrend);
+$("trend-window").addEventListener("change",renderTrend);
 $("evidence-category").addEventListener("change",renderEvidence);
 $("download-csv").addEventListener("click",downloadCsv);
 $("print-report").addEventListener("click",() => window.print());

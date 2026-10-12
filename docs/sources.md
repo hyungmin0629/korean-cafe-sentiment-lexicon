@@ -16,7 +16,7 @@
 | 카페나리나무 리뷰 | https://www.diningcode.com/profile.php?rid=ekLKGpK4p3Rc | 고정 사전 적용, 원문 비공개 |
 | 모모스커피 부산본점 | https://www.diningcode.com/profile.php?rid=yxzkcEWHCAUB | 이번 분류기 수정 미사용, 원문 비공개 |
 | 앤트러사이트 합정점 | https://www.diningcode.com/profile.php?rid=BkLmmTum9h3V | 이번 분류기 수정 미사용, 원문 비공개 |
-| 보고서 예제 74건 | Codex 자체 작성 | synthetic 입력·HTML, MIT |
+| 보고서 예제 250건 | Codex 자체 작성 | synthetic 입력·HTML, MIT |
 | 수집 허용 경로 확인 | https://www.diningcode.com/robots.txt | 수집 도구에 경로 검사 적용 |
 
 실제 수집 건수·캐시·날짜 누락은 `data_private/crawl_manifest.json`에 기록합니다. 수집일은 Asia/Seoul 기준입니다. 원문 연도가 빠진 표시일을 임의로 작성일로 변환하지 않습니다.

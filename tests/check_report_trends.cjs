@@ -1,0 +1,20 @@
+// Independent expectations for visible month-to-month comparisons.
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const source = fs.readFileSync(path.join(__dirname, '../src/cafe_sentiment/resources/report-trends.js'), 'utf8');
+const trends = vm.runInNewContext(source + '; CafeTrends');
+const row = (period, score, n = 24) => ({period, score, scored_reviews: n});
+let summary = trends.summarize([row('2026-01', 95.3), row('2026-02', 50), row('2026-03', 87.5)], 10);
+assert.equal(summary.delta, 37.5);
+assert.equal(summary.largest.to, '2026-02');
+assert.ok(Math.abs(summary.largest.delta + 45.3) < 1e-10);
+assert.equal(trends.summarize([row('2026-01', 75), row('2026-03', 90)], 10).delta, null);
+assert.equal(trends.summarize([row('2026-01', 75), row('2026-02', null, 0), row('2026-03', 90)], 10).largest, null);
+assert.equal(trends.summarize([row('2026-01', 75, 9), row('2026-02', 90)], 10).delta, null);
+assert.equal(trends.summarize([row('2026-01', 75)], 10).delta, null);
+assert.equal(trends.summarize([row('2025-12', 50), row('2026-01', 75)], 10).delta, 25);
+assert.equal(trends.summarize([], 10).last, undefined);
+assert.equal(trends.summarize([row('2026-01', 0), row('2026-02', 0)], 10).delta, 0);
+console.log('Temporal checks passed: changes, gaps, sparse months, single month, year boundary, zero scores');

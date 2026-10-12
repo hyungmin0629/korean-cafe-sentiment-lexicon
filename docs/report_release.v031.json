@@ -1,0 +1,12 @@
+{
+  "version": "0.3.1",
+  "change_scope": "report presentation and authored synthetic example; classification unchanged",
+  "actual_input_sha256": "a8f1785f6e8b2d33bd7f15fce7d020a1cb3686169e10564c7a83bfef393a2125",
+  "lexicon_sha256": "f2af93cb3d4f6ca18ce22750a79fded03be2f1ec91fd845a7c4fa6a7435fa85b",
+  "rules_sha256": "162bfc7143e5c909386af6a320edbf71471c37040e9155f42ccbaa99b59eb17f",
+  "predictions_sha256": "e843e7c405fd9b89b205df648444176534fc0c86af0a4338aa10462f8942e92f",
+  "actual_prediction_identity_to_v030": true,
+  "synthetic_example_rows": 250,
+  "synthetic_example_months": 6,
+  "human_accuracy_status": "unmeasured"
+}

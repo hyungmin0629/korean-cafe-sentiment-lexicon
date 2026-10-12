@@ -1,5 +1,6 @@
 """Create explicitly synthetic report examples with a large and sparse cafe."""
 import csv
+import argparse
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -28,20 +29,27 @@ TEXTS={
        "라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.",
        "케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.",
        "커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요."]}
+TEXTS[4] = TEXTS[1][:4] + TEXTS[2][4:]
+TEXTS[5] = [text.replace("가격은 비싸요", "가격이 합리적이에요") for text in TEXTS[3]]
+TEXTS[6] = TEXTS[1]
+MONTH_COUNTS={1:32,2:40,3:56,4:48,5:32,6:40}
 
 
 def main():
-    path=ROOT / "examples/reviews.report.synthetic.csv"
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--output",default=str(ROOT / "examples/reviews.report.synthetic.csv"))
+    args=parser.parse_args()
+    path=Path(args.output)
     if path.exists():raise SystemExit("Synthetic example exists; preserve it")
     with path.open("w",encoding="utf-8-sig",newline="") as handle:
         writer=csv.writer(handle)
         writer.writerow(["review_id","cafe_id","cafe_name","source","review_date","text"])
         for month,texts in TEXTS.items():
-            for i in range(24):
-                writer.writerow([f"report_{month}_{i}","report_demo_a","보고서 예제 카페 A","synthetic",f"2026-{month:02d}-{i+1:02d}",texts[i%len(texts)]])
+            for i in range(MONTH_COUNTS[month]):
+                writer.writerow([f"report_{month}_{i}","report_demo_a","보고서 예제 카페 A","synthetic",f"2026-{month:02d}-{i%28+1:02d}",texts[i%len(texts)]])
         writer.writerow(["sparse_1","report_demo_b","소량 예제 카페 B","synthetic","2026-01-02","커피는 맛있어요"])
         writer.writerow(["sparse_2","report_demo_b","소량 예제 카페 B","synthetic","","커피는 맛없어요"])
-    print("74 authored synthetic rows; not customer data")
+    print(f"{sum(MONTH_COUNTS.values())+2} authored synthetic rows, six months; not customer data")
 
 
 if __name__=="__main__":main()
