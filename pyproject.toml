@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cafe-sentiment-lexicon"
+version = "0.1.0"
+description = "Explainable Korean cafe review sentiment lexicon and analyzer"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/hyungmin0629/korean-cafe-sentiment-lexicon"
+
+[project.scripts]
+cafe-sentiment = "cafe_sentiment.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cafe_sentiment = ["resources/*.json"]

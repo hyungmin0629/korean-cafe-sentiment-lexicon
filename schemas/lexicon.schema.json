@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cafe sentiment lexicon JSON",
+  "type": "object",
+  "required": ["version", "status", "entries"],
+  "properties": {
+    "version": {"type": "string"},
+    "status": {"type": "string"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entry_id", "expression", "pattern", "category", "polarity", "status", "provenance", "match_type", "variants", "target_terms", "context_rule_id", "notes"],
+        "properties": {
+          "entry_id": {"type": "string", "minLength": 1},
+          "expression": {"type": "string", "minLength": 1},
+          "pattern": {"type": "string", "minLength": 1},
+          "category": {"enum": ["menu", "service", "space", "location", "value", "hygiene", "operation", "overall", "auto"]},
+          "subcategory": {"type": "string"},
+          "polarity": {"type": "integer", "minimum": -2, "maximum": 2},
+          "match_type": {"const": "regex"},
+          "variants": {"type": "array", "items": {"type": "string"}},
+          "target_terms": {"type": "array", "items": {"type": "string"}},
+          "context_rule_id": {"const": "default"},
+          "provenance": {"type": "string"},
+          "status": {"enum": ["candidate", "reviewed", "deprecated"]},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

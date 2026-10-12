@@ -1,0 +1,114 @@
+# 한국어 카페 리뷰 감성사전
+
+저장소: [korean-cafe-sentiment-lexicon](https://github.com/hyungmin0629/korean-cafe-sentiment-lexicon)
+
+리뷰 CSV를 넣으면 메뉴·친절·공간·입지·가격·청결·운영·전반 만족의 감성 점수를 기간별로 계산합니다. 표현별 근거를 저장하며, 분석 실행에는 외부 AI API나 추가 Python 라이브러리가 필요하지 않습니다.
+
+버전 0.1.0은 자체 작성한 **124개 후보 표현**과 규칙으로 구현한 초기 버전입니다. 실제 리뷰 수집·실행과 사람 정답 기반 정확도 평가는 구분합니다. 현재 사람 정답 기반 정확도는 측정하지 않았습니다. 카페나리나무는 후속 적용 대상이며, 먼저 다른 카페 리뷰로 동작을 확인합니다.
+
+## 바로 실행
+
+Python 3.10 이상에서 이 폴더를 작업 위치로 사용합니다.
+
+```powershell
+git clone https://github.com/hyungmin0629/korean-cafe-sentiment-lexicon.git
+cd korean-cafe-sentiment-lexicon
+```
+
+```powershell
+python run.py --input examples/reviews.synthetic.csv --output outputs_private/demo --period month --start 2026-01-01 --end 2026-03-31
+```
+
+예제는 실제 고객 리뷰가 아닌 자체 작성 문장 18건입니다. 기존 결과를 실수로 덮어쓰지 않도록 새 폴더 또는 빈 폴더로 출력해야 합니다.
+
+실제 리뷰 분석:
+
+```powershell
+python run.py --input data_private/reviews.diningcode.csv --output outputs_private/actual_all --period all
+python run.py --input data_private/reviews.diningcode.csv --output outputs_private/actual_month --period month
+```
+
+분기 집계는 `--period quarter`, 전체 기간은 `--period all`입니다. `--start`·`--end`는 양 끝 날짜를 포함합니다. 날짜 필터가 있으면 날짜 미상 리뷰는 전체 기간 집계에서도 제외됩니다.
+
+설치해서 쓰는 경우:
+
+```powershell
+python -m pip install .
+cafe-sentiment --input examples/reviews.synthetic.csv --output outputs_private/installed_demo
+```
+
+## 리뷰 준비
+
+UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/reviews.template.csv`에 있습니다.
+
+| 필드 | 내용 |
+|---|---|
+| review_id | 출처·카페 내 고유 리뷰 ID, 필수 |
+| cafe_id | 카페 ID, 필수 |
+| cafe_name | 표시용 이름 |
+| review_date | YYYY-MM-DD 작성일, 기간 분석 시 필요 |
+| text | 리뷰 본문, 필수 |
+| source | 출처, 필수. 생성 예제는 synthetic |
+| rating | 별점, 선택. 텍스트 점수 계산에 사용하지 않음 |
+| collected_at | 수집일, 선택 |
+
+쉼표나 줄바꿈이 있는 본문은 CSV 규칙에 따라 따옴표로 감싸야 합니다. 원문에 작성 연도가 없으면 임의로 연도를 넣지 않습니다. 본문이 같은 독립 리뷰는 유지하고, 출처·카페 ID·리뷰 ID가 같은 중복은 첫 행만 처리합니다.
+
+## 결과 파일
+
+| 파일 | 읽는 방법 |
+|---|---|
+| summary.csv | 카페·기간·카테고리별 점수, 건수, 비율, 표본 상태 |
+| reviews.jsonl | 리뷰별 원문·정제문·카테고리 점수·근거 표현·정제문 위치 |
+| input_issues.csv | 중복·빈 필드·날짜 누락 등과 처리 방식 |
+| run_metadata.json | 입력·사전·규칙 해시, 버전, 집계 설정, 처리 건수 |
+
+점수 범위는 0~100입니다. 해당 항목의 감성 근거가 없으면 빈칸이며, 중립과 긍부정 혼합은 구분해 집계합니다. **75점은 고객 75%가 만족했다는 뜻이 아닙니다.** 관련 리뷰가 10건 미만이면 임시 기준으로 ‘표본 부족’을 표시합니다.
+
+`reviews.jsonl`은 날짜 필터 밖 리뷰도 포함하는 전체 입력의 상세 분석입니다. `summary.csv`에만 기간 필터가 적용됩니다. 상세 파일에는 리뷰 원문이 있으므로 비공개 폴더에서 관리합니다.
+
+## 사전 수정과 카페 설정
+
+`lexicon/cafe_sentiment.csv`가 편집 기준입니다. `polarity`는 -2~-1~0~1~2이며, `pattern`은 실제 매칭에 사용하는 정규식입니다. 단어 변형은 `pattern`에 반영합니다. `variants`, `target_terms`, `subcategory`는 현재 기록용 필드입니다. 대상 연결은 `context_rules.json`의 공통 단서와 카페별 설정을 사용합니다.
+
+```powershell
+python tools/export_lexicon.py
+python -m unittest discover -s tests -v
+```
+
+변환 도구는 배포용 JSON과 설치 패키지 안의 사전도 동기화합니다. 사전·규칙을 바꾸면 버전과 변경 이력을 갱신합니다.
+
+카페별 메뉴명은 `configs/cafe_aliases.example.json` 구조로 작성하여 `--aliases 파일경로`를 지정합니다. 그 설정의 단어 자체에는 감성 점수를 부여하지 않습니다.
+
+## 실제 리뷰 수집
+
+수집 도구는 분석기와 별도이며 `beautifulsoup4`가 필요합니다. 공개 페이지의 리뷰만 요청하며 닉네임·사용자 프로필·사진을 결과 CSV로 저장하지 않습니다. 요청 간격은 최소 1초이고, 접근 제한 응답을 받으면 중단합니다.
+
+```powershell
+python -m pip install -r requirements-crawl.txt
+python tools/crawl_diningcode.py --max-pages 40 --delay 1.5
+```
+
+수집 대상은 테라로사 강릉본점·어니언 안국점·레이어드 안국점입니다. 추천순 표본이므로 전체 고객을 대표하는 무작위 표본이 아닙니다. 원문 CSV·캐시·수집 기록은 `data_private`에 저장하며 GitHub 공개 대상에서 제외합니다. 작성일에 연도가 빠진 경우 `source_date_text`를 보존하고 `review_date`를 빈칸으로 둡니다.
+
+## 검증과 문서
+
+```powershell
+python -m unittest discover -s tests -v
+python tools/benchmark.py
+```
+
+- `docs/taxonomy.md`: 분류 기준.
+- `docs/scoring.md`: 점수, 비율 분모, 날짜와 표본 처리.
+- `docs/annotation_guide.md`: 실제 리뷰 정답 작성 방법.
+- `docs/evaluation.md`: 검증 결과와 미지원 문맥.
+- `docs/data_status.md`: 확보 자료와 작업 상태.
+- `docs/sources.md`: 출처와 공개 범위.
+
+반어, 복잡한 대명사, 붙여 쓴 긴 문장, 인용과 직접 평가가 섞인 절은 오판 또는 누락이 생길 수 있습니다. 현재는 형태소 분석기 없이 어간 정규식과 가까운 대상 단서를 사용합니다. 판정률은 정확도가 아니며, 카페 사이의 단순 순위 산정에 사용하기 전에 출처·기간·표본 차이를 확인해야 합니다.
+
+## 공개와 기여
+
+코드와 자체 작성 사전·예제는 MIT 라이선스로 제공합니다. 외부 원문 리뷰는 이 라이선스에 포함하지 않습니다. KNU 사전 데이터는 복제하지 않았습니다. 신규 표현을 제안할 때는 카테고리, 감성 강도, 판단 이유, 자체 작성 예문을 함께 제출해주세요.
+
+GitHub 공개용 묶음은 `python tools/package_public.py`로 생성합니다. 공개 묶음에는 허용된 코드·문서·사전·생성 예제만 포함합니다. 버전 0.1.0은 초기 후보 사전이며, 기능 검증 결과와 실제 정확도 평가의 한계를 함께 공개합니다.

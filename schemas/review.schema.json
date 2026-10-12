@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cafe review row (CSV values are strings)",
+  "type": "object",
+  "required": ["review_id", "cafe_id", "text", "source"],
+  "properties": {
+    "review_id": {"type": "string", "minLength": 1},
+    "cafe_id": {"type": "string", "minLength": 1},
+    "cafe_name": {"type": "string"},
+    "review_date": {"type": "string", "pattern": "^(|[0-9]{4}-[0-9]{2}-[0-9]{2})$", "description": "Optional; calendar validity checked by CLI"},
+    "text": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "rating": {"type": ["string", "number", "null"]},
+    "collected_at": {"type": "string"}
+  },
+  "additionalProperties": true
+}
