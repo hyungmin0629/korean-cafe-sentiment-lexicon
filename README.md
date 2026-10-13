@@ -59,6 +59,8 @@ cafe-sentiment --input examples/reviews.synthetic.csv --output outputs_private/i
 
 ## 리뷰 준비
 
+네이버 플레이스 리뷰를 직접 준비할 때는 [리뷰 준비 안내](docs/review_preparation.md)와 [본문·작성일 두 칸짜리 Excel 양식](examples/review_input/리뷰입력_빈양식.xlsx)을 사용합니다. CSV로 저장한 뒤 `tools/prepare_review_csv.py`에서 카페 이름을 한 번 입력하면 리뷰 ID와 출처를 채운 분석용 CSV가 생성됩니다. 현재는 명령으로 변환·분석하며 CSV 업로드 화면은 후속 작업입니다.
+
 UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/reviews.template.csv`에 있습니다.
 
 | 필드 | 내용 |
