@@ -1,10 +1,10 @@
 {
-  "description": "Initial selectors; live Naver DOM has not been verified. Override when the page layout changes.",
-  "card": "li:has([data-pui-click-code='reviewtext']), li.pui__X35jYm",
+  "description": "Desktop visible DOM checked 2026-10-13 on place 1649277590. Mobile collection and live pagination remain unverified.",
+  "card": "#_review_list > li:has(.pui__vn15t2), li:has([data-pui-click-code='reviewtext']), li.pui__X35jYm",
   "body": "[data-pui-click-code='reviewtext'], .pui__vn15t2",
   "written_date": "[data-review-written-date]",
   "visit_date": "[data-review-visit-date]",
   "generic_date": "[data-pui-click-code='reviewdate'], .pui__gfuUIT, time",
   "load_more": "[data-pui-click-code='reviewlistmore']",
-  "expand_body": "[data-pui-click-code='reviewtext'], .pui__vn15t2"
+  "expand_body": "[data-pui-click-code='rvshowmore'], [data-pui-click-code='reviewtext']"
 }

@@ -2,7 +2,7 @@
 
 `tools/crawl_naver_place.py`는 사용자가 자기 컴퓨터에서 실행하는 Python 코드입니다. **매장 URL → 방문자 리뷰 CSV → 감성분석 보고서**로 연결합니다. 카페 이름은 결과 표시용이며, 대상 지점은 URL의 플레이스 ID로 정합니다. 공개 고객 본문을 대상으로 하며 작성자·프로필·사진·매장 답글·선택 키워드를 수집 필드에 넣지 않습니다.
 
-**현재 검증 상태 (2026-10-13):** 이 개발 환경의 네이버 `robots.txt` 요청이 429를 반환해 추가 네이버 접속을 중단했습니다. 사용자가 제공한 ID `1649277590`의 지도 URL 변환은 시험했지만, 해당 지점에서 실제 리뷰가 추출되는지는 확인하지 못했습니다. 기본 CSS 선택자는 초기 구현값이며 실제 화면과 다르면 수정이 필요합니다. Python 검사 56개, 자체 작성 HTML 추출, 모의 브라우저의 더보기·중복·제한 중단, CSV와 보고서 연결을 검사했습니다. 실제 Chrome에서도 모든 외부 요청을 자체 작성 HTML 응답으로 대체해 더보기로 2→5건 확보와 403/429 중단·브라우저 닫기를 확인했습니다. 이 시험은 실제 네이버 접속·화면 검증을 대신하지 않습니다.
+**현재 검증 상태 (2026-10-13):** 사용자 링크는 스타벅스 타임스퀘어R점이며, 네이버 지도와 데스크톱 방문자 리뷰 탭은 정상적으로 열렸습니다. 이미 열린 화면에서 카드 10개·본문 10개의 구조를 확인해 선택자와 본문 더보기 처리를 수정했습니다. 크롤러의 실제 실행은 `robots.txt`의 429 응답으로 **0건에서 중단**됐습니다. 기본 대상인 모바일 화면과 실제 수집·목록 추가 로딩은 아직 미확인입니다. Python 검사 59개와 외부 요청을 자체 작성 HTML로 대체한 Chrome 시험은 통과했습니다. 상세한 확인 범위와 미지원 동작은 [실수집 검증 기록](naver_live_validation.md)에 있습니다.
 
 ## 설치
 
@@ -17,10 +17,10 @@ python -m playwright install chromium
 
 ## URL을 넣어 수집과 보고서 생성
 
-사용자가 제공한 지도 URL의 매장 ID를 사용한 예제입니다. `--cafe-name`에는 실행 전에 플레이스에 보이는 정확한 지점명을 넣으세요. 여기의 이름은 지점 확인 전 표시명입니다.
+사용자가 제공한 지도 URL의 매장 ID와 화면에서 확인한 지점명을 사용한 예제입니다. 다른 카페에서는 `--cafe-name`을 해당 지점명으로 바꾸세요.
 
 ```powershell
-python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 리저브" --max-reviews 200 --max-pages 20 --delay 2 --output data_private/naver_starbucks_01 --report-output outputs_private/naver_starbucks_01
+python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 타임스퀘어R점" --max-reviews 200 --max-pages 20 --delay 2 --output data_private/naver_starbucks_01 --report-output outputs_private/naver_starbucks_01
 ```
 
 카페를 바꿀 때는 URL·표시명·출력 폴더를 바꿉니다. 지도 검색 결과의 `/place/숫자ID` URL과 모바일 플레이스의 `/restaurant/숫자ID` URL도 받습니다. 검색 문구·추적 쿼리는 제거하고 같은 ID의 방문자 리뷰 페이지를 엽니다. `naver.me` 공유 단축 주소는 브라우저에서 매장 페이지로 연 뒤 전체 URL을 복사합니다. 카페 이름만으로 지점을 자동 선택하지 않습니다.
@@ -37,7 +37,7 @@ python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/164
 | `collection_manifest.json` | 매장 ID, 수집 시각(UTC), 시도한 화면 수, 상한, 종료 이유, 확보 건수, 작성일 확인 건수, 선택자 해시 |
 | 보고서 출력 폴더 | `report.html`, `summary.csv`, `reviews.jsonl`, `input_issues.csv`, `run_metadata.json` |
 
-화면 기본 정렬을 사용하고 더보기를 누르며 수집합니다. `--max-pages`는 웹 주소의 페이지 번호가 아니라 읽은 화면 스냅샷 수의 상한입니다. 최대 리뷰 수·화면 수에 도달하거나 더보기 버튼이 없거나 새 카드가 늘지 않으면 종료합니다. **전체 리뷰의 완전 수집과 최신순·무작위 표본을 보장하지 않습니다.** 종료 이유를 확인하고 같은 표본 범위로 비교하세요. 가상 스크롤로 기존 카드를 교체하는 화면은 현재 지원하지 않습니다.
+화면 기본 정렬을 사용하고 설정한 목록 더보기가 있을 때 누르며 수집합니다. 사진·차트·본문의 일반 더보기는 목록 더보기로 사용하지 않습니다. `--max-pages`는 웹 주소의 페이지 번호가 아니라 읽은 화면 스냅샷 수의 상한입니다. 최대 리뷰 수·화면 수에 도달하거나 목록 더보기 버튼이 없거나 새 카드가 늘지 않으면 종료합니다. **전체 리뷰의 완전 수집과 최신순·무작위 표본을 보장하지 않습니다.** 자동 스크롤 로딩·기존 카드 교체 방식은 현재 지원하지 않아 해당 화면에서는 이미 로드된 표본만 저장합니다. 종료 이유를 확인하고 같은 표본 범위로 비교하세요.
 
 가능하면 출처의 리뷰 ID를 사용합니다. ID가 보이지 않으면 본문·원본 날짜·같은 화면 내 발생 순서로 임시 ID를 만듭니다. 같은 문장의 독립 리뷰는 유지하고 반복 스냅샷은 중복 제거합니다. 임시 ID는 화면 순서나 본문 수정 시 변할 수 있어 다른 실행의 자료를 합칠 때 별도 확인해야 합니다. `fallback_id_count`로 사용 건수를 확인할 수 있습니다.
 
@@ -51,10 +51,10 @@ python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/164
 
 중단 시 종료 코드 `1`과 `status: stopped`를 기록하고 이미 확보한 행은 CSV로 보존합니다. 자동 보고서 생성은 생략합니다. 0행 CSV는 성공 결과가 아닙니다. 입력 오류는 종료 코드 `2`이며, 정상적으로 제한 범위의 표본을 저장한 경우 `0`입니다. 정상 코드도 전체 수집 완료를 뜻하지 않습니다.
 
-페이지를 열었는데 `review_layout_unrecognized_or_unavailable` 또는 `no_nonempty_review_bodies`가 나오면 [선택자 설정](../configs/naver_place_selectors.json)을 확인합니다. `card`는 리뷰 한 장, `body`는 고객 본문, `written_date`는 명시된 작성일, `visit_date`는 명시된 방문일, `generic_date`는 기타 날짜 표시, `load_more`는 목록 더보기, `expand_body`는 접힌 본문입니다. 날짜와 본문 선택자는 카드 안에서 조회합니다. 클래스가 바뀔 수 있으며 선택자를 아무 텍스트 전체로 넓히면 닉네임·답글·메뉴 안내가 섞입니다. 기본 날짜 속성은 실제 화면에 있다고 검증된 속성이 아닙니다.
+페이지를 열었는데 `review_layout_unrecognized_or_unavailable` 또는 `no_nonempty_review_bodies`가 나오면 [선택자 설정](../configs/naver_place_selectors.json)을 확인합니다. `card`는 리뷰 한 장, `body`는 고객 본문, `written_date`는 명시된 작성일, `visit_date`는 명시된 방문일, `generic_date`는 기타 날짜 표시, `load_more`는 목록 더보기, `expand_body`는 본문 펼치기 버튼입니다. 날짜와 본문 선택자는 카드 안에서 조회합니다. 클래스가 바뀔 수 있으며 선택자를 아무 텍스트 전체로 넓히면 닉네임·답글·메뉴 안내가 섞입니다. 기본의 명시 작성일/방문일 속성은 실제 화면에서 확인되지 않은 확장용 선택자입니다. 확인한 화면의 방문일은 `.pui__gfuUIT`에서 읽습니다.
 
 ```powershell
-python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 리저브" --selectors configs/naver_place_selectors.json --output data_private/naver_starbucks_02
+python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 타임스퀘어R점" --selectors configs/naver_place_selectors.json --output data_private/naver_starbucks_02
 ```
 
 접근이 허용된 화면의 렌더링된 HTML을 이미 가지고 있다면 `--html 파일.html`로 네트워크 요청 없이 추출을 점검할 수 있습니다. 웹페이지 저장 파일은 JavaScript로 생성된 리뷰 DOM을 포함하지 않을 수도 있습니다. 실제 저장 화면은 개인정보가 있을 수 있으므로 비공개 경로에 두세요.

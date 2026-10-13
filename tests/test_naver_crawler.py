@@ -44,6 +44,7 @@ class FakeLocator:
     def evaluate(self, *args): return True
     def scroll_into_view_if_needed(self): pass
     def click(self): pass
+    def get_attribute(self, name): return None
 
 
 class FakePage:
@@ -222,6 +223,34 @@ class NaverCrawlerTests(unittest.TestCase):
             manifest = json.loads((folder / "output/collection_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["review_count"], 0)
             self.assertEqual(manifest["status"], "stopped")
+
+    def test_current_dom_structure_and_korean_visit_date(self):
+        rows = self.parse((ROOT / "tests/fixtures/naver_reviews.dom20261013.synthetic.html").read_text(encoding="utf-8"))
+        self.assertEqual(len(rows), 3)
+        self.assertEqual(rows[0]["text"], "커피가 맛있어요.\n공간이 넓어요.")
+        self.assertEqual(rows[0]["visit_date"], "2026-08-22")
+        self.assertEqual(rows[1]["visit_date"], "2026-09-02")
+        self.assertEqual(rows[2]["visit_date"], "")
+        self.assertTrue(all(row["review_date"] == "" for row in rows))
+        self.assertNotIn("영수증", rows[0]["source_date_text"])
+        self.assertNotIn("1번째", rows[0]["source_date_text"])
+        self.assertEqual(crawler.full_date("2026년 2월 29일"), "")
+
+    def test_generic_photo_and_chart_more_are_not_candidates(self):
+        page = FakePage([FIXTURE.read_text(encoding="utf-8")])
+        with patch.object(page, "get_by_role", side_effect=AssertionError("Generic more must not be used")):
+            self.assertIsNone(crawler.more_button(page, SELECTORS))
+        for attributes in ({"href": "/restaurant/1649277590/photo"}, {"data-nlog-area": "plc_rrv.chartmore"}):
+            button = FakeLocator(1)
+            button.get_attribute = lambda name: attributes.get(name)
+            with patch.object(page, "locator", return_value=button):
+                self.assertIsNone(crawler.more_button(page, SELECTORS))
+
+    def test_same_host_photo_redirect_is_stopped(self):
+        page = FakePage([FIXTURE.read_text(encoding="utf-8")])
+        page.url = "https://m.place.naver.com/restaurant/1649277590/photo"
+        with self.assertRaisesRegex(crawler.CollectionStopped, "unexpected_non_review_page"):
+            crawler.restriction(page, [])
 
 
 if __name__ == "__main__":

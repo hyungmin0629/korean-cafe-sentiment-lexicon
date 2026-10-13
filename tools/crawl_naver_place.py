@@ -92,6 +92,8 @@ def check_robots(url, opener=urlopen):
 def full_date(value):
     match = re.search(r"(?<!\d)(\d{4})\s*[./-]\s*(\d{1,2})\s*[./-]\s*(\d{1,2})(?!\d)", value)
     if not match:
+        match = re.search(r"(?<!\d)(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일", value)
+    if not match:
         return ""
     try:
         return date(*map(int, match.groups())).isoformat()
@@ -111,7 +113,7 @@ def extract_reviews(html, selectors, url, cafe_name, collected_at, source="naver
         body = card.select_one(selectors["body"])
         if not body:
             continue
-        for control in body.select("button, [data-pui-click-code='reviewmore']"):
+        for control in body.select("button, [data-pui-click-code='reviewmore'], [data-pui-click-code='rvshowmore']"):
             control.decompose()
         text = body.get_text("\n", strip=True).strip()
         if not text:
@@ -119,6 +121,8 @@ def extract_reviews(html, selectors, url, cafe_name, collected_at, source="naver
         written = date_text(card.select_one(selectors["written_date"]), "data-review-written-date")
         visited = date_text(card.select_one(selectors["visit_date"]), "data-review-visit-date")
         generic = [date_text(node, "datetime") for node in card.select(selectors["generic_date"])]
+        generic = [value for value in generic if full_date(value) or re.search(
+            r"\d{1,2}\s*[./-]\s*\d{1,2}|어제|오늘|그제|\d+\s*일\s*전", value)]
         for value in generic:
             if "작성" in value and not written:
                 written = value
@@ -157,21 +161,26 @@ def restriction(page, blocked):
     host = urlparse(page.url).hostname or ""
     if host not in {"m.place.naver.com", "pcmap.place.naver.com"}:
         raise CollectionStopped("redirected_outside_place_or_login_required")
+    if not re.match(r"/(?:restaurant|place)/\d+/review(?:/|$)", urlparse(page.url).path):
+        raise CollectionStopped("unexpected_non_review_page")
     # Inspect access-control elements, not arbitrary review text mentioning login.
     if page.locator("input[name='captcha'], #captcha, iframe[src*='captcha']").count():
         raise CollectionStopped("captcha_required")
 
 
 def more_button(page, selectors):
-    candidates = [page.locator(selectors["load_more"]),
-                  page.get_by_role("button", name="더보기", exact=True),
-                  page.get_by_role("link", name="더보기", exact=True)]
-    for group in candidates:
-        for index in range(group.count()):
-            button = group.nth(index)
-            if (button.is_visible() and button.is_enabled()
-                    and button.evaluate("(el, card) => !el.closest(card)", selectors["card"])):
-                return button
+    # Generic '더보기' also names photo, keyword-chart, and body controls.
+    # Use only the explicitly configured review-list control.
+    group = page.locator(selectors["load_more"])
+    for index in range(group.count()):
+        button = group.nth(index)
+        href = button.get_attribute("href") or ""
+        area = button.get_attribute("data-nlog-area") or ""
+        if (href and not href.startswith(("javascript:", "#"))) or re.search(r"imgmore|chartmore|photomore", area):
+            continue
+        if (button.is_visible() and button.is_enabled()
+                and button.evaluate("(el, card) => !el.closest(card)", selectors["card"])):
+            return button
     return None
 
 

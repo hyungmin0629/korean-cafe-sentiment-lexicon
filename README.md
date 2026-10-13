@@ -64,10 +64,10 @@ cafe-sentiment --input examples/reviews.synthetic.csv --output outputs_private/i
 ```powershell
 python -m pip install -r requirements-naver.txt
 python -m playwright install chromium
-python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 리저브" --output data_private/naver_01 --report-output outputs_private/naver_01
+python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 타임스퀘어R점" --output data_private/naver_01 --report-output outputs_private/naver_01
 ```
 
-**네이버 실수집은 아직 확인하지 못했습니다.** 개발 환경의 robots 요청이 429라 접속을 중단했으며 기본 선택자는 실제 화면에 맞는지 추가 확인이 필요합니다. 자체 작성 HTML 추출·모의 더보기·중복 제거·제한 시 중단·보고서 연결을 검사했습니다. 전체 리뷰 수집을 보장하지 않으며 작성일을 확인할 수 없는 리뷰는 월별 집계에서 제외합니다. 위 매장 ID는 사용자가 제공한 링크의 ID이고 표시명은 정확한 지점명으로 바꾸세요.
+**네이버 실수집은 429 응답으로 0건에서 중단됐습니다.** 일반 브라우저에서는 매장·방문자 리뷰 탭이 열렸고, 데스크톱 화면의 카드 10개 구조를 확인해 선택자를 수정했습니다. 모바일 화면의 실제 수집·목록 추가 로딩은 미확인입니다. 자동 스크롤 로딩은 현재 미지원이며 전체 리뷰 수집을 보장하지 않습니다. 작성일을 확인할 수 없는 리뷰는 월별 집계에서 제외하고 방문일은 별도로 보존합니다. [사이트 접속·실수집 검증 기록](docs/naver_live_validation.md)에서 확인 범위를 보세요.
 
 CSV를 이미 가지고 있거나 수동 준비하는 경우 [리뷰 준비·변환 안내](docs/review_preparation.md)를 사용합니다. CSV 업로드 화면은 아직 구현하지 않았습니다.
 
