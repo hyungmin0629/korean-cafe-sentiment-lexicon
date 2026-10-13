@@ -29,6 +29,8 @@ python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/164
 
 정상적으로 본문이 확보되면 `outputs_private/naver_starbucks_01/report.html`을 브라우저로 엽니다. 메뉴·친절·공간·입지 등 8항목 점수와 근거가 나오며, 확인된 작성일이 있어야 월별 추세에 포함됩니다. 보고서의 점수는 후보 사전의 분석 결과이고 사람 정확도는 아직 미측정입니다.
 
+CSV만 수집한 경우 [CSV 분석 화면](upload_app.md)에 `reviews.csv`를 올려 입력을 확인하고 기간을 선택할 수 있습니다. 화면 자체에서 네이버를 수집하지는 않습니다.
+
 ## 수집 결과와 범위
 
 | 파일 | 내용 |

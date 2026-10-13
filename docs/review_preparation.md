@@ -2,6 +2,8 @@
 
 네이버 플레이스를 각자 수집하는 코드가 필요한 경우 [네이버 크롤러 안내](naver_crawling.md)를 먼저 보세요. 이 문서는 이미 확보한 자료를 정리하거나 수동으로 입력할 때의 대안입니다.
 
+준비한 CSV는 [CSV 분석 화면](upload_app.md)에 올릴 수 있습니다. 본문·작성일 두 열을 올리고 카페 정보를 입력하면 별도 변환 명령 없이 분석용 CSV와 보고서를 만듭니다.
+
 한 카페·한 지점의 리뷰를 파일 하나로 준비합니다. [빈 Excel 양식](../examples/review_input/리뷰입력_빈양식.xlsx) 또는 [빈 CSV 양식](../examples/review_input/리뷰입력_빈양식.csv)을 사용하세요. 입력할 것은 **리뷰본문**과 **리뷰작성일**입니다. 카페 이름과 지점은 변환할 때 한 번 입력합니다.
 
 ## 1. 매장과 리뷰 범위 확인
@@ -33,7 +35,7 @@ Excel 양식을 사용한 경우 입력한 시트를 **CSV UTF-8(쉼표로 분�
 
 ## 4. 분석용 CSV로 변환
 
-현재는 저장소 폴더에서 다음 명령으로 변환합니다. 업로드 화면은 후속 개발입니다.
+명령으로 변환하는 경우 저장소 폴더에서 아래를 실행합니다. 화면에서 처리하려면 [CSV 분석 화면](upload_app.md)을 사용합니다.
 
 ```powershell
 python tools/prepare_review_csv.py --input data_private/나리나무_리뷰입력.csv --cafe-name "카페나리나무 서울용산" --cafe-id narinamu --output outputs_private/narinamu_prepared

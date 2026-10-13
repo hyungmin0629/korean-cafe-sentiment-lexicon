@@ -30,3 +30,5 @@
 새 카페 수집 기록은 `data_private/reviews.holdout_v03.manifest.json`에 있습니다. 실제 보고서의 발췌는 외부 원문이므로 공개 대상에 포함하지 않습니다.
 
 2026-10-13에는 각자 실행하는 네이버 수집 코드를 추가했습니다. 사용자 지도 링크의 플레이스 ID는 `1649277590`이며 일반 브라우저에서 확인한 지점은 스타벅스 타임스퀘어R점입니다. 지도·데스크톱 리뷰 탭이 열려 카드 10개의 DOM 구조를 확인하고 선택자를 보완했습니다. 크롤러의 `https://m.place.naver.com/robots.txt` 요청은 429를 반환해 본문 0건에서 중단했습니다. 이 지점의 실제 리뷰 원문은 저장하거나 공개하지 않았으며 모바일 실제 수집·추가 로딩은 미확인입니다. 공개 `tests/fixtures/naver_reviews.synthetic.html`(5건)과 `naver_reviews.dom20261013.synthetic.html`(3건)은 Codex가 직접 작성한 테스트 문장입니다. 후자는 확인한 태그 구조를 재현하지만 실제 리뷰·작성자·HTML 전체를 복제하지 않았습니다. 설치·브라우저 API는 [Playwright 공식 문서](https://playwright.dev/python/docs/library)를 참고했습니다. [검증 기록](naver_live_validation.md)과 [실행 안내](naver_crawling.md)에 확인 범위를 기록했습니다.
+
+CSV 업로드 화면의 내장 예제 `src/cafe_sentiment/resources/upload_sample.csv`는 기존 자체 작성 `examples/reviews.report.synthetic.csv` 250건의 복사본입니다. UI 기능 시험의 중복·잘못된 날짜·HTML 모양 문자열·추가 열 사례도 자체 작성했습니다. 실제 리뷰·닉네임·인증 정보를 기능 시험이나 공개 예제에 추가하지 않았습니다.

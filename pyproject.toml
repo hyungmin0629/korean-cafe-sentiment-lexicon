@@ -14,9 +14,10 @@ Repository = "https://github.com/hyungmin0629/korean-cafe-sentiment-lexicon"
 
 [project.scripts]
 cafe-sentiment = "cafe_sentiment.cli:main"
+cafe-review-app = "cafe_sentiment.web:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-cafe_sentiment = ["resources/*.json", "resources/*.html", "resources/*.css", "resources/*.js"]
+cafe_sentiment = ["resources/*.json", "resources/*.html", "resources/*.css", "resources/*.js", "resources/*.csv"]

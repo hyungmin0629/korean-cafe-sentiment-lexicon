@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카페 리뷰 분석 · CSV로 보고서 만들기</title>
+<link rel="stylesheet" href="/assets/upload.css"><script src="/assets/upload.js" defer></script></head>
+<body>
+<header class="masthead"><a class="brand" href="/"><span class="brand-mark">리뷰</span>카페 리뷰 분석</a><span class="local-tag">이 PC에서 분석 · 외부 전송 없음</span></header>
+<main>
+  <section class="hero"><div><p class="eyebrow">우리 카페를 이해하는 첫걸음</p><h1>리뷰 CSV로 만드는<br>우리 카페 진단 보고서</h1><p class="hero-caption">메뉴·친절·공간·입지 등 8개 항목의 점수와<br class="mobile-break">월별 변화, 판단 근거를 함께 살펴보세요.</p></div><div class="hero-side"><span class="hero-number">8</span><p>카테고리 분석<br>월별 추세 · 리뷰 근거</p></div></section>
+  <ol class="steps" aria-label="분석 순서"><li id="step-file" class="current"><span>01</span> CSV 선택</li><li id="step-check"><span>02</span> 입력 확인</li><li id="step-report"><span>03</span> 보고서 생성</li></ol>
+  <div class="workspace">
+    <section class="panel input-panel" aria-labelledby="input-heading"><p class="eyebrow">STEP 01</p><h2 id="input-heading">분석할 리뷰를 준비해주세요</h2>
+      <div id="drop-zone" class="drop-zone"><span class="file-icon" aria-hidden="true">CSV</span><strong id="file-label">리뷰 CSV를 여기에 놓으세요</strong><p>또는 아래에서 파일을 선택하세요</p><input id="csv-file" type="file" accept=".csv,text/csv" aria-label="리뷰 CSV 선택"><small>UTF-8 CSV · 최대 10MB / 20,000개 기록</small></div>
+      <div class="sample-row"><span>파일 없이 먼저 살펴보기</span><button id="sample-load" class="text-button" type="button">예제 CSV로 사용해 보기 →</button></div>
+      <label for="cafe-name">카페 이름과 지점 <span class="optional">CSV에 있으면 생략 가능</span></label><input id="cafe-name" type="text" maxlength="150" placeholder="예: 스타벅스 타임스퀘어R점" autocomplete="off"><p class="field-help">본문·작성일 두 열만 있는 파일은 카페 이름이 필요합니다. 여러 카페가 있는 파일은 비워두세요.</p>
+      <label for="source">두 열짜리 CSV의 리뷰 출처</label><select id="source"><option value="naver_place">네이버 플레이스</option><option value="diningcode">다이닝코드</option><option value="manual">그 밖의 직접 준비 자료</option><option value="synthetic">자체 작성한 기능 예제</option></select><p class="field-help">크롤러 CSV는 파일에 기록된 출처와 리뷰 ID를 그대로 사용합니다.</p>
+      <button id="preview-btn" class="primary" disabled type="button">입력 확인하기</button>
+      <details class="format-guide"><summary>사용할 수 있는 CSV 형식</summary><p>크롤러 CSV에는 <code>review_id, cafe_id, source, text</code>가 필요합니다. 작성일은 <code>review_date</code>, 방문일은 <code>visit_date</code>입니다.</p><p>두 열짜리 CSV는 <code>리뷰본문, 리뷰작성일</code> 또는 <code>text, review_date</code>를 사용하세요. 쉼표·줄바꿈을 CSV 규칙에 맞게 저장합니다.</p><p>완전한 연월일이 없으면 날짜를 추측하지 않습니다. 방문일은 작성일로 바꾸지 않습니다.</p></details>
+    </section>
+    <div class="right-column">
+      <section id="welcome-panel" class="panel welcome-panel"><p class="eyebrow">어떤 결과가 나오나요?</p><h2>점수만으로 끝내지 않습니다</h2><ul class="benefits"><li><span>01</span><div><strong>항목별 감성 점수</strong><p>메뉴·친절·공간·입지·가격·청결·운영·전반 만족</p></div></li><li><span>02</span><div><strong>월별 흐름과 표본 수</strong><p>작성일이 확인된 리뷰로 변화와 리뷰 수를 비교합니다.</p></div></li><li><span>03</span><div><strong>다음에 살펴볼 근거</strong><p>긍정·부정 표현과 관련 리뷰 발췌를 함께 확인합니다.</p></div></li></ul><div class="callout">첫 실행은 자체 작성 예제로 시험해보세요.<br>실제 고객 리뷰와 섞이지 않도록 출처가 표시됩니다.</div><a id="demo-link" href="/demo.html" hidden>완성된 보고서 예제 보기 →</a></section>
+      <section id="preview-panel" class="panel" hidden><p class="eyebrow">STEP 02</p><h2>입력 확인 결과</h2><p id="file-summary" class="muted"></p><div id="stats" class="stats"></div><p id="date-range" class="field-help"></p><div id="warnings" class="callout" hidden></div><p id="visit-note" class="callout" hidden></p><div class="table-scroll"><table><caption>사용 가능한 리뷰 중 처음 5개</caption><thead><tr><th>카페</th><th>작성일</th><th>리뷰 본문</th></tr></thead><tbody id="preview-body"></tbody></table></div><details id="issue-details" hidden><summary>입력 확인 내역 보기</summary><ul id="issue-list"></ul></details>
+        <div class="analysis-settings"><label for="period">집계 단위</label><select id="period"><option value="month">월별</option><option value="quarter">분기별</option><option value="all">전체 기간</option></select><div class="date-inputs"><div><label for="start-date">시작일 <span class="optional">선택</span></label><input id="start-date" type="date"></div><div><label for="end-date">종료일 <span class="optional">선택</span></label><input id="end-date" type="date"></div></div><p class="field-help">기간을 비우면 전체 자료를 사용합니다. 날짜를 지정하면 작성일 미상 리뷰는 집계에서 제외합니다. 보고서에는 월별 변화와 기간 합산을 함께 표시합니다.</p><button id="analyze-btn" class="primary" type="button">감성분석하고 보고서 만들기</button></div>
+      </section>
+      <section id="result-panel" class="panel result-panel" hidden><p class="eyebrow">STEP 03 · 분석 완료</p><h2>우리 카페 보고서가 준비됐습니다</h2><p id="result-summary"></p><a id="open-report" class="primary link-button" target="_blank" rel="noopener">보고서 열기 ↗</a><div class="download-links"><a id="download-report" download>보고서 HTML 저장</a><a id="download-summary" download>항목별 점수 CSV</a><a id="download-input" download>분석용 리뷰 CSV</a><a id="download-issues" download>입력 확인 내역 CSV</a></div><details><summary>상세 분석 파일</summary><div class="download-links"><a id="download-detail" download>리뷰별 분석 JSONL</a><a id="download-metadata" download>실행 기록 JSON</a><a id="download-analysis-issues" download>분석 입력 검사 CSV</a></div></details><p class="field-help">결과는 이 PC의 <code>outputs_private/web_runs</code>에 저장됩니다. 보고서와 상세 파일에는 원문 발췌가 포함될 수 있습니다.</p><button id="reset-btn" class="secondary" type="button">다른 CSV 분석하기</button></section>
+      <p id="status" role="status" aria-live="polite"></p><p id="error" class="error" role="alert" hidden></p>
+    </div>
+  </div>
+  <footer><strong>보고서 해석에 앞서</strong><p>감성사전은 현재 사람 검증 전 후보입니다. 점수는 만족 고객의 비율이 아니며, 평가 근거가 10건 미만인 항목에는 ‘표본 부족’을 표시합니다. 작성일이 없는 리뷰는 월별 변화에서 제외합니다.</p><p>이 화면은 CSV를 분석하는 도구입니다. 네이버 리뷰 수집은 별도의 크롤러로 실행합니다.</p></footer>
+</main></body></html>

@@ -20,12 +20,24 @@ python tools/build_annotation_ui.py --input examples/annotations.synthetic.blank
 
 ## 바로 실행
 
-Python 3.10 이상에서 이 폴더를 작업 위치로 사용합니다.
+Python 3.10 이상에서 내려받은 저장소 폴더를 작업 위치로 사용합니다.
 
 ```powershell
 git clone https://github.com/hyungmin0629/korean-cafe-sentiment-lexicon.git
 cd korean-cafe-sentiment-lexicon
 ```
+
+### CSV를 올리는 분석 화면
+
+```powershell
+python tools/serve_app.py
+```
+
+[http://127.0.0.1:8766/](http://127.0.0.1:8766/)에서 **CSV 선택 → 입력 확인 → 보고서 생성**을 실행합니다. 크롤러 CSV와 본문·작성일 두 열 CSV를 받고, 중복·날짜 미상·방문일만 있는 자료를 안내합니다. 파일이 없으면 자체 작성 예제 250건을 선택해 볼 수 있습니다. 결과는 이 PC의 비공개 실행 폴더에 저장합니다. 서버가 실행 중이어야 새로 접속하거나 분석할 수 있습니다. [설치·입력·산출물 안내](docs/upload_app.md)를 참고하세요.
+
+이 화면은 사람 정답을 입력하는 `review.html`과 별도이며 네이버 자동 수집은 별도 코드로 실행합니다.
+
+### 명령으로 실행
 
 ```powershell
 python run.py --input examples/reviews.synthetic.csv --output outputs_private/demo --period month --start 2026-01-01 --end 2026-03-31
@@ -69,7 +81,7 @@ python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/164
 
 **네이버 실수집은 429 응답으로 0건에서 중단됐습니다.** 일반 브라우저에서는 매장·방문자 리뷰 탭이 열렸고, 데스크톱 화면의 카드 10개 구조를 확인해 선택자를 수정했습니다. 모바일 화면의 실제 수집·목록 추가 로딩은 미확인입니다. 자동 스크롤 로딩은 현재 미지원이며 전체 리뷰 수집을 보장하지 않습니다. 작성일을 확인할 수 없는 리뷰는 월별 집계에서 제외하고 방문일은 별도로 보존합니다. [사이트 접속·실수집 검증 기록](docs/naver_live_validation.md)에서 확인 범위를 보세요.
 
-CSV를 이미 가지고 있거나 수동 준비하는 경우 [리뷰 준비·변환 안내](docs/review_preparation.md)를 사용합니다. CSV 업로드 화면은 아직 구현하지 않았습니다.
+CSV를 이미 가지고 있거나 두 열로 준비한 경우 [CSV 분석 화면](docs/upload_app.md)을 사용합니다. 명령으로 변환하려면 [수동 리뷰 준비·변환 안내](docs/review_preparation.md)를 참고하세요.
 
 UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/reviews.template.csv`에 있습니다.
 

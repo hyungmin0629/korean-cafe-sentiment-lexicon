@@ -1,0 +1,251 @@
+﻿review_id,cafe_id,cafe_name,source,review_date,text
+report_1_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-01,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_1_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-02,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_1_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-03,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_1_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-04,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_1_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-05,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_1_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-06,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_1_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-07,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_1_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-08,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_1_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-09,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_1_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-10,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_1_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-11,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_1_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-12,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_1_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-13,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_1_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-14,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_1_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-15,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_1_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-16,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_1_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-17,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_1_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-18,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_1_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-19,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_1_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-20,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_1_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-21,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_1_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-22,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_1_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-23,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_1_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-24,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_1_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-25,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_1_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-26,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_1_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-27,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_1_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-28,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_1_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-01,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_1_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-02,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_1_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-03,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_1_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-01-04,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_2_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-01,커피는 맛있어요. 직원은 불친절해요. 주차가 어려워요.
+report_2_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-02,빵은 맛없어요. 분위기는 좋아요. 가격은 비싸요.
+report_2_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-03,커피는 맛있어요. 주문하는데 오래 걸려요. 의자가 불편해요.
+report_2_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-04,스콘은 맛없어요. 직원 설명이 부족해요. 화장실은 깨끗해요.
+report_2_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-05,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_2_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-06,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_2_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-07,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_2_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-08,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_2_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-09,커피는 맛있어요. 직원은 불친절해요. 주차가 어려워요.
+report_2_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-10,빵은 맛없어요. 분위기는 좋아요. 가격은 비싸요.
+report_2_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-11,커피는 맛있어요. 주문하는데 오래 걸려요. 의자가 불편해요.
+report_2_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-12,스콘은 맛없어요. 직원 설명이 부족해요. 화장실은 깨끗해요.
+report_2_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-13,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_2_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-14,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_2_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-15,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_2_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-16,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_2_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-17,커피는 맛있어요. 직원은 불친절해요. 주차가 어려워요.
+report_2_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-18,빵은 맛없어요. 분위기는 좋아요. 가격은 비싸요.
+report_2_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-19,커피는 맛있어요. 주문하는데 오래 걸려요. 의자가 불편해요.
+report_2_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-20,스콘은 맛없어요. 직원 설명이 부족해요. 화장실은 깨끗해요.
+report_2_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-21,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_2_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-22,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_2_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-23,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_2_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-24,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_2_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-25,커피는 맛있어요. 직원은 불친절해요. 주차가 어려워요.
+report_2_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-26,빵은 맛없어요. 분위기는 좋아요. 가격은 비싸요.
+report_2_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-27,커피는 맛있어요. 주문하는데 오래 걸려요. 의자가 불편해요.
+report_2_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-28,스콘은 맛없어요. 직원 설명이 부족해요. 화장실은 깨끗해요.
+report_2_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-01,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_2_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-02,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_2_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-03,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_2_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-04,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_2_32,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-05,커피는 맛있어요. 직원은 불친절해요. 주차가 어려워요.
+report_2_33,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-06,빵은 맛없어요. 분위기는 좋아요. 가격은 비싸요.
+report_2_34,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-07,커피는 맛있어요. 주문하는데 오래 걸려요. 의자가 불편해요.
+report_2_35,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-08,스콘은 맛없어요. 직원 설명이 부족해요. 화장실은 깨끗해요.
+report_2_36,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-09,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_2_37,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-10,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_2_38,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-11,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_2_39,report_demo_a,보고서 예제 카페 A,synthetic,2026-02-12,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_3_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-01,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-02,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-03,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-04,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-05,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-06,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-07,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-08,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-09,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-10,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-11,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-12,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-13,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-14,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-15,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-16,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-17,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-18,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-19,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-20,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-21,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-22,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-23,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-24,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-25,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-26,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-27,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-28,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-01,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-02,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-03,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-04,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_32,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-05,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_33,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-06,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_34,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-07,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_35,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-08,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_36,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-09,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_37,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-10,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_38,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-11,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_39,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-12,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_40,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-13,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_41,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-14,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_42,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-15,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_43,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-16,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_44,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-17,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_45,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-18,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_46,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-19,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_47,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-20,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_3_48,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-21,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_3_49,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-22,빵은 맛있어요. 분위기가 좋아요. 가격은 비싸요.
+report_3_50,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-23,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_3_51,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-24,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_3_52,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-25,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_3_53,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-26,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_3_54,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-27,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 있어요.
+report_3_55,report_demo_a,보고서 예제 카페 A,synthetic,2026-03-28,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_4_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-01,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-02,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-03,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-04,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-05,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-06,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-07,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-08,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_4_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-09,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-10,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-11,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-12,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-13,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-14,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-15,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-16,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_4_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-17,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-18,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-19,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-20,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-21,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-22,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-23,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-24,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_4_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-25,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-26,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-27,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-28,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-01,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-02,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-03,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-04,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_4_32,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-05,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_33,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-06,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_34,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-07,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_35,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-08,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_36,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-09,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_37,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-10,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_38,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-11,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_39,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-12,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_4_40,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-13,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_4_41,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-14,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_4_42,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-15,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_4_43,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-16,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_4_44,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-17,커피는 맛있어요. 공간은 넓어요. 웨이팅이 길어요.
+report_4_45,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-18,라떼는 맛없어요. 직원이 불친절해요. 와이파이가 안 돼요.
+report_4_46,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-19,케이크는 맛있어요. 가격은 비싸요. 재방문 의사 없어요.
+report_4_47,report_demo_a,보고서 예제 카페 A,synthetic,2026-04-20,커피는 맛없어요. 직원은 친절해요. 대기가 길어요.
+report_5_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-01,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_5_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-02,빵은 맛있어요. 분위기가 좋아요. 가격이 합리적이에요.
+report_5_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-03,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_5_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-04,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_5_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-05,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_5_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-06,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_5_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-07,케이크는 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_5_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-08,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_5_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-09,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_5_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-10,빵은 맛있어요. 분위기가 좋아요. 가격이 합리적이에요.
+report_5_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-11,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_5_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-12,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_5_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-13,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_5_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-14,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_5_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-15,케이크는 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_5_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-16,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_5_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-17,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_5_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-18,빵은 맛있어요. 분위기가 좋아요. 가격이 합리적이에요.
+report_5_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-19,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_5_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-20,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_5_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-21,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_5_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-22,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_5_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-23,케이크는 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_5_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-24,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_5_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-25,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_5_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-26,빵은 맛있어요. 분위기가 좋아요. 가격이 합리적이에요.
+report_5_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-27,커피는 맛있어요. 주문이 빨리 나와요. 의자가 편해요.
+report_5_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-28,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_5_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-01,커피는 맛없어요. 공간은 넓어요. 대기 없이 들어왔어요.
+report_5_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-02,라떼는 맛있어요. 직원은 친절해요. 와이파이가 잘 돼요.
+report_5_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-03,케이크는 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_5_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-05-04,커피는 맛있어요. 직원은 친절해요. 주문이 빨리 나와요.
+report_6_0,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-01,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_6_1,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-02,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_6_2,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-03,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_6_3,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-04,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_6_4,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-05,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_6_5,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-06,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_6_6,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-07,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_6_7,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-08,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_6_8,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-09,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_6_9,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-10,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_6_10,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-11,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_6_11,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-12,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_6_12,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-13,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_6_13,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-14,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_6_14,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-15,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_6_15,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-16,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_6_16,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-17,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_6_17,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-18,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_6_18,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-19,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_6_19,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-20,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_6_20,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-21,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_6_21,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-22,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_6_22,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-23,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_6_23,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-24,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_6_24,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-25,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_6_25,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-26,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_6_26,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-27,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_6_27,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-28,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_6_28,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-01,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_6_29,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-02,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_6_30,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-03,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_6_31,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-04,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+report_6_32,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-05,커피는 맛있어요. 직원은 친절해요. 주차가 편해요.
+report_6_33,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-06,빵이 촉촉하고 맛있어요. 분위기가 좋아요. 가격이 적당해요.
+report_6_34,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-07,커피가 고소해요. 주문이 빨리 나와요. 의자가 편해요.
+report_6_35,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-08,스콘은 맛있어요. 직원이 설명을 잘 해줘요. 화장실은 깨끗해요.
+report_6_36,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-09,커피는 맛있어요. 공간이 넓어요. 주차장이 넓어요.
+report_6_37,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-10,라떼는 맛있어요. 직원이 상냥해요. 와이파이가 잘 돼요.
+report_6_38,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-11,케이크가 맛있어요. 가격이 합리적이에요. 재방문 의사 있어요.
+report_6_39,report_demo_a,보고서 예제 카페 A,synthetic,2026-06-12,커피는 맛있어요. 직원이 친절해요. 대기 없이 들어왔어요.
+sparse_1,report_demo_b,소량 예제 카페 B,synthetic,2026-01-02,커피는 맛있어요
+sparse_2,report_demo_b,소량 예제 카페 B,synthetic,,커피는 맛없어요
