@@ -1,0 +1,232 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>카페 리뷰 검토</title><style>:root{--ink:#233e35;--green:#2d735e;--muted:#6c7970;--paper:#f5f4ee;--line:#dce0d5;--red:#a45237}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 "Malgun Gothic","Apple SD Gothic Neo",sans-serif}input,button,select,textarea{font:inherit;color:inherit}button,select,summary,.file-button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #d3a451;outline-offset:2px}button:disabled{opacity:.4;cursor:default}.masthead,main{max-width:1380px;margin:auto;padding:0 24px}.masthead{padding:22px 24px;display:flex;justify-content:space-between}.brand{font-weight:700;display:flex;gap:12px;align-items:center}.brand>span{background:var(--ink);color:white;font-size:11px;padding:4px 10px;border-radius:4px}.badge{font-size:11px;background:#e3eadd;padding:4px 10px;border-radius:5px}.hero{background:var(--ink);color:#fafbee;border-radius:12px;padding:26px 32px;display:flex;justify-content:space-between;gap:24px}.eyebrow{font-size:11px;color:#cbd9c6;margin:0}h1{font-size:30px;letter-spacing:-.04em;margin:6px 0 10px}.hero p:last-child{color:#d5dfcf;margin:0;font-size:12px}.hero-note{text-align:right;color:#cbd9c6;font-size:13px;align-self:center}h2{font-size:17px;margin:0 0 12px}label{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:5px}input,select,textarea{padding:9px 11px;border:1px solid var(--line);background:white;border-radius:5px;max-width:100%}.button{border:1px solid var(--ink);background:var(--ink);color:white;padding:9px 13px;border-radius:6px;white-space:nowrap;min-height:42px}.secondary{background:transparent;color:var(--ink)}.file-button{font-size:14px;font-weight:400;margin:0;display:inline-flex;align-items:center}.session{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;padding:20px 0 10px}.session input{width:190px}.save-tools{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}.muted,.storage-status{font-size:11px;color:var(--muted)}.storage-status{margin:0 0 12px}.notice{padding:11px 14px;border-radius:6px;background:#f3e7d5;font-size:12px}.progress{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.progress-item{border-top:2px solid var(--line);padding:10px 0}.progress-item strong{font-size:26px;display:block;line-height:1.4}.progress-item span{font-size:11px;color:var(--muted)}.progress-track{height:4px;background:#e3e6dc;border-radius:4px;overflow:hidden;margin:4px 0 16px}.progress-track>div{height:100%;background:var(--green);transition:width .15s}.guide{font-size:12px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}.guide summary{font-weight:600}.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 22px}.guide-grid p{font-size:12px;margin:10px 0 0}.workspace{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px}.review-sidebar{align-self:start;position:sticky;top:16px}.filters{display:grid;grid-template-columns:1fr;gap:10px}.filters select{width:100%}#review-list{max-height:68vh;overflow-y:auto;padding-right:5px;display:grid;gap:6px}.review-item{display:block;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:white;text-align:left;min-width:0}.review-item.active{border-color:var(--green);background:#e8f0e5}.review-item strong{display:block;font-size:12px}.review-item span{display:block;font-size:10px;color:var(--muted)}.review-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.review-navigation p{font-size:12px;color:var(--muted);margin:0}.original{padding:24px;background:#fffef8;border:1px solid var(--line);border-radius:9px}.original-heading{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.original-heading h2{margin:0}.original #review-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.95;margin:18px 0 0;user-select:text}.aspect-heading{margin:24px 0 12px}.aspect-heading h2{margin-bottom:4px}.aspect-heading p{font-size:11px;color:var(--muted);margin:0}.aspect{padding:17px 20px;background:white;border:1px solid var(--line);border-radius:8px;margin-bottom:10px}.aspect-top{display:flex;align-items:center;gap:18px;margin-bottom:12px;flex-wrap:wrap}.aspect h3{font-size:14px;margin:0;min-width:112px}.aspect select{min-width:190px}.aspect-status{font-size:10px;color:var(--muted);margin-left:auto}.aspect-fields{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.aspect-fields textarea{width:100%;resize:vertical;font-size:12px}.evidence-header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}.evidence-header label{margin:0}.quote-button{background:#edf2e9;color:var(--green);border:1px solid var(--line);border-radius:4px;font-size:10px;padding:3px 8px}.validation{font-size:11px;color:var(--red);margin:8px 0 0;min-height:0}.bottom-help{font-size:11px;color:var(--muted);margin:16px 0}.empty{font-size:12px;color:var(--muted);padding:20px}footer{margin:30px 0 20px;border-top:1px solid var(--line);padding-top:15px;font-size:11px;color:var(--muted)}dialog{width:min(850px,92vw);border:1px solid var(--line);border-radius:12px;padding:24px;color:var(--ink)}dialog::backdrop{background:#173b2b66}dialog p{font-size:12px;color:var(--muted)}#export-preview{width:100%;font-size:11px;margin:4px 0 15px}.dialog-actions{display:flex;gap:10px}.dialog-actions a{text-decoration:none;display:inline-flex;align-items:center}form{margin:0}fieldset{margin:0;border:0;padding:0;min-width:0}@media(max-width:1000px){.save-tools{margin-left:0}.workspace{grid-template-columns:200px minmax(0,1fr)}.aspect-fields{grid-template-columns:1fr}.aspect-status{margin-left:0}.guide-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.masthead,main{padding-left:16px;padding-right:16px}.hero{padding:22px}.hero-note{display:none}h1{font-size:24px}.progress{grid-template-columns:repeat(2,1fr)}.workspace{grid-template-columns:1fr}.review-sidebar{position:static}.filters{grid-template-columns:1fr 1fr}#review-list{max-height:170px}.original{padding:18px}.aspect{padding:15px}.aspect-top{gap:10px}.aspect h3{min-width:100px}.aspect select{width:100%}.session input{width:170px}.guide-grid{grid-template-columns:1fr}.review-navigation .button{padding:8px;font-size:12px}.save-tools .button{font-size:12px;padding:8px}.original #review-text{font-size:14px}}
+</style></head>
+<body><header class="masthead"><div class="brand"><span>리뷰</span>카페 리뷰 검토</div><span id="dataset-badge" class="badge"></span></header><main>
+<section class="hero"><div><p class="eyebrow">사전 예측 없이 원문을 읽고 판단합니다</p><h1>리뷰에 어떤 평가가 담겼나요?</h1><p id="dataset-description"></p></div><div class="hero-note">평가 없음과<br>판단 보류를 구분해주세요.</div></section>
+<section class="session"><div><label for="reviewer">검토자 이름 또는 별칭</label><input id="reviewer" maxlength="80" placeholder="예: 검토자 A" autocomplete="off"></div><button id="start" class="button">검토 시작 / 이어가기</button><span id="active-reviewer" class="muted">검토자를 입력해주세요.</span><div class="save-tools"><button id="backup" class="button secondary" disabled>진행 상황 JSON 저장</button><label class="file-button button secondary" for="restore">JSON 불러오기</label><input id="restore" type="file" accept=".json,application/json" hidden><button id="export" class="button" disabled>정답 CSV 내보내기</button></div></section>
+<p id="storage-status" class="storage-status" role="status"></p><button id="undo-import" class="button secondary" hidden>불러오기 전 입력 복구</button><p id="notice" class="notice" role="status" hidden></p>
+<section id="progress" class="progress" aria-label="검토 진행 상황"></section><div class="progress-track"><div id="progress-fill"></div></div>
+<details class="guide"><summary>감성 선택 기준과 근거 입력 방법</summary><div class="guide-grid"><p><b>긍정 / 부정</b> 해당 항목에 대한 좋고 나쁜 평가가 있습니다.</p><p><b>명시적 중립</b> ‘무난하다’처럼 중립적인 평가를 직접 표현했습니다.</p><p><b>긍부정 혼합</b> 같은 항목에 좋은 평가와 나쁜 평가가 모두 있습니다.</p><p><b>평가 없음</b> 해당 항목의 평가가 없습니다. 메뉴 주문·단순 특징 서술과 구별합니다.</p><p><b>판단 보류</b> 의미나 대상이 모호해 결정하기 어렵습니다. 이유를 남깁니다.</p><p>원문 구절을 선택하고 항목의 <b>선택 구절 넣기</b>를 누르세요. 혼합 평가의 여러 근거는 줄바꿈으로 나눌 수 있습니다.</p></div></details>
+<div class="workspace"><aside class="review-sidebar"><div class="filters"><div><label for="cafe-filter">카페 필터</label><select id="cafe-filter"><option value="all">모든 카페</option></select></div><div><label for="status-filter">검토 상태</label><select id="status-filter"><option value="all">전체 리뷰</option><option value="remaining">미완료 리뷰</option><option value="finished">검토 완료</option><option value="deferred">판단 보류 포함</option></select></div></div><p id="list-caption" class="muted"></p><nav id="review-list" aria-label="리뷰 목록"></nav></aside>
+<section class="review-main"><div class="review-navigation"><button id="previous" class="button secondary">이전 리뷰</button><p id="review-position"></p><button id="next" class="button secondary">다음 리뷰</button></div><article class="original"><div class="original-heading"><h2 id="review-title"></h2><span id="review-source" class="muted"></span></div><p id="review-text" tabindex="0"></p></article><div class="aspect-heading"><h2>항목별 판단</h2><p>평가가 있는 항목은 원문 근거를 입력해주세요. 선택하지 않은 항목은 미검토로 남습니다.</p></div><div id="aspect-list"></div><p class="bottom-help">입력은 검토자별로 이 브라우저에 저장됩니다. 다른 기기에서 이어가거나 장기간 보관하려면 진행 상황 JSON을 저장하세요.</p><button id="next-pending" class="button secondary">다음 미완료 리뷰로 이동</button></section></div>
+<footer><p>정답 CSV에는 확정한 라벨만 들어갑니다. 판단 보류와 미검토는 빈 라벨로 유지합니다. 원문은 다시 복제하지 않고 리뷰 ID와 원문 해시로 평가 입력과 일치하는지 확인합니다.</p><p id="provenance" class="muted"></p></footer></main>
+<dialog id="export-dialog" aria-labelledby="export-title"><h2 id="export-title"></h2><p id="export-description"></p><label for="export-preview">저장 내용</label><textarea id="export-preview" readonly rows="10"></textarea><div class="dialog-actions"><a id="save-file" class="button">파일 저장</a><form method="dialog"><button class="button secondary">닫기</button></form></div></dialog>
+<script id="annotation-data" type="application/json">{"schema_version":1,"ui_version":"0.1.0","dataset_sha256":"a6d9be82745d7cd0d75046d4eca96d84009706671c7144552ebc9a8f6767339f","categories":{"menu":"메뉴·맛","service":"친절·서비스","space":"공간·분위기","location":"입지·접근성","value":"가격·가성비","hygiene":"청결","operation":"이용·운영","overall":"전반 만족"},"reviews":[{"key":"[\"synthetic\",\"annotation_demo_a\",\"1\"]","source":"synthetic","cafe_id":"annotation_demo_a","review_id":"1","split":"holdout","text":"커피는 맛있어요. 직원은 친절해요. 주차는 불편해요.","text_sha256":"8ba592a857327fdb8188dfa4ab4b5719e54c0c7c7edc1f4257e3d3f508d46f65","cafe_name":"검토 예제 카페 A","categories":["menu","service","space","location","value","hygiene","operation","overall"]},{"key":"[\"synthetic\",\"annotation_demo_a\",\"2\"]","source":"synthetic","cafe_id":"annotation_demo_a","review_id":"2","split":"holdout","text":"커피는 맛있지만 케이크는 맛없어요. 공간은 넓어요.","text_sha256":"f45c111ae2c8e3c84c51535daedb5238781431d154326939e92486b0be061d69","cafe_name":"검토 예제 카페 A","categories":["menu","service","space","location","value","hygiene","operation","overall"]},{"key":"[\"synthetic\",\"annotation_demo_b\",\"3\"]","source":"synthetic","cafe_id":"annotation_demo_b","review_id":"3","split":"holdout","text":"커피 맛은 무난해요. 라떼 한 잔을 주문했어요.","text_sha256":"f63845ebc2a2de97ad9b67c69a4f295d148cb5c824202f39b8fb6c62263976d4","cafe_name":"검토 예제 카페 B","categories":["menu","service","space","location","value","hygiene","operation","overall"]},{"key":"[\"synthetic\",\"annotation_demo_b\",\"4\"]","source":"synthetic","cafe_id":"annotation_demo_b","review_id":"4","split":"holdout","text":"친구가 친절하다고 했는데 저는 잘 모르겠어요. 가격이 적당한지는 모르겠어요.","text_sha256":"772f4cbc30fbc0320ecb7b0751484b0238d5edd4f5b4519835f5f54c0d050218","cafe_name":"검토 예제 카페 B","categories":["menu","service","space","location","value","hygiene","operation","overall"]}],"aspect_count":32,"is_synthetic":true,"prediction_blind":true}</script><script>"use strict";
+const AnnotationCore = (() => {
+  const LABELS={positive:"긍정",negative:"부정",neutral:"명시적 중립",mixed:"긍부정 혼합",unscored:"평가 없음",deferred:"판단 보류"};
+  const key=(review,category)=>JSON.stringify([review.source,review.cafe_id,review.review_id,category]);
+  function validate(review, decision) {
+    if (!decision || !decision.label) return {status:"pending",message:""};
+    if (!Object.hasOwn(LABELS,decision.label)) return {status:"invalid",message:"감성 선택값을 확인해주세요."};
+    if (decision.label==="deferred") return decision.notes?.trim() ? {status:"deferred",message:""} : {status:"invalid",message:"판단 보류 이유를 입력해주세요."};
+    if (decision.label==="unscored") return {status:"labeled",message:""};
+    const evidence=decision.evidence?.trim();
+    if (!evidence) return {status:"invalid",message:"평가를 판단한 원문 구절을 입력해주세요."};
+    if (!review.text.includes(evidence) && !evidence.split(/\r?\n/).filter(s=>s.trim()).every(s=>review.text.includes(s)))
+      return {status:"invalid",message:"근거는 원문에서 그대로 가져와주세요. 여러 구절은 줄바꿈으로 구분합니다."};
+    return {status:"labeled",message:""};
+  }
+  function counts(reviews, decisions) {
+    const result={labeled:0,deferred:0,pending:0,invalid:0,finished_reviews:0,total:0};
+    for (const review of reviews) {
+      let finished=true;
+      for (const category of review.categories) {
+        const state=validate(review,decisions[key(review,category)]).status;
+        result[state]++; result.total++;
+        if (!["labeled","deferred"].includes(state)) finished=false;
+      }
+      if (finished) result.finished_reviews++;
+    }
+    return result;
+  }
+  function snapshot(data, reviewer, decisions, cursor) {
+    return {schema_version:1,dataset_sha256:data.dataset_sha256,reviewer,saved_at:new Date().toISOString(),cursor,
+      decisions:data.reviews.flatMap(review=>review.categories.map(category=>({source:review.source,cafe_id:review.cafe_id,
+        review_id:review.review_id,category,...decisions[key(review,category)]}))).filter(row=>row.label || row.evidence || row.notes)};
+  }
+  function parseSnapshot(data, content) {
+    const saved=typeof content==="string"?JSON.parse(content):content;
+    if (saved.schema_version!==1 || saved.dataset_sha256!==data.dataset_sha256 || typeof saved.reviewer!=="string" || !saved.reviewer.trim() || saved.reviewer.length>80 || !Array.isArray(saved.decisions))
+      throw new Error("현재 리뷰 세트의 올바른 JSON 저장본이 아닙니다.");
+    const known=new Set(data.reviews.flatMap(review=>review.categories.map(category=>key(review,category)))), decisions=Object.create(null);
+    for (const row of saved.decisions) {
+      const identity=key(row,row.category);
+      if (!known.has(identity) || Object.hasOwn(decisions,identity) || !["","positive","negative","neutral","mixed","unscored","deferred"].includes(row.label || ""))
+        throw new Error("알 수 없거나 중복된 리뷰·항목이 있습니다.");
+      for (const field of ["label","evidence","notes"]) if (row[field]!=null && (typeof row[field]!=="string" || row[field].length>20000)) throw new Error("저장된 입력값을 확인해주세요.");
+      decisions[identity]={label:row.label || "",evidence:row.evidence || "",notes:row.notes || ""};
+    }
+    return {reviewer:saved.reviewer.trim(),decisions,cursor:data.reviews.some(r=>r.key===saved.cursor)?saved.cursor:data.reviews[0].key};
+  }
+  function csv(data, reviewer, decisions) {
+    if (!reviewer.trim()) throw new Error("검토자 이름을 입력하고 검토를 시작해주세요.");
+    const fields=["source","review_id","cafe_id","split","text","category","gold_label","evidence_text","reviewer","notes","input_text_sha256"];
+    // Original text is represented by its hash and identity to avoid duplicating
+    // raw reviews in a spreadsheet. The evaluator verifies this hash.
+    const escape=value=>'"'+String(value??"").replace(/"/g,'""')+'"';
+    const spreadsheetText=value=>/^[\s]*[=+\-@]/.test(value)?"'"+value:value;
+    const rows=[];
+    for (const review of data.reviews) for (const category of review.categories) {
+      const decision=decisions[key(review,category)] || {}, check=validate(review,decision);
+      if (check.status==="invalid") throw new Error("입력 미완료: "+review.review_id+" / "+data.categories[category]+" · "+check.message);
+      const row={source:review.source,review_id:review.review_id,cafe_id:review.cafe_id,split:review.split,text:"",category,
+        gold_label:check.status==="labeled"?decision.label:"",evidence_text:check.status==="labeled" && decision.label!=="unscored"?spreadsheetText(decision.evidence || ""):"",
+        reviewer:["labeled","deferred"].includes(check.status)?spreadsheetText(reviewer):"",
+        notes:spreadsheetText(check.status==="deferred"?"[판단 보류] "+decision.notes:decision.notes || ""),input_text_sha256:review.text_sha256};
+      rows.push(fields.map(field=>escape(row[field])).join(","));
+    }
+    return "\uFEFF"+[fields.map(escape).join(","),...rows].join("\r\n");
+  }
+  return {LABELS,key,validate,counts,snapshot,parseSnapshot,csv};
+})();
+</script><script>"use strict";
+const DATA=JSON.parse(document.getElementById("annotation-data").textContent);
+const $=id=>document.getElementById(id);
+const C=AnnotationCore;
+const namespace="cafe-annotation:"+DATA.dataset_sha256;
+const profileKey=name=>namespace+":profile:"+name;
+const add=(parent,tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!=null)node.textContent=text;parent.append(node);return node;};
+let reviewer="", decisions=Object.create(null), cursor=DATA.reviews[0].key, selectedQuote="", objectUrl;
+const readStorage=key=>{try{return localStorage.getItem(key);}catch{return null;}};
+const notice=text=>{$("notice").textContent=text;$("notice").hidden=!text;};
+$("reviewer").value=readStorage(namespace+":last-reviewer") || "";
+$("dataset-badge").textContent=DATA.is_synthetic?"자체 작성 검토 예제":"실제 리뷰 · 비공개 검토용";
+$("dataset-description").textContent=DATA.reviews.length+"개 리뷰 · "+DATA.aspect_count+"개 항목 · 사전 예측과 자동 라벨 없이 시작합니다.";
+$("provenance").textContent="검토 화면 "+DATA.ui_version+" · 이 화면은 사람 검토를 돕는 도구이며 검토자 신원을 확인하지 않습니다.";
+for(const [id,name] of new Map(DATA.reviews.map(r=>[r.cafe_id,r.cafe_name]))){const option=add($("cafe-filter"),"option",null,name);option.value=id;}
+
+function save(){
+  if(!reviewer)return;
+  try{
+    localStorage.setItem(profileKey(reviewer),JSON.stringify(C.snapshot(DATA,reviewer,decisions,cursor)));
+    localStorage.setItem(namespace+":last-reviewer",reviewer);
+    $("storage-status").textContent="브라우저에 저장됨 · "+new Date().toLocaleTimeString("ko-KR",{timeZone:"Asia/Seoul",hour:"2-digit",minute:"2-digit"})+" · JSON 저장본으로 다른 기기에서 이어갈 수 있습니다.";
+  }catch{$("storage-status").textContent="브라우저 저장을 사용할 수 없습니다. 진행 상황 JSON을 저장해서 입력을 보관해주세요.";}
+}
+function activate(name,saved){
+  reviewer=name;decisions=saved?.decisions || Object.create(null);cursor=saved?.cursor || DATA.reviews[0].key;
+  selectedQuote="";
+  $("reviewer").value=reviewer;$("active-reviewer").textContent="현재 검토자: "+reviewer;
+  $("backup").disabled=$("export").disabled=false;
+  $("cafe-filter").value=$("status-filter").value="all";
+  save();renderAll();
+}
+$("start").addEventListener("click",()=>{
+  const name=$("reviewer").value.trim();
+  if(!name){notice("검토자 이름 또는 별칭을 입력해주세요.");return;}
+  try{const stored=readStorage(profileKey(name));activate(name,stored?C.parseSnapshot(DATA,stored):null);notice("");}
+  catch(error){notice("저장본을 읽지 못했습니다. 다른 검토자 별칭으로 시작하거나 유효한 JSON 저장본을 불러와주세요. "+error.message);}
+});
+$("reviewer").addEventListener("input",()=>{
+  if(reviewer && $("reviewer").value.trim()!==reviewer) notice("입력은 현재 검토자 ‘"+reviewer+"’로 저장됩니다. 검토자를 바꾸려면 검토 시작 / 이어가기를 누르세요.");
+});
+function reviewCounts(review){return C.counts([review],decisions);}
+function filtered(){return DATA.reviews.filter(r=>{
+  if($("cafe-filter").value!=="all" && r.cafe_id!==$("cafe-filter").value)return false;
+  const stats=reviewCounts(r),status=$("status-filter").value;
+  return status==="all" || status==="remaining" && !stats.finished_reviews || status==="finished" && stats.finished_reviews || status==="deferred" && stats.deferred>0;
+});}
+function renderProgress(){
+  const stats=C.counts(DATA.reviews,decisions);$("progress").replaceChildren();
+  for(const [value,label] of [[stats.labeled+" / "+stats.total,"정답 확정 항목"],[stats.deferred,"판단 보류 항목"],[stats.pending+stats.invalid,"미완료 항목"],[stats.finished_reviews+" / "+DATA.reviews.length,"8항목 검토 완료 리뷰"]]){
+    const box=add($("progress"),"div","progress-item");add(box,"strong",null,value);add(box,"span",null,label);
+  }
+  $("progress-fill").style.width=(stats.total?(stats.labeled+stats.deferred)/stats.total*100:0)+"%";
+}
+function renderList(){
+  const list=filtered();$("review-list").replaceChildren();$("list-caption").textContent=list.length+"개 리뷰 표시";
+  for(const r of list){
+    const stats=reviewCounts(r),index=DATA.reviews.indexOf(r)+1;
+    const button=add($("review-list"),"button","review-item"+(cursor===r.key?" active":""));button.type="button";
+    button.setAttribute("aria-current",cursor===r.key?"true":"false");
+    add(button,"strong",null,index+". "+r.cafe_name);
+    add(button,"span",null,"확정 "+stats.labeled+" / 8 · 보류 "+stats.deferred+" · ID "+r.review_id);
+    button.addEventListener("click",()=>{cursor=r.key;selectedQuote="";save();renderAll();});
+  }
+  if(!list.length)add($("review-list"),"p","empty","선택한 조건의 리뷰가 없습니다.");
+  const index=list.findIndex(r=>r.key===cursor);
+  $("previous").disabled=!list.length || index<=0;
+  $("next").disabled=!list.length || index===list.length-1;
+}
+function renderReview(){
+  const review=DATA.reviews.find(r=>r.key===cursor);$("aspect-list").replaceChildren();
+  if(!review){$("review-title").textContent="선택한 조건의 리뷰가 없습니다";$("review-text").textContent="";$("review-source").textContent="";$("review-position").textContent="";return;}
+  $("review-position").textContent=(DATA.reviews.indexOf(review)+1)+" / "+DATA.reviews.length+" 리뷰";
+  $("review-title").textContent=review.cafe_name;$("review-source").textContent=review.source+" · 리뷰 "+review.review_id;
+  $("review-text").textContent=review.text;
+  for(const category of review.categories){
+    const key=C.key(review,category),decision=decisions[key] || {label:"",evidence:"",notes:""};
+    const row=add($("aspect-list"),"fieldset","aspect");row.disabled=!reviewer;
+    const top=add(row,"div","aspect-top");add(top,"h3",null,DATA.categories[category]);
+    const select=add(top,"select");select.setAttribute("aria-label",DATA.categories[category]+" 감성");
+    let option=add(select,"option",null,"선택해주세요 · 미검토");option.value="";
+    for(const [value,label] of Object.entries(C.LABELS)){option=add(select,"option",null,label);option.value=value;}
+    select.value=decision.label;
+    const badge=add(top,"span","aspect-status");
+    const fields=add(row,"div","aspect-fields"),evidenceBox=add(fields,"div"),notesBox=add(fields,"div");
+    const heading=add(evidenceBox,"div","evidence-header");const label=add(heading,"label",null,"원문 근거");label.htmlFor="evidence-"+category;
+    const quote=add(heading,"button","quote-button","선택 구절 넣기");quote.type="button";
+    const evidence=add(evidenceBox,"textarea");evidence.id="evidence-"+category;evidence.rows=2;evidence.maxLength=8000;evidence.value=decision.evidence;evidence.placeholder="원문 구절을 그대로 입력하세요";
+    const noteLabel=add(notesBox,"label",null,"판단 보류 이유 / 메모");noteLabel.htmlFor="notes-"+category;
+    const notes=add(notesBox,"textarea");notes.id="notes-"+category;notes.rows=2;notes.maxLength=8000;notes.value=decision.notes;notes.placeholder="모호한 대상·표현 또는 검토 메모";
+    const validation=add(row,"p","validation");
+    const status=()=>{
+      const check=C.validate(review,{label:select.value,evidence:evidence.value,notes:notes.value});
+      badge.textContent={pending:"미검토",invalid:"입력 미완료",labeled:"정답 확정",deferred:"판단 보류"}[check.status];
+      validation.textContent=check.message;
+    };
+    const update=()=>{decisions[key]={label:select.value,evidence:evidence.value,notes:notes.value};status();save();renderProgress();renderList();};
+    select.addEventListener("change",update);evidence.addEventListener("input",update);notes.addEventListener("input",update);
+    quote.addEventListener("click",()=>{
+      if(!selectedQuote || !review.text.includes(selectedQuote)){notice("먼저 위 원문에서 근거 구절을 선택해주세요.");return;}
+      evidence.value=evidence.value.trim()?evidence.value+"\n"+selectedQuote:selectedQuote;update();notice("");
+    });status();
+  }
+}
+function renderAll(){renderProgress();renderList();renderReview();}
+document.addEventListener("selectionchange",()=>{
+  const selection=document.getSelection(),text=$("review-text");
+  if(selection && !selection.isCollapsed && text.contains(selection.anchorNode) && text.contains(selection.focusNode))selectedQuote=selection.toString();
+});
+for(const id of ["cafe-filter","status-filter"])$(id).addEventListener("change",()=>{
+  const list=filtered();if(!list.some(r=>r.key===cursor))cursor=list[0]?.key || "";selectedQuote="";save();renderAll();
+});
+function move(offset){const list=filtered(),index=list.findIndex(r=>r.key===cursor),target=list[index+offset];if(target){cursor=target.key;selectedQuote="";save();renderAll();}}
+$("previous").addEventListener("click",()=>move(-1));$("next").addEventListener("click",()=>move(1));
+$("next-pending").addEventListener("click",()=>{
+  const start=DATA.reviews.findIndex(r=>r.key===cursor);
+  const order=[...DATA.reviews.slice(start+1),...DATA.reviews.slice(0,start+1)];
+  const next=order.find(r=>($("cafe-filter").value==="all" || r.cafe_id===$("cafe-filter").value) && !reviewCounts(r).finished_reviews);
+  if(!next){notice("선택한 카페의 모든 리뷰를 검토했습니다.");return;}
+  $("status-filter").value="remaining";cursor=next.key;selectedQuote="";save();renderAll();notice("");
+});
+function showFile(title,description,content,extension,mime){
+  if(objectUrl)URL.revokeObjectURL(objectUrl);
+  objectUrl=URL.createObjectURL(new Blob([content],{type:mime}));
+  $("export-title").textContent=title;$("export-description").textContent=description;$("export-preview").value=content;
+  $("save-file").href=objectUrl;$("save-file").download=("review_annotations_"+reviewer+"_"+DATA.dataset_sha256.slice(0,10)).replace(/[\\/:*?"<>|\u0000-\u001f]/g,"_")+"."+extension;
+  $("export-dialog").showModal();
+}
+$("backup").addEventListener("click",()=>{save();showFile("진행 상황 JSON 저장","현재 입력과 검토 위치를 보관합니다. 이 저장본은 같은 리뷰 세트에서 다시 불러올 수 있습니다.",JSON.stringify(C.snapshot(DATA,reviewer,decisions,cursor),null,2),"json","application/json;charset=utf-8");});
+$("export").addEventListener("click",()=>{
+  try{const content=C.csv(DATA,reviewer,decisions),stats=C.counts(DATA.reviews,decisions);showFile("정답 CSV 내보내기","확정 "+stats.labeled+"항목 · 판단 보류 "+stats.deferred+"항목 · 미완료 "+(stats.pending+stats.invalid)+"항목. 판단 보류·미검토는 빈 라벨로 내보냅니다. 파일 저장이 어려우면 아래 내용을 복사할 수 있습니다.",content,"csv","text/csv;charset=utf-8");notice("");}
+  catch(error){const first=DATA.reviews.find(r=>r.categories.some(category=>C.validate(r,decisions[C.key(r,category)]).status==="invalid"));if(first){$("cafe-filter").value=$("status-filter").value="all";cursor=first.key;renderAll();}notice(error.message);}
+});
+$("restore").addEventListener("change",async event=>{
+  const file=event.target.files?.[0];if(!file)return;
+  try{
+    if(file.size>16*1024*1024)throw new Error("JSON 저장본은 16MB 이하로 선택해주세요.");
+    const incoming=C.parseSnapshot(DATA,await file.text());
+    const stored=readStorage(profileKey(incoming.reviewer));
+    const before=stored?C.parseSnapshot(DATA,stored):{decisions:Object.create(null),cursor:DATA.reviews[0].key};
+    const undo=JSON.stringify(C.snapshot(DATA,incoming.reviewer,before.decisions,before.cursor));
+    try{localStorage.setItem(namespace+":before-import",undo);$("undo-import").hidden=false;}catch{throw new Error("변경 전 입력을 저장할 수 없어 불러오기를 중단했습니다. 진행 상황 JSON을 먼저 보관해주세요.");}
+    activate(incoming.reviewer,incoming);notice("JSON 저장본을 불러왔습니다. ‘불러오기 전 입력 복구’로 변경 전 입력을 복구할 수 있습니다.");
+  }catch(error){notice(error.message);}finally{event.target.value="";}
+});
+$("undo-import").hidden=!readStorage(namespace+":before-import");
+$("undo-import").addEventListener("click",()=>{
+  try{const saved=C.parseSnapshot(DATA,readStorage(namespace+":before-import"));activate(saved.reviewer,saved);notice("불러오기 전 입력을 복구했습니다.");}catch(error){notice(error.message);}
+});
+$("storage-status").textContent="검토자별로 별도 저장합니다. 정답은 자동으로 채우지 않습니다.";
+renderAll();
+</script></body></html>

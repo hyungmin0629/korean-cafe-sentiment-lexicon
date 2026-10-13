@@ -1,0 +1,17 @@
+{
+  "version": "0.4.0",
+  "annotation_ui_version": "0.1.0",
+  "release_date": "2026-10-13",
+  "change_scope": "prediction-blind annotation workspace; classification unchanged",
+  "actual_reviews": 60,
+  "actual_annotation_rows": 480,
+  "actual_human_labeled_rows": 0,
+  "actual_template_sha256": "4e6a3c405cf9e1a545cbfcaec5ffeb5b6460b20b61a433fb0eefa40291b20add",
+  "public_synthetic_reviews": 4,
+  "public_synthetic_annotation_rows": 32,
+  "actual_prediction_identity_to_v031": true,
+  "actual_prediction_comparison_rows": 624,
+  "lexicon_sha256": "3a4d723a9f264c20572526099ab2f00f3743cdd9efc6a00f5614a1f9ca98949c",
+  "rules_sha256": "76a67c4b2c819226b51ac281d7f96283f591204109ef10197565e38bce069f58",
+  "human_accuracy_status": "unmeasured"
+}

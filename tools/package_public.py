@@ -25,10 +25,18 @@ def main():
         raise ValueError("Missing required public file")
     for path in paths:
         if path.parent == ROOT / "examples" and path.suffix == ".html":
-            payload = re.search(r'<script id="report-data" type="application/json">(.*?)</script>',
+            payload = re.search(r'<script id="(report-data|annotation-data)" type="application/json">(.*?)</script>',
                                 path.read_text(encoding="utf-8"), re.S)
-            if not payload or not json.loads(payload.group(1)).get("is_synthetic"):
-                raise ValueError("Only synthetic reports may be packaged in public examples")
+            if not payload:
+                raise ValueError("Public HTML examples need a synthetic data payload")
+            model = json.loads(payload.group(2))
+            if model.get("is_synthetic") is not True:
+                raise ValueError("Only synthetic HTML may be packaged in public examples")
+            if payload.group(1) == "annotation-data" and (
+                    model.get("prediction_blind") is not True
+                    or not model.get("reviews")
+                    or any(review.get("source") != "synthetic" for review in model["reviews"])):
+                raise ValueError("Only prediction-blind synthetic annotation examples may be public")
     destination = ROOT / f"outputs_private/cafe-sentiment-lexicon-v{__version__}.zip"
     destination.parent.mkdir(parents=True, exist_ok=True)
     manifest = []

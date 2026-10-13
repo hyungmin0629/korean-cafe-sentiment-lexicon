@@ -34,37 +34,41 @@ def metrics(pairs):
 
 def evaluate(predictions, annotations, kind, split="holdout"):
     lookup = {}
-    for line in Path(predictions).open(encoding="utf-8"):
-        record = json.loads(line)
-        identity = (record["source"], record["cafe_id"], record["review_id"])
-        if identity in lookup:
-            raise ValueError("Duplicate prediction identity")
-        lookup[identity] = record
+    with Path(predictions).open(encoding="utf-8") as prediction_file:
+        for line in prediction_file:
+            record = json.loads(line)
+            identity = (record["source"], record["cafe_id"], record["review_id"])
+            if identity in lookup:
+                raise ValueError("Duplicate prediction identity")
+            lookup[identity] = record
     seen, pairs, by_category = set(), [], defaultdict(list)
     blank, eligible = 0, 0
-    for row in csv.DictReader(Path(annotations).open(encoding="utf-8-sig", newline="")):
-        if split != "all" and row.get("split") != split:
-            continue
-        eligible += 1
-        gold = row.get("gold_label", "").strip()
-        if not gold:
-            blank += 1
-            continue
-        if gold not in LABELS or not row.get("reviewer", "").strip():
-            raise ValueError("Each labeled row needs a valid gold_label and reviewer")
-        identity = (row["source"], row["cafe_id"], row["review_id"])
-        aspect = (*identity, row["category"])
-        if aspect in seen:
-            raise ValueError("Duplicate labeled aspect")
-        seen.add(aspect)
-        record = lookup.get(identity)
-        if record is None or row["category"] not in record["categories"]:
-            raise ValueError("Annotation has no matching prediction")
-        if row.get("text") and row["text"] != record["original_text"]:
-            raise ValueError("Annotation text differs from prediction input")
-        pair = (gold, record["categories"][row["category"]]["label"])
-        pairs.append(pair)
-        by_category[row["category"]].append(pair)
+    with Path(annotations).open(encoding="utf-8-sig", newline="") as annotation_file:
+        for row in csv.DictReader(annotation_file):
+            if split != "all" and row.get("split") != split:
+                continue
+            eligible += 1
+            gold = row.get("gold_label", "").strip()
+            if not gold:
+                blank += 1
+                continue
+            if gold not in LABELS or not row.get("reviewer", "").strip():
+                raise ValueError("Each labeled row needs a valid gold_label and reviewer")
+            identity = (row["source"], row["cafe_id"], row["review_id"])
+            aspect = (*identity, row["category"])
+            if aspect in seen:
+                raise ValueError("Duplicate labeled aspect")
+            seen.add(aspect)
+            record = lookup.get(identity)
+            if record is None or row["category"] not in record["categories"]:
+                raise ValueError("Annotation has no matching prediction")
+            if row.get("text") and row["text"] != record["original_text"]:
+                raise ValueError("Annotation text differs from prediction input")
+            if row.get("input_text_sha256") and row["input_text_sha256"] != hashlib.sha256(record["original_text"].encode()).hexdigest():
+                raise ValueError("Annotation text hash differs from prediction input")
+            pair = (gold, record["categories"][row["category"]]["label"])
+            pairs.append(pair)
+            by_category[row["category"]].append(pair)
     if not pairs:
         raise ValueError("No labeled aspects; accuracy cannot be calculated")
     return {"annotation_kind": kind, "split": split, "eligible_annotation_rows": eligible,

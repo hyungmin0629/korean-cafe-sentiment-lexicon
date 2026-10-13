@@ -9,6 +9,8 @@
 5. 다른 카페 비교·과거 경험·전언·희망은 현재 카페의 직접 평가와 구별합니다. 의견 차이를 기록하고 합의한 자료를 만듭니다.
 6. 보류 자료의 원문이나 오류를 보고 후보를 수정했다면 새 최종 평가 자료가 필요합니다.
 
+정답 작성에는 [원문 검토 화면](annotation_workspace.md)을 사용할 수 있습니다. CSV 원문 열을 비우고 원문 해시로 연결하는 출력도 지원하며, 평가 도구가 해시 일치를 확인합니다.
+
 v0.3 새 카페 양식은 `data_private/annotations.v03.holdout.blank.csv`입니다. 두 카페에서 각각 30본문을 ID 해시 순서로 선택해 8개 항목씩 480행을 만들었습니다. 모두 비어 있습니다. 이전 v0.2 양식 1,216행은 과거 기록입니다. 예측 라벨은 넣지 않았습니다. `source, review_id, cafe_id, split, text, category, gold_label, evidence_text, reviewer, notes` 열을 사용합니다. reviewer는 필수이며 사람 검토자나 Codex 등 실제 작성자를 기록합니다. 합의한 파일은 별도 이름으로 저장합니다.
 
 ```powershell

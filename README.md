@@ -4,9 +4,19 @@
 
 리뷰 CSV를 넣으면 메뉴·친절·공간·입지·가격·청결·운영·전반 만족의 감성 점수를 기간별로 계산합니다. 표현별 근거를 저장하며, 분석 실행에는 외부 AI API나 추가 Python 라이브러리가 필요하지 않습니다.
 
-버전 0.3.1은 자체 작성한 **420개 후보 표현**과 **오프라인 HTML 진단 보고서**를 제공합니다. 실제 카페 8곳의 본문 624건에 실행했고, 나리나무 2건도 포함했습니다. 개발 본문 221건에서 관찰된 후보는 95개, 미관찰 후보는 325개입니다. 모든 항목은 `candidate`이며 **사람 정답 기반 정확도는 아직 측정하지 않았습니다.**
+버전 0.4.0은 자체 작성한 **420개 후보 표현**과 **오프라인 HTML 진단 보고서**를 제공합니다. 실제 카페 8곳의 본문 624건에 실행했고, 나리나무 2건도 포함했습니다. 개발 본문 221건에서 관찰된 후보는 95개, 미관찰 후보는 325개입니다. 모든 항목은 `candidate`이며 **사람 정답 기반 정확도는 아직 측정하지 않았습니다.**
 
 보고서 상단에서 최근 6개월의 점수 변화, 전월 대비 차이, 가장 큰 월간 변화와 월별 리뷰 수를 봅니다. 항목별 월간 점수표와 기간 합산, 근거·반복 표현도 함께 제공합니다. [자체 작성 예제 보고서](examples/report.synthetic.html)를 내려받아 브라우저에서 열어보세요. 사용법은 [보고서 안내](docs/owner_report.md)에 있습니다.
+
+## 원문 검토 화면
+
+사전 예측을 숨긴 화면에서 사람이 8개 항목의 정답·근거·보류 이유를 입력합니다. 검토자별 자동 저장, JSON 백업·복구, 평가용 CSV 출력을 제공합니다. [자체 작성 검토 예제](examples/annotation.synthetic.html)를 내려받아 열어보세요. 실제 검토 자료 60리뷰·480항목은 비공개이며 정답은 아직 비어 있습니다.
+
+```powershell
+python tools/build_annotation_ui.py --input examples/annotations.synthetic.blank.csv --output outputs_private/review_demo.html
+```
+
+작성 기준·저장·평가 방법은 [검토 화면 안내](docs/annotation_workspace.md)에 있습니다. 화면 생성만으로 사람 정확도가 측정되지는 않습니다.
 
 ## 바로 실행
 
@@ -117,6 +127,7 @@ python tools/benchmark_cli.py
 - `docs/taxonomy.md`: 분류 기준.
 - `docs/scoring.md`: 점수, 비율 분모, 날짜와 표본 처리.
 - `docs/annotation_guide.md`: 실제 리뷰 정답 작성 방법.
+- `docs/annotation_workspace.md`: 예측을 숨긴 검토 화면·저장·복구·CSV 평가 연결.
 - `docs/evaluation.md`: 검증 결과와 미지원 문맥.
 - `docs/provisional_review.md`: v0.2의 고정 사전 12본문 잠정 점검(과거 기록).
 - `docs/provisional_review.v03.md`: 새 카페 10본문 잠정 점검과 남은 누락·오판.
