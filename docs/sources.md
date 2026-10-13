@@ -1,6 +1,6 @@
 # 출처와 공개 범위
 
-기준일: 2026-10-12.
+기준일: 2026-10-13.
 
 | 자료 | 출처·확인 방법 | 사용 |
 |---|---|---|
@@ -28,3 +28,5 @@
 추가 수집 기록은 `data_private/reviews.expansion.manifest.json`, `data_private/reviews.narinamu.manifest.json`에 있습니다. 공개 통계에는 원문·작성자·카페 감성 점수를 포함하지 않습니다.
 
 새 카페 수집 기록은 `data_private/reviews.holdout_v03.manifest.json`에 있습니다. 실제 보고서의 발췌는 외부 원문이므로 공개 대상에 포함하지 않습니다.
+
+2026-10-13에는 각자 실행하는 네이버 수집 코드를 추가했습니다. 사용자가 제공한 지도 검색 URL의 플레이스 ID는 `1649277590`입니다. 개발 환경의 `https://m.place.naver.com/robots.txt` 요청이 다시 429를 반환해 추가 네이버 요청을 중단했습니다. 이 지점의 실제 리뷰는 새로 수집하지 않았으며 기본 선택자의 실제 화면 적합성도 미확인입니다. 공개 `tests/fixtures/naver_reviews.synthetic.html`은 Codex가 직접 작성한 5건의 테스트 DOM이고 실제 네이버 화면이나 리뷰를 복제한 자료가 아닙니다. 설치·브라우저 API는 [Playwright 공식 문서](https://playwright.dev/python/docs/library)를 참고했습니다. [수집 실행과 제한 안내](naver_crawling.md)에 확인 범위를 기록했습니다.

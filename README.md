@@ -59,7 +59,17 @@ cafe-sentiment --input examples/reviews.synthetic.csv --output outputs_private/i
 
 ## 리뷰 준비
 
-네이버 플레이스 리뷰를 직접 준비할 때는 [리뷰 준비 안내](docs/review_preparation.md)와 [본문·작성일 두 칸짜리 Excel 양식](examples/review_input/리뷰입력_빈양식.xlsx)을 사용합니다. CSV로 저장한 뒤 `tools/prepare_review_csv.py`에서 카페 이름을 한 번 입력하면 리뷰 ID와 출처를 채운 분석용 CSV가 생성됩니다. 현재는 명령으로 변환·분석하며 CSV 업로드 화면은 후속 작업입니다.
+네이버 플레이스는 각자 자기 컴퓨터에서 실행하는 [수집 코드와 설치 안내](docs/naver_crawling.md)를 제공합니다. 지도·플레이스 URL로 방문자 리뷰 CSV를 만들고 기존 감성분석 보고서에 연결합니다.
+
+```powershell
+python -m pip install -r requirements-naver.txt
+python -m playwright install chromium
+python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 리저브" --output data_private/naver_01 --report-output outputs_private/naver_01
+```
+
+**네이버 실수집은 아직 확인하지 못했습니다.** 개발 환경의 robots 요청이 429라 접속을 중단했으며 기본 선택자는 실제 화면에 맞는지 추가 확인이 필요합니다. 자체 작성 HTML 추출·모의 더보기·중복 제거·제한 시 중단·보고서 연결을 검사했습니다. 전체 리뷰 수집을 보장하지 않으며 작성일을 확인할 수 없는 리뷰는 월별 집계에서 제외합니다. 위 매장 ID는 사용자가 제공한 링크의 ID이고 표시명은 정확한 지점명으로 바꾸세요.
+
+CSV를 이미 가지고 있거나 수동 준비하는 경우 [리뷰 준비·변환 안내](docs/review_preparation.md)를 사용합니다. CSV 업로드 화면은 아직 구현하지 않았습니다.
 
 UTF-8 또는 UTF-8 BOM CSV를 사용합니다. 입력 양식은 `examples/reviews.template.csv`에 있습니다.
 

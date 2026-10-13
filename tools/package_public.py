@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from cafe_sentiment import __version__
 DIRECTORIES = ("src", "lexicon", "configs", "schemas", "examples", "docs", "tests", "tools")
-FILES = ("README.md", "LICENSE", "CHANGELOG.md", ".gitignore", "pyproject.toml", "run.py", "requirements-crawl.txt")
+FILES = ("README.md", "LICENSE", "CHANGELOG.md", ".gitignore", "pyproject.toml", "run.py", "requirements-crawl.txt", "requirements-naver.txt")
 
 
 def main():
