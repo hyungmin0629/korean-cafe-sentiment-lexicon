@@ -195,7 +195,10 @@ def collect_browser(args, selectors, url, records, manifest):
     manifest["effective_delay_seconds"] = delay
     blocked = []
     with sync_playwright() as runtime:
-        browser = runtime.chromium.launch(headless=not args.headed)
+        browser_options = {"headless": not args.headed}
+        if getattr(args, "browser", "chromium") != "chromium":
+            browser_options["channel"] = args.browser
+        browser = runtime.chromium.launch(**browser_options)
         try:
             context = browser.new_context(user_agent=USER_AGENT, locale="ko-KR")
             page = context.new_page()
@@ -245,22 +248,85 @@ def collect_browser(args, selectors, url, records, manifest):
                 if page_number == args.max_pages:
                     return "max_pages_reached"
                 button = more_button(page, selectors)
-                if button is None:
+                if button is None and not getattr(args, "scroll_load", False):
                     return "no_load_more_control_visible"
                 old_count = page.locator(selectors["card"]).count()
-                button.scroll_into_view_if_needed()
                 time.sleep(delay)
                 restriction(page, blocked)
-                button.click()
+                if button is not None:
+                    button.scroll_into_view_if_needed()
+                    restriction(page, blocked)
+                    button.click()
+                    method = "list_button"
+                else:
+                    # Scroll only the visible review list, including nested scroll containers.
+                    # Do not follow photo/profile links or change sorting to recover a failure.
+                    page.locator(selectors["card"]).last.evaluate(
+                        "el => el.scrollIntoView({block: 'start', behavior: 'instant'})")
+                    method = "review_list_scroll"
+                manifest.setdefault("load_actions", []).append(method)
                 try:
                     page.wait_for_function("({selector, count}) => document.querySelectorAll(selector).length > count",
                                            arg={"selector": selectors["card"], "count": old_count}, timeout=15000)
                 except BrowserTimeout:
                     restriction(page, blocked)
-                    return "load_more_did_not_increase_cards"
+                    return ("load_more_did_not_increase_cards" if button is not None
+                            else "scroll_did_not_increase_cards")
                 restriction(page, blocked)
         finally:
             browser.close()
+
+
+def collection_summary(manifest):
+    """Explain a result without leaking review bodies or claiming completeness."""
+    reason = manifest.get("stop_reason", "unknown")
+    count = manifest["review_count"]
+    known = manifest["written_date_count"]
+    lines = ["네이버 플레이스 리뷰 수집 결과", f"카페: {manifest['cafe_name']}",
+             f"확보한 본문: {count}건", f"작성일 확인: {known}건",
+             f"방문일 확인: {manifest['visit_date_count']}건 (작성일과 별도)",
+             f"종료 상태: {manifest['status']}", f"종료 이유: {reason}", ""]
+    if reason in {"robots_http_429", "page_http_429"}:
+        lines += ["네이버가 자동 요청을 제한했습니다(429). 이번 실행은 중단됐습니다.",
+                  "자동 재시도나 접근 제한 우회를 하지 않았습니다."]
+    elif reason in {"robots_disallowed", "robots_http_403", "page_http_403"}:
+        lines += ["해당 경로의 자동 접근이 허용되지 않거나 거절됐습니다."]
+    elif reason.startswith("robots_"):
+        lines += ["자동 접근 규칙을 확인하지 못해 수집을 중단했습니다."]
+    elif "Executable doesn't exist" in reason:
+        lines += ["수집용 Chromium이 없습니다. 아래 설치 후 새 실행을 시작하세요.",
+                  "python -m playwright install chromium"]
+    elif "distribution" in reason and "not found" in reason:
+        lines += ["지정한 브라우저가 설치되어 있지 않습니다.",
+                  "설치된 Chrome/Edge에 맞춰 --browser chrome 또는 --browser msedge를 선택하세요.",
+                  "Chromium을 사용하려면 python -m playwright install chromium 후 --browser chromium을 선택하세요."]
+    elif reason.startswith("playwright_missing"):
+        lines += ["수집 라이브러리가 없습니다. 설치 안내를 확인하세요.",
+                  "python -m pip install -r requirements-naver.txt",
+                  "python -m playwright install chromium"]
+    elif reason == "captcha_required":
+        lines += ["인증 화면이 나타나 수집을 중단했습니다."]
+    elif reason in {"review_layout_unrecognized_or_unavailable", "no_nonempty_review_bodies"}:
+        lines += ["리뷰 본문을 찾지 못했습니다. URL과 선택자 설정을 확인하세요."]
+    elif reason in {"scroll_did_not_increase_cards", "load_more_did_not_increase_cards",
+                    "no_load_more_control_visible"}:
+        lines += ["목록이 더 늘어나지 않아 현재 확보한 표본만 저장했습니다.",
+                  "전체 수집 완료나 마지막 리뷰 도달을 확인한 결과가 아닙니다."]
+    if count:
+        if manifest["status"] == "stopped":
+            lines += ["중단 전에 확보한 일부 본문은 CSV에 보존했습니다. 부분 수집 자료입니다."]
+        lines += ["reviews.csv를 CSV 분석 화면에 올릴 수 있습니다."]
+        if known == 0:
+            lines += ["작성일을 확인한 리뷰가 없어 작성일 기준 시계열은 만들 수 없습니다.",
+                      "방문일을 작성일로 바꾸지 않았습니다. 전체 기간 분석만 사용하세요."]
+        elif known < count:
+            lines += [f"작성일 미확인 {count - known}건은 월별 집계에서 제외됩니다."]
+    else:
+        lines += ["리뷰가 0건입니다. reviews.csv는 헤더만 있으며 분석용 데이터가 아닙니다.",
+                  "보고서는 생성하지 않았습니다."]
+    lines += ["", "범위: 제한된 표본이며 전체 수집을 보장하지 않습니다.",
+              "실제 리뷰와 결과 파일은 비공개 폴더에 보관하세요."]
+    return "\n".join(lines) + "\n"
 
 
 def save_collection(output, records, manifest):
@@ -270,8 +336,12 @@ def save_collection(output, records, manifest):
         writer.writerows(records.values())
     manifest["review_count"] = len(records)
     manifest["written_date_count"] = sum(bool(row["review_date"]) for row in records.values())
+    manifest["written_date_unknown_count"] = len(records) - manifest["written_date_count"]
+    manifest["visit_date_count"] = sum(bool(row["visit_date"]) for row in records.values())
+    manifest["usable_for_analysis"] = bool(records)
     manifest["fallback_id_count"] = sum(row["review_id_basis"] != "source_review_id" for row in records.values())
     (output / "collection_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    (output / "collection_summary.txt").write_text(collection_summary(manifest), encoding="utf-8-sig")
 
 
 def main(argv=None):
@@ -284,6 +354,9 @@ def main(argv=None):
     parser.add_argument("--max-pages", type=int, default=20, help="Maximum DOM snapshots")
     parser.add_argument("--delay", type=float, default=2)
     parser.add_argument("--headed", action="store_true", help="Show browser; does not bypass restrictions")
+    parser.add_argument("--browser", choices=["chromium", "chrome", "msedge"], default="chromium",
+                        help="Bundled Chromium, or an installed browser with a fresh anonymous profile")
+    parser.add_argument("--scroll-load", action="store_true", help="Try review-list scrolling when no list button is visible; live Naver behavior unverified")
     parser.add_argument("--selectors", default=str(ROOT / "configs/naver_place_selectors.json"))
     parser.add_argument("--html", help="Read locally saved rendered HTML without network")
     parser.add_argument("--synthetic", action="store_true", help="Label authored HTML fixture; requires --html")
@@ -313,6 +386,8 @@ def main(argv=None):
                     "source": "synthetic" if args.synthetic else "naver_place",
                     "max_reviews": args.max_reviews, "max_snapshots": args.max_pages,
                     "requested_delay_seconds": args.delay, "snapshots": 0,
+                    "scroll_load_enabled": args.scroll_load, "load_actions": [],
+                    "browser": args.browser,
                     "selectors_sha256": hashlib.sha256(Path(args.selectors).read_bytes()).hexdigest(),
                     "all_reviews_collected": False, "date_basis": "written_only",
                     "ordering": "default_page_order; no sort change", "status": "running"}

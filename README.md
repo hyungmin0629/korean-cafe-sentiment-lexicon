@@ -73,13 +73,15 @@ cafe-sentiment --input examples/reviews.synthetic.csv --output outputs_private/i
 
 네이버 플레이스는 각자 자기 컴퓨터에서 실행하는 [수집 코드와 설치 안내](docs/naver_crawling.md)를 제공합니다. 지도·플레이스 URL로 방문자 리뷰 CSV를 만들고 기존 감성분석 보고서에 연결합니다.
 
+Windows에서는 라이브러리 설치 후 **`collect_naver.cmd`를 더블클릭**해 URL과 카페 이름을 입력합니다. 설치된 Chrome을 사용하며 결과를 새 비공개 폴더에 저장합니다. 한국어 `collection_summary.txt`에서 먼저 본문 건수와 종료 이유를 확인하세요. 다른 환경에서는 `python tools/collect_naver_reviews.py`로 실행합니다.
+
 ```powershell
 python -m pip install -r requirements-naver.txt
 python -m playwright install chromium
 python tools/crawl_naver_place.py --url "https://map.naver.com/p/entry/place/1649277590" --cafe-name "스타벅스 타임스퀘어R점" --output data_private/naver_01 --report-output outputs_private/naver_01
 ```
 
-**네이버 실수집은 429 응답으로 0건에서 중단됐습니다.** 일반 브라우저에서는 매장·방문자 리뷰 탭이 열렸고, 데스크톱 화면의 카드 10개 구조를 확인해 선택자를 수정했습니다. 모바일 화면의 실제 수집·목록 추가 로딩은 미확인입니다. 자동 스크롤 로딩은 현재 미지원이며 전체 리뷰 수집을 보장하지 않습니다. 작성일을 확인할 수 없는 리뷰는 월별 집계에서 제외하고 방문일은 별도로 보존합니다. [사이트 접속·실수집 검증 기록](docs/naver_live_validation.md)에서 확인 범위를 보세요.
+**2026-10-14에도 네이버 실수집은 429 응답으로 0건에서 중단됐습니다.** 전날 일반 브라우저에서 확인한 카드 구조와 실제 수집 성공은 구분합니다. 모바일 실수집·실제 목록 추가 로딩은 미확인입니다. 선택형 `--scroll-load`는 자체 작성 화면의 일반·내부 스크롤만 검증했으며 전체 수집을 보장하지 않습니다. 작성일이 없는 리뷰는 월별 집계에서 제외하고 방문일은 따로 보존합니다. [검증 기록](docs/naver_live_validation.md)에서 확인 범위를 보세요.
 
 CSV를 이미 가지고 있거나 두 열로 준비한 경우 [CSV 분석 화면](docs/upload_app.md)을 사용합니다. 명령으로 변환하려면 [수동 리뷰 준비·변환 안내](docs/review_preparation.md)를 참고하세요.
 

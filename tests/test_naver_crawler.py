@@ -34,6 +34,7 @@ class FakeLocator:
     def __init__(self, count=0):
         self.amount = count
         self.first = self
+        self.last = self
 
     def count(self): return self.amount
     def nth(self, index): return self
@@ -193,6 +194,10 @@ class NaverCrawlerTests(unittest.TestCase):
             self.assertEqual(detail[0]["original_text"], rows[0]["text"])
             manifest = json.loads((output / "collection_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["written_date_count"], 1)
+            self.assertEqual(manifest["written_date_unknown_count"], 4)
+            self.assertEqual(manifest["visit_date_count"], 2)
+            self.assertTrue(manifest["usable_for_analysis"])
+            self.assertIn("월별 집계에서 제외", (output / "collection_summary.txt").read_text(encoding="utf-8-sig"))
             self.assertFalse(manifest["all_reviews_collected"])
             before = (output / "reviews.csv").read_bytes()
             self.assertEqual(crawler.main(arguments), 2)
@@ -211,6 +216,72 @@ class NaverCrawlerTests(unittest.TestCase):
             manifest = json.loads((output / "collection_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["review_count"], 5)
             self.assertEqual(manifest["status"], "stopped")
+            self.assertTrue(manifest["usable_for_analysis"])
+
+    def test_scroll_load_without_list_button_and_bounded_stop(self):
+        class ScrollPage(FakePage):
+            def locator(self, selector):
+                if selector == SELECTORS["load_more"]:
+                    return FakeLocator()
+                return super().locator(selector)
+
+            def wait_for_function(self, *args, **kwargs):
+                if self.index == len(self.htmls) - 1:
+                    raise FakeTimeout()
+                self.index += 1
+
+        full = FIXTURE.read_text(encoding="utf-8")
+        soup = crawler.BeautifulSoup(full, "html.parser")
+        first = "<ul>" + str(soup.select(SELECTORS["card"])[0]) + "</ul>"
+        page = ScrollPage([first, full])
+        modules, browser = fake_runtime(page)
+        args = SimpleNamespace(delay=1, headed=False, cafe_name="예제", max_pages=3,
+                               max_reviews=200, scroll_load=True)
+        records, manifest = {}, {"collected_at": "2026-10-14T00:00:00Z"}
+        with patch.dict(sys.modules, modules), patch.object(crawler, "check_robots", return_value={"crawl_delay": 0}), patch.object(crawler.time, "sleep"):
+            reason = crawler.collect_browser(args, SELECTORS, page.url, records, manifest)
+        self.assertEqual(reason, "scroll_did_not_increase_cards")
+        self.assertEqual(len(records), 5)
+        self.assertEqual(manifest["snapshots"], 2)
+        self.assertEqual(manifest["load_actions"], ["review_list_scroll"] * 2)
+        self.assertTrue(browser.closed)
+
+    def test_scroll_response_429_stops_and_preserves_existing_sample(self):
+        page = FakePage([FIXTURE.read_text(encoding="utf-8")])
+        modules, browser = fake_runtime(page)
+        def blocked(*args, **kwargs):
+            page.callback(SimpleNamespace(url=page.url, status=429,
+                                          request=SimpleNamespace(resource_type="fetch")))
+            raise FakeTimeout()
+        args = SimpleNamespace(delay=1, headed=False, cafe_name="예제", max_pages=3,
+                               max_reviews=200, scroll_load=True)
+        records = {}
+        with patch.dict(sys.modules, modules), patch.object(crawler, "check_robots", return_value={"crawl_delay": 0}), patch.object(crawler.time, "sleep"), patch.object(page, "wait_for_function", side_effect=blocked):
+            with self.assertRaisesRegex(crawler.CollectionStopped, "page_http_429"):
+                crawler.collect_browser(args, SELECTORS, page.url, records, {"collected_at": "test"})
+        self.assertEqual(len(records), 5)
+        self.assertEqual(page.clicked, 0)
+        self.assertTrue(browser.closed)
+
+    def test_blocked_collection_explains_empty_csv_in_korean(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / "csv"
+            with patch.object(crawler, "collect_browser", side_effect=crawler.CollectionStopped("robots_http_429")), redirect_stdout(io.StringIO()):
+                result = crawler.main(["--url", URL, "--cafe-name", "예제", "--output", str(output)])
+            self.assertEqual(result, 1)
+            summary = (output / "collection_summary.txt").read_text(encoding="utf-8-sig")
+            self.assertIn("자동 요청을 제한", summary)
+            self.assertIn("분석용 데이터가 아닙니다", summary)
+            self.assertNotIn("CSV에", summary)
+
+    def test_visit_only_summary_does_not_promise_time_series(self):
+        manifest = {"cafe_name": "예제", "review_count": 3, "written_date_count": 0,
+                    "visit_date_count": 2, "status": "collected_sample",
+                    "stop_reason": "scroll_did_not_increase_cards"}
+        summary = crawler.collection_summary(manifest)
+        self.assertIn("시계열은 만들 수 없습니다", summary)
+        self.assertIn("작성일로 바꾸지", summary)
+        self.assertIn("전체 수집 완료", summary)
 
     def test_empty_unknown_html_is_failure_not_empty_success(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -223,6 +294,7 @@ class NaverCrawlerTests(unittest.TestCase):
             manifest = json.loads((folder / "output/collection_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["review_count"], 0)
             self.assertEqual(manifest["status"], "stopped")
+            self.assertFalse(manifest["usable_for_analysis"])
 
     def test_current_dom_structure_and_korean_visit_date(self):
         rows = self.parse((ROOT / "tests/fixtures/naver_reviews.dom20261013.synthetic.html").read_text(encoding="utf-8"))
